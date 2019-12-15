@@ -21,12 +21,11 @@ body {
 }
 
 .container {
-    width: 100%;
+    width: 90%;
 }
 
 .header {
     background-color: $main-black;
-    position: fixed;
     width: 100%;
     .header__inner {
         display: grid;
@@ -212,6 +211,23 @@ body {
         background-color: $main-yellow;
         &>a {
             color: $main-black;
+        }
+    }
+}
+
+.aside {
+    height: 100vw;
+    position: fixed;
+    background-color: #000000;
+    .aside__menu {
+        list-style-type: none;
+       li:first-child {
+           background-image:url('../img/top10.svg');
+           width:60px;
+           height:60px;
+       }
+        a {
+            text-decoration: none;
         }
     }
 }

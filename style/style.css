@@ -13,11 +13,10 @@ body {
   margin: 0; }
 
 .container {
-  width: 100%; }
+  width: 90%; }
 
 .header {
   background-color: #030200;
-  position: fixed;
   width: 100%; }
   .header .header__inner {
     display: grid;
@@ -173,5 +172,18 @@ body {
     background-color: #f4ff00; }
     .header li[class*="submenu"]:hover > a {
       color: #030200; }
+
+.aside {
+  height: 100vw;
+  position: fixed;
+  background-color: #000000; }
+  .aside .aside__menu {
+    list-style-type: none; }
+    .aside .aside__menu li:first-child {
+      background-image: url("../img/top10.svg");
+      width: 60px;
+      height: 60px; }
+    .aside .aside__menu a {
+      text-decoration: none; }
 
 /*# sourceMappingURL=style.css.map */
