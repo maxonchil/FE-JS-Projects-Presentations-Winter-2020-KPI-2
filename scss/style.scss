@@ -95,9 +95,29 @@ body {
 .header__submenu1,
 .header__submenu2,
 .header__submenu3 {
-    display: none;
+    transform: translateY(-31vw);
     background-color: #000;
     padding-left: 0;
+    opacity: 0;
+    transition: .5s;
+    a {
+        display: block;
+        width: 100%;
+        height: 100%;
+    }
+    li {
+        border-top: 1px solid $main-violet;
+        &:hover {
+            background-color: $main-yellow;
+            a {
+                color: $main-black;
+            }
+        }
+    }
+}
+
+.header__submenu3 {
+    transform: translateY(-18vw);
 }
 
 .header__menu-li1:hover,
@@ -110,11 +130,15 @@ body {
 }
 
 .header__menu-li1:hover>.header__submenu1 {
-    display: block;
+    transform: translateY(0);
+    opacity: 1;
+    transition: .5s;
 }
 
 .header__menu-li3:hover>.header__submenu3 {
-    display: block;
+    transform: translateY(0);
+    opacity: 1;
+    transition: .5s;
 }
 
 .header__registation {
@@ -369,7 +393,7 @@ body {
     .aside__submenu-1 {
         padding: 0;
         margin-right: -10vw;
-        transform: translate(5vw, -23vw);
+        transform: translate(5vw, -24vw);
         transition: .4s;
         background-color: $main-black;
         text-align: center;
@@ -387,7 +411,7 @@ body {
     }
     &:hover>.aside__submenu-1 {
         transition: .4s;
-        transform: translate(5vw, -1.3vw);
+        transform: translate(5vw, -1vw);
     }
 }
 
