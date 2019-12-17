@@ -353,7 +353,9 @@ body {
   transition: .5s;
   position: relative; }
   .slider__item iframe {
-    width: 100%;
+    display: block;
+    width: 90%;
+    margin: 0 auto;
     min-height: 34vw; }
 
 .slider__controls-dots {
@@ -367,10 +369,6 @@ body {
     background-color: #030200;
     border-radius: 50%; }
 
-.slider__controls-arrow {
-  max-height: 50px;
-  width: 100%; }
-
 #control1:checked ~ .slider__controls-dots label:first-child,
 #control2:checked ~ .slider__controls-dots label:nth-child(2),
 #control3:checked ~ .slider__controls-dots label:nth-child(3),
@@ -379,13 +377,14 @@ body {
 #control6:checked ~ .slider__controls-dots label:nth-child(6) {
   background-color: #f4ff00; }
 
-#control1:checked ~ .slider__controls-arrow label:nth-child(2) {
+#control1:checked ~ .slider__window .slider__item:first-child label {
   display: block;
-  width: 100%;
-  height: 50px;
-  margin-top: -20vw;
-  position: relative; }
-  #control1:checked ~ .slider__controls-arrow label:nth-child(2):after {
+  min-width: 100%;
+  min-height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 0; }
+  #control1:checked ~ .slider__window .slider__item:first-child label:after {
     content: '';
     position: absolute;
     width: 50px;
@@ -394,6 +393,159 @@ body {
     transform: rotate(-45deg);
     top: 0;
     right: 2%; }
+
+#control2:checked ~ .slider__window .slider__item:nth-child(2) label[for="control1"] {
+  display: inline-block;
+  min-width: 50%;
+  min-height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 0; }
+  #control2:checked ~ .slider__window .slider__item:nth-child(2) label[for="control1"]:before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    box-shadow: 5px 5px 0 1px #030200;
+    transform: rotate(135deg);
+    top: 0;
+    left: 4%; }
+
+#control2:checked ~ .slider__window .slider__item:nth-child(2) label[for="control3"] {
+  display: inline-block;
+  min-width: 50%;
+  min-height: 50px;
+  position: absolute;
+  top: 50%;
+  right: 0; }
+  #control2:checked ~ .slider__window .slider__item:nth-child(2) label[for="control3"]:after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    box-shadow: 5px 5px 0 1px #030200;
+    transform: rotate(-45deg);
+    top: 0;
+    right: 4%; }
+
+#control3:checked ~ .slider__window .slider__item:nth-child(3) label[for="control2"] {
+  display: inline-block;
+  min-width: 50%;
+  min-height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 0; }
+  #control3:checked ~ .slider__window .slider__item:nth-child(3) label[for="control2"]:before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    box-shadow: 5px 5px 0 1px #030200;
+    transform: rotate(135deg);
+    top: 0;
+    left: 4%; }
+
+#control3:checked ~ .slider__window .slider__item:nth-child(3) label[for="control4"] {
+  display: inline-block;
+  min-width: 50%;
+  min-height: 50px;
+  position: absolute;
+  top: 50%;
+  right: 0; }
+  #control3:checked ~ .slider__window .slider__item:nth-child(3) label[for="control4"]:after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    box-shadow: 5px 5px 0 1px #030200;
+    transform: rotate(-45deg);
+    top: 0;
+    right: 4%; }
+
+#control4:checked ~ .slider__window .slider__item:nth-child(4) label[for="control3"] {
+  display: inline-block;
+  min-width: 50%;
+  min-height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 0; }
+  #control4:checked ~ .slider__window .slider__item:nth-child(4) label[for="control3"]:before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    box-shadow: 5px 5px 0 1px #030200;
+    transform: rotate(135deg);
+    top: 0;
+    left: 4%; }
+
+#control4:checked ~ .slider__window .slider__item:nth-child(4) label[for="control5"] {
+  display: inline-block;
+  min-width: 50%;
+  min-height: 50px;
+  position: absolute;
+  top: 50%;
+  right: 0; }
+  #control4:checked ~ .slider__window .slider__item:nth-child(4) label[for="control5"]:after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    box-shadow: 5px 5px 0 1px #030200;
+    transform: rotate(-45deg);
+    top: 0;
+    right: 4%; }
+
+#control5:checked ~ .slider__window .slider__item:nth-child(5) label[for="control4"] {
+  display: inline-block;
+  min-width: 50%;
+  min-height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 0; }
+  #control5:checked ~ .slider__window .slider__item:nth-child(5) label[for="control4"]:before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    box-shadow: 5px 5px 0 1px #030200;
+    transform: rotate(135deg);
+    top: 0;
+    left: 4%; }
+
+#control5:checked ~ .slider__window .slider__item:nth-child(5) label[for="control6"] {
+  display: inline-block;
+  min-width: 50%;
+  min-height: 50px;
+  position: absolute;
+  top: 50%;
+  right: 0; }
+  #control5:checked ~ .slider__window .slider__item:nth-child(5) label[for="control6"]:after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    box-shadow: 5px 5px 0 1px #030200;
+    transform: rotate(-45deg);
+    top: 0;
+    right: 4%; }
+
+#control6:checked ~ .slider__window .slider__item:nth-child(6) label[for="control5"] {
+  display: inline-block;
+  min-width: 50%;
+  min-height: 50px;
+  position: absolute;
+  top: 50%;
+  left: 0; }
+  #control6:checked ~ .slider__window .slider__item:nth-child(6) label[for="control5"]:before {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    box-shadow: 5px 5px 0 1px #030200;
+    transform: rotate(135deg);
+    top: 0;
+    left: 4%; }
 
 #control1:checked ~ .slider__window .slider__item {
   margin-left: 0;
