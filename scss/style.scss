@@ -43,7 +43,7 @@ body {
 }
 
 .container {
-    width: 95%;
+    width: 96.5%;
     margin-left: auto;
 }
 
@@ -129,6 +129,7 @@ body {
 .header__menu-li2:hover,
 .header__menu-li3:hover {
     background-color: $main-yellow;
+    z-index: 2;
     &>a {
         color: $main-black;
     }
@@ -156,7 +157,7 @@ body {
         border-radius: 5px;
         border: none;
         width: 100%;
-        font-size: 1.1vw;
+        font-size: 1vw;
         background-color: $main-gray;
         &:focus {
             background-color: #fff;
@@ -203,12 +204,13 @@ body {
 }
 
 .aside {
-    width: 5%;
+    width: 3.5%;
     position: fixed;
     top: 0;
     left: 0;
     background-color: #000000;
     height: 100vh;
+    z-index: 2;
     a {
         text-decoration: none;
         color: $main-yellow;
@@ -229,14 +231,17 @@ body {
 .aside__menu-item1 {
     &>a {
         display: block;
-        height: 4vw;
-        width: 4.5vw;
-        background: url(../img/top10.svg) no-repeat right center;
+        height: 100%;
+    background: url(../img/top10.svg) no-repeat right center;
+    margin-left: auto;
+    margin-right: 0;
+    width: 3.1vw;
     }
     .aside__submenu-1 {
+        list-style-type: none;
         padding: 0;
-        margin-right: -10vw;
-        transform: translate(5vw, -24vw);
+        margin-right:-10vw;
+        transform: translate(-100%, -9.5%);
         transition: .4s;
         background-color: $main-black;
         text-align: center;
@@ -245,21 +250,29 @@ body {
         border: 1px solid $main-violet;
         border-radius: 0 15px 15px 0;
         li {
-            padding: 0.4vw 0;
+            z-index: 2;
             border-top: 1px solid $main-violet;
         }
+        a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            padding: 0.4vw 0;
+            
+        }
     }
-    &:hover {
-        background-color: $main-violet;
-    }
+    
     &:hover>.aside__submenu-1 {
         transition: .4s;
-        transform: translate(5vw, -1vw);
+        transform: translate(25%, -9.5%);
     }
 }
 
 .aside__sumbenu1-item1 {
     border-radius: 0 15px 0 0;
+    &:hover {
+        border-radius: 0 15px 0 0;
+    }
 }
 
 .aside__sumbenu1-item1:hover,
@@ -277,115 +290,86 @@ body {
     }
 }
 
-.aside__sumbenu1-item1:hover {
-    border-radius: 0 15px 0 0;
-}
-
 .aside__sumbenu1-item9:hover {
     border-radius: 0 0 15px 0;
 }
-
+.aside__menu-item1,  .aside__menu-item2,.aside__menu-item3, .aside__menu-item4,.aside__menu-item5, .aside__menu-item6,
+.aside__menu-item7,.aside__menu-item8,.aside__menu-item9,.aside__menu-item10 {
+    &:hover {
+        background-color: $main-violet;
+    }
+}
 .aside__menu-item2 {
     a {
         display: block;
-        height: 4vw;
+        height: 100%;
         background: url('../img/rock-and-roll.svg') no-repeat center center;
-    }
-    &:hover {
-        background-color: $main-violet;
     }
 }
 
 .aside__menu-item3 {
     a {
         display: block;
-        height: 4vw;
+        height: 100%;
         background: url('../img/kpop.svg') no-repeat center center;
     }
-    &:hover {
-        background-color: $main-violet;
-    }
+    
 }
 
 .aside__menu-item4 {
     a {
         display: block;
-        height: 4vw;
+        height: 100%;
         background: url('../img/jazz.svg') no-repeat center center;
-    }
-    &:hover {
-        background-color: $main-violet;
     }
 }
 
 .aside__menu-item5 {
     a {
         display: block;
-        height: 4vw;
+        height: 100%;
         background: url('../img/dabstep.svg') no-repeat center center;
-    }
-    &:hover {
-        background-color: $main-violet;
     }
 }
 
 .aside__menu-item6 {
     a {
         display: block;
-        height: 4vw;
+        height: 100%;
         background: url('../img/electro.svg') no-repeat center center;
-    }
-    &:hover {
-        background-color: $main-violet;
     }
 }
 
 .aside__menu-item7 {
     a {
         display: block;
-        height: 4vw;
+        height: 100%;
         background: url('../img/blues.svg') no-repeat center center;
-    }
-    &:hover {
-        background-color: $main-violet;
     }
 }
 
 .aside__menu-item8 {
     a {
         display: block;
-        height: 4vw;
+        height: 100%;
         background: url('../img/techno.svg') no-repeat center center;
-    }
-    &:hover {
-        background-color: $main-violet;
     }
 }
 
 .aside__menu-item9 {
     a {
         display: block;
-        height: 4vw;
+        height: 100%;
         background: url('../img/country.svg') no-repeat center center;
-    }
-    &:hover {
-        background-color: $main-violet;
     }
 }
 
 .aside__menu-item10 {
     a {
         display: block;
-        height: 4vw;
+        height: 100%;
         background: url('../img/pop.svg') no-repeat center center;
     }
-    &:hover {
-        background-color: $main-violet;
-    }
-}
-
-.aside__submenu-1 {
-    list-style-type: none;
 }
 
 .slider__title {
@@ -393,6 +377,7 @@ body {
     text-transform: uppercase;
     font-family: "title font";
     margin-bottom: 0;
+    font-size: 1.85vw;
 }
 
 .slider__window {
@@ -414,28 +399,38 @@ body {
     min-width: 100%;
     transition: .5s;
     position: relative;
-    iframe {
+    h4 {
+        margin: 0.5% auto 0.5%;
+        font-size: 1.23vw;
+    }
+    video {
         display: block;
-        width: 90%;
+        width: 76%;
         margin: 0 auto;
         min-height: 34vw;
+        
     }
 }
 
-// input[type="radio"] {
-//     -webkit-appearance: none;
-//     display: none;
-// }
+input[type="radio"] {
+    -webkit-appearance: none;
+    display: none;
+}
 .slider__controls-dots {
     display: flex;
     width: 10vw;
     margin: 0 auto;
     justify-content: space-around;
+    padding: 1vw 0;
     label {
-        width: 15px;
-        height: 15px;
+        width: 1.3vw;
+        height: 1.3vw;
         background-color: $main-black;
         border-radius: 50%;
+        cursor: pointer;
+        &:hover {
+            background-color: $main-violet;
+        }
     }
 }
 
@@ -448,193 +443,58 @@ body {
     background-color: $main-yellow;
 }
 
-#control1:checked~.slider__window .slider__item:first-child label {
-    display: block;
-    min-width: 100%;
-    min-height: 50px;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    &:after {
-        content: '';
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        box-shadow: 5px 5px 0 1px $main-black;
-        transform: rotate(-45deg);
-        top: 0;
-        right: 2%;
-    }
-}
 
-#control2:checked~.slider__window .slider__item:nth-child(2) label[for="control1"] {
+#control5:checked~.slider__window .slider__item:nth-child(5) label[for="control4"],
+#control4:checked~.slider__window .slider__item:nth-child(4) label[for="control3"],
+#control3:checked~.slider__window .slider__item:nth-child(3) label[for="control2"],
+#control2:checked~.slider__window .slider__item:nth-child(2) label[for="control1"],
+#control6:checked~.slider__window .slider__item:nth-child(6) label[for="control5"]    {
     display: inline-block;
-    min-width: 50%;
-    min-height: 50px;
+    min-width: 6.2%;
+    min-height: 6vw;
     position: absolute;
-    top: 50%;
-    left: 0;
+    top: 46%;
+    left: 5%;
     &:before {
         content: '';
         position: absolute;
-        width: 50px;
-        height: 50px;
+        width: 4vw;
+        height: 4vw;
         box-shadow: 5px 5px 0 1px $main-black;
         transform: rotate(135deg);
-        top: 0;
-        left: 4%;
+        top: 16%;
+        left: 28%;
+        cursor: pointer;
+    }
+    &:hover:before {
+        box-shadow:5px 5px 0 1px $main-yellow;
     }
 }
 
-#control2:checked~.slider__window .slider__item:nth-child(2) label[for="control3"] {
+#control1:checked~.slider__window .slider__item:first-child label,
+#control2:checked~.slider__window .slider__item:nth-child(2) label[for="control3"],
+#control3:checked~.slider__window .slider__item:nth-child(3) label[for="control4"],
+#control4:checked~.slider__window .slider__item:nth-child(4) label[for="control5"],
+#control5:checked~.slider__window .slider__item:nth-child(5) label[for="control6"]  {
     display: inline-block;
-    min-width: 50%;
-    min-height: 50px;
+    min-width: 6.2%;
+    min-height: 6vw;
     position: absolute;
-    top: 50%;
-    right: 0;
+    top: 46%;
+    right: 5%;
     &:after {
         content: '';
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        box-shadow: 5px 5px 0 1px $main-black;
-        transform: rotate(-45deg);
-        top: 0;
-        right: 4%;
-    }
-}
-
-#control3:checked~.slider__window .slider__item:nth-child(3) label[for="control2"] {
-    display: inline-block;
-    min-width: 50%;
-    min-height: 50px;
     position: absolute;
-    top: 50%;
-    left: 0;
-    &:before {
-        content: '';
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        box-shadow: 5px 5px 0 1px $main-black;
-        transform: rotate(135deg);
-        top: 0;
-        left: 4%;
+    width: 4vw;
+    height: 4vw;
+    box-shadow: 5px 5px 0 1px #030200;
+    transform: rotate(-45deg);
+    top: 16%;
+    right: 28%;
+    cursor: pointer;
     }
-}
-
-#control3:checked~.slider__window .slider__item:nth-child(3) label[for="control4"] {
-    display: inline-block;
-    min-width: 50%;
-    min-height: 50px;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    &:after {
-        content: '';
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        box-shadow: 5px 5px 0 1px $main-black;
-        transform: rotate(-45deg);
-        top: 0;
-        right: 4%;
-    }
-}
-
-#control4:checked~.slider__window .slider__item:nth-child(4) label[for="control3"] {
-    display: inline-block;
-    min-width: 50%;
-    min-height: 50px;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    &:before {
-        content: '';
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        box-shadow: 5px 5px 0 1px $main-black;
-        transform: rotate(135deg);
-        top: 0;
-        left: 4%;
-    }
-}
-
-#control4:checked~.slider__window .slider__item:nth-child(4) label[for="control5"] {
-    display: inline-block;
-    min-width: 50%;
-    min-height: 50px;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    &:after {
-        content: '';
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        box-shadow: 5px 5px 0 1px $main-black;
-        transform: rotate(-45deg);
-        top: 0;
-        right: 4%;
-    }
-}
-
-#control5:checked~.slider__window .slider__item:nth-child(5) label[for="control4"] {
-    display: inline-block;
-    min-width: 50%;
-    min-height: 50px;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    &:before {
-        content: '';
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        box-shadow: 5px 5px 0 1px $main-black;
-        transform: rotate(135deg);
-        top: 0;
-        left: 4%;
-    }
-}
-
-#control5:checked~.slider__window .slider__item:nth-child(5) label[for="control6"] {
-    display: inline-block;
-    min-width: 50%;
-    min-height: 50px;
-    position: absolute;
-    top: 50%;
-    right: 0;
-    &:after {
-        content: '';
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        box-shadow: 5px 5px 0 1px $main-black;
-        transform: rotate(-45deg);
-        top: 0;
-        right: 4%;
-    }
-}
-
-#control6:checked~.slider__window .slider__item:nth-child(6) label[for="control5"] {
-    display: inline-block;
-    min-width: 50%;
-    min-height: 50px;
-    position: absolute;
-    top: 50%;
-    left: 0;
-    &:before {
-        content: '';
-        position: absolute;
-        width: 50px;
-        height: 50px;
-        box-shadow: 5px 5px 0 1px $main-black;
-        transform: rotate(135deg);
-        top: 0;
-        left: 4%;
+    &:hover:after {
+        box-shadow:5px 5px 0 1px $main-yellow;
     }
 }
 
