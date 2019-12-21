@@ -29,6 +29,12 @@ $main-gray: #e5e5e5;
         color: $main-yellow;
     }
 }
+@mixin title-style {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "title font";
+    font-size: 1.85vw;
+}
 
 .test {
     height: 200vh;
@@ -241,7 +247,7 @@ body {
         list-style-type: none;
         padding: 0;
         margin-right:-10vw;
-        transform: translate(-100%, -9.5%);
+        transform: translate(26%, -33vw);
         transition: .4s;
         background-color: $main-black;
         text-align: center;
@@ -303,7 +309,7 @@ body {
     a {
         display: block;
         height: 100%;
-        background: url('../img/rock-and-roll.svg') no-repeat center center;
+        background: url('../img/rock_and_roll.svg') no-repeat center center;
     }
 }
 
@@ -373,17 +379,18 @@ body {
 }
 
 .slider__title {
-    text-align: center;
-    text-transform: uppercase;
-    font-family: "title font";
+    @include title-style;
     margin-bottom: 0;
-    font-size: 1.85vw;
+}
+.slider input[type="radio"] {
+    display: none;
 }
 
 .slider__window {
     width: 90%;
     overflow: hidden;
     margin: 0 auto;
+    
 }
 
 .slider__inner {
@@ -393,6 +400,7 @@ body {
         text-align: center;
         font-family: "title font";
     }
+    
 }
 
 .slider__item {
@@ -412,10 +420,7 @@ body {
     }
 }
 
-input[type="radio"] {
-    -webkit-appearance: none;
-    display: none;
-}
+
 .slider__controls-dots {
     display: flex;
     width: 10vw;
@@ -527,6 +532,137 @@ input[type="radio"] {
     margin-left: -500%;
     transition: .5s;
 }
+.albums__inner {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
+    grid-gap: 2vw;
+    max-height: 600px;
+    min-height: 600px;
+    width: 85%;
+    margin: 0 auto;
+    overflow: auto;
+}
+.albums__title {
+    @include title-style;
+}
+.albums__item-checked {
+display: none;
+}
+input[class^="albums__item"]{
+    -webkit-appearance: none;
+    display: none;
+    background-size: cover;
+    min-width: 300px;
+    min-height: 300px;
+    margin: 0 auto;
+    cursor: pointer;
+}
+.albums__item1 {
+    background: url('../img/fine_line.png') no-repeat 0 0;
+}
+.albums__item2 {
+    background: url('../img/heavy.jpg') no-repeat 0 0;
+}
+.albums__item3{
+    background: url('../img/tunes.jpg') no-repeat 0 0;
+}
+.albums__item4 {
+    background: url('../img/lp1.jpg') no-repeat 0 0;
+}
+.albums__item5{
+    background: url('../img/trippie.jpg') no-repeat 0 0;
+}
+.albums__item6 {
+    background: url('../img/coldplay.jpg') no-repeat 0 0;
+}
+.albums__item7{
+    background: url('../img/robbie_williams.jpg') no-repeat 0 0;
+}
+.albums__item8 {
+    background: url('../img/leonard_cohen.png') no-repeat 0 0;
+}
+.albums__item9{
+    background: url('../img/hyperspace.jpg') no-repeat 0 0;
+}
+.albums__item10{
+    background: url('../img/lil.jpg') no-repeat 0 0;
+}
+.albums__item11 {
+    background: url('../img/dj_shadow.png') no-repeat 0 0;
+}
+.albums__item12{
+    background: url('../img/i_made_a_place.jpg') no-repeat 0 0;
+}
+.albums__item13{
+    background: url('../img/chixtape.png') no-repeat 0 0;
+}
+.albums__item14 {
+    background: url('../img/luce_combs.png') no-repeat 0 0;
+}
+.albums__item15{
+    background: url('../img/one_of_the_best.jpeg') no-repeat 0 0;
+}
+.albums__item-checked:checked ~ input {
+    display: block;
+}
+.albums__tracks1,.albums__tracks2 ,.albums__tracks3,.albums__tracks4,.albums__tracks5,.albums__tracks6,
+.albums__tracks7,.albums__tracks8,.albums__tracks9,.albums__tracks10,.albums__tracks11,.albums__tracks12,
+.albums__tracks13,.albums__tracks14,.albums__tracks15 {
+    display: none;
+    h4 {
+        text-align: center;
+        text-transform: uppercase;
+        font-family: "title font";
+    }
+    label {
+        display: block;
+        position: relative;
+        min-height: 3vw;
+        min-width: 2vw;
+        float:left;
+        cursor: pointer;
+        &:before {
+            content: '';
+            position: absolute;
+            width: 2vw;
+            height: 2vw;
+            box-shadow: 2px 2px 0 1px $main-black;
+            transform: rotate(135deg);
+            top: 16%;
+            left: 40%;
+        }
+        &:hover:before {
+            box-shadow:2px 2px 0 1px $main-yellow;
+        }
+    }
+}
+.albums__tracks-inner {
+    display:grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-auto-rows: 7vw;
+    align-items: center;
+    audio {
+        outline: none;
+    height: 2vw;
+    width: 90%;
+    }
+    div {
+        margin: 0 auto;
+        width: 100%;
+    }
+    p{
+        font-size: 1.5vw;
+    }
+    
+}
+.albums__item1:checked ~ .albums__tracks1, .albums__item2:checked ~ .albums__tracks2,.albums__item3:checked ~ .albums__tracks3,
+.albums__item4:checked ~ .albums__tracks4,.albums__item5:checked ~ .albums__tracks5,.albums__item6:checked ~ .albums__tracks6,
+.albums__item7:checked ~ .albums__tracks7,.albums__item8:checked ~ .albums__tracks8,.albums__item9:checked ~ .albums__tracks9,
+.albums__item10:checked ~ .albums__tracks10,.albums__item11:checked ~ .albums__tracks11,.albums__item12:checked ~ .albums__tracks12,
+.albums__item13:checked ~ .albums__tracks13,.albums__item14:checked ~ .albums__tracks14,.albums__item15:checked ~ .albums__tracks15{
+    display: block;
+}
+
 
 // @for $i from 1 to 4 {
 //     .li-style:nth-child(#{$i}) {

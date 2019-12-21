@@ -211,7 +211,7 @@ body {
   list-style-type: none;
   padding: 0;
   margin-right: -10vw;
-  transform: translate(-100%, -9.5%);
+  transform: translate(26%, -33vw);
   transition: .4s;
   background-color: #030200;
   text-align: center;
@@ -268,7 +268,7 @@ body {
 .aside__menu-item2 a {
   display: block;
   height: 100%;
-  background: url("../img/rock-and-roll.svg") no-repeat center center; }
+  background: url("../img/rock_and_roll.svg") no-repeat center center; }
 
 .aside__menu-item3 a {
   display: block;
@@ -314,8 +314,11 @@ body {
   text-align: center;
   text-transform: uppercase;
   font-family: "title font";
-  margin-bottom: 0;
-  font-size: 1.85vw; }
+  font-size: 1.85vw;
+  margin-bottom: 0; }
+
+.slider input[type="radio"] {
+  display: none; }
 
 .slider__window {
   width: 90%;
@@ -341,10 +344,6 @@ body {
     width: 76%;
     margin: 0 auto;
     min-height: 34vw; }
-
-input[type="radio"] {
-  -webkit-appearance: none;
-  display: none; }
 
 .slider__controls-dots {
   display: flex;
@@ -456,5 +455,138 @@ input[type="radio"] {
 #control6:checked ~ .slider__window .slider__item:nth-child(1) {
   margin-left: -500%;
   transition: .5s; }
+
+.albums__inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 2vw;
+  max-height: 600px;
+  min-height: 600px;
+  width: 85%;
+  margin: 0 auto;
+  overflow: auto; }
+
+.albums__title {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "title font";
+  font-size: 1.85vw; }
+
+.albums__item-checked {
+  display: none; }
+
+input[class^="albums__item"] {
+  -webkit-appearance: none;
+  display: none;
+  background-size: cover;
+  min-width: 300px;
+  min-height: 300px;
+  margin: 0 auto;
+  cursor: pointer; }
+
+.albums__item1 {
+  background: url("../img/fine_line.png") no-repeat 0 0; }
+
+.albums__item2 {
+  background: url("../img/heavy.jpg") no-repeat 0 0; }
+
+.albums__item3 {
+  background: url("../img/tunes.jpg") no-repeat 0 0; }
+
+.albums__item4 {
+  background: url("../img/lp1.jpg") no-repeat 0 0; }
+
+.albums__item5 {
+  background: url("../img/trippie.jpg") no-repeat 0 0; }
+
+.albums__item6 {
+  background: url("../img/coldplay.jpg") no-repeat 0 0; }
+
+.albums__item7 {
+  background: url("../img/robbie_williams.jpg") no-repeat 0 0; }
+
+.albums__item8 {
+  background: url("../img/leonard_cohen.png") no-repeat 0 0; }
+
+.albums__item9 {
+  background: url("../img/hyperspace.jpg") no-repeat 0 0; }
+
+.albums__item10 {
+  background: url("../img/lil.jpg") no-repeat 0 0; }
+
+.albums__item11 {
+  background: url("../img/dj_shadow.png") no-repeat 0 0; }
+
+.albums__item12 {
+  background: url("../img/i_made_a_place.jpg") no-repeat 0 0; }
+
+.albums__item13 {
+  background: url("../img/chixtape.png") no-repeat 0 0; }
+
+.albums__item14 {
+  background: url("../img/luce_combs.png") no-repeat 0 0; }
+
+.albums__item15 {
+  background: url("../img/one_of_the_best.jpeg") no-repeat 0 0; }
+
+.albums__item-checked:checked ~ input {
+  display: block; }
+
+.albums__tracks1, .albums__tracks2, .albums__tracks3, .albums__tracks4, .albums__tracks5, .albums__tracks6,
+.albums__tracks7, .albums__tracks8, .albums__tracks9, .albums__tracks10, .albums__tracks11, .albums__tracks12,
+.albums__tracks13, .albums__tracks14, .albums__tracks15 {
+  display: none; }
+  .albums__tracks1 h4, .albums__tracks2 h4, .albums__tracks3 h4, .albums__tracks4 h4, .albums__tracks5 h4, .albums__tracks6 h4,
+  .albums__tracks7 h4, .albums__tracks8 h4, .albums__tracks9 h4, .albums__tracks10 h4, .albums__tracks11 h4, .albums__tracks12 h4,
+  .albums__tracks13 h4, .albums__tracks14 h4, .albums__tracks15 h4 {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: "title font"; }
+  .albums__tracks1 label, .albums__tracks2 label, .albums__tracks3 label, .albums__tracks4 label, .albums__tracks5 label, .albums__tracks6 label,
+  .albums__tracks7 label, .albums__tracks8 label, .albums__tracks9 label, .albums__tracks10 label, .albums__tracks11 label, .albums__tracks12 label,
+  .albums__tracks13 label, .albums__tracks14 label, .albums__tracks15 label {
+    display: block;
+    position: relative;
+    min-height: 3vw;
+    min-width: 2vw;
+    float: left;
+    cursor: pointer; }
+    .albums__tracks1 label:before, .albums__tracks2 label:before, .albums__tracks3 label:before, .albums__tracks4 label:before, .albums__tracks5 label:before, .albums__tracks6 label:before,
+    .albums__tracks7 label:before, .albums__tracks8 label:before, .albums__tracks9 label:before, .albums__tracks10 label:before, .albums__tracks11 label:before, .albums__tracks12 label:before,
+    .albums__tracks13 label:before, .albums__tracks14 label:before, .albums__tracks15 label:before {
+      content: '';
+      position: absolute;
+      width: 2vw;
+      height: 2vw;
+      box-shadow: 2px 2px 0 1px #030200;
+      transform: rotate(135deg);
+      top: 16%;
+      left: 40%; }
+    .albums__tracks1 label:hover:before, .albums__tracks2 label:hover:before, .albums__tracks3 label:hover:before, .albums__tracks4 label:hover:before, .albums__tracks5 label:hover:before, .albums__tracks6 label:hover:before,
+    .albums__tracks7 label:hover:before, .albums__tracks8 label:hover:before, .albums__tracks9 label:hover:before, .albums__tracks10 label:hover:before, .albums__tracks11 label:hover:before, .albums__tracks12 label:hover:before,
+    .albums__tracks13 label:hover:before, .albums__tracks14 label:hover:before, .albums__tracks15 label:hover:before {
+      box-shadow: 2px 2px 0 1px #f4ff00; }
+
+.albums__tracks-inner {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-auto-rows: 7vw;
+  align-items: center; }
+  .albums__tracks-inner audio {
+    outline: none;
+    height: 2vw;
+    width: 90%; }
+  .albums__tracks-inner div {
+    margin: 0 auto;
+    width: 100%; }
+  .albums__tracks-inner p {
+    font-size: 1.5vw; }
+
+.albums__item1:checked ~ .albums__tracks1, .albums__item2:checked ~ .albums__tracks2, .albums__item3:checked ~ .albums__tracks3,
+.albums__item4:checked ~ .albums__tracks4, .albums__item5:checked ~ .albums__tracks5, .albums__item6:checked ~ .albums__tracks6,
+.albums__item7:checked ~ .albums__tracks7, .albums__item8:checked ~ .albums__tracks8, .albums__item9:checked ~ .albums__tracks9,
+.albums__item10:checked ~ .albums__tracks10, .albums__item11:checked ~ .albums__tracks11, .albums__item12:checked ~ .albums__tracks12,
+.albums__item13:checked ~ .albums__tracks13, .albums__item14:checked ~ .albums__tracks14, .albums__item15:checked ~ .albums__tracks15 {
+  display: block; }
 
 /*# sourceMappingURL=style.css.map */
