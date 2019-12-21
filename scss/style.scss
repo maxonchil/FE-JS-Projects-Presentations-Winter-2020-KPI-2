@@ -21,7 +21,6 @@ $main-gray: #e5e5e5;
     border: 1px solid $main-gray;
     border-radius: 3px;
     line-height: 1.5vw;
-    font-size: 0.9vw;
     cursor: pointer;
     font-family: "menu font";
     &:hover {
@@ -46,6 +45,7 @@ $main-gray: #e5e5e5;
 
 body {
     margin: 0;
+    color:$main-black;
 }
 
 .container {
@@ -195,6 +195,7 @@ body {
         background-color: $main-yellow;
         color: $main-black;
         @include btn-style;
+        font-size: 0.9vw;
     }
 }
 
@@ -534,11 +535,11 @@ body {
 }
 .albums__inner {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(300px, 1fr));
-    grid-gap: 2vw;
-    max-height: 600px;
-    min-height: 600px;
-    width: 85%;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-row-gap: 1vw;
+    max-height: 615px;
+    min-height: 615px;
+    width: 83%;
     margin: 0 auto;
     overflow: auto;
 }
@@ -551,56 +552,72 @@ display: none;
 input[class^="albums__item"]{
     -webkit-appearance: none;
     display: none;
-    background-size: cover;
     min-width: 300px;
+    max-width:300px;
     min-height: 300px;
+    max-height: 300px;
     margin: 0 auto;
     cursor: pointer;
 }
 .albums__item1 {
     background: url('../img/fine_line.png') no-repeat 0 0;
+    background-size: cover;
 }
 .albums__item2 {
     background: url('../img/heavy.jpg') no-repeat 0 0;
+    background-size: cover;
 }
 .albums__item3{
     background: url('../img/tunes.jpg') no-repeat 0 0;
+    background-size: cover;
 }
 .albums__item4 {
     background: url('../img/lp1.jpg') no-repeat 0 0;
+    background-size: cover;
 }
 .albums__item5{
     background: url('../img/trippie.jpg') no-repeat 0 0;
+    background-size: cover;
 }
 .albums__item6 {
     background: url('../img/coldplay.jpg') no-repeat 0 0;
+    background-size: cover;
 }
 .albums__item7{
     background: url('../img/robbie_williams.jpg') no-repeat 0 0;
+    background-size: cover;
 }
 .albums__item8 {
     background: url('../img/leonard_cohen.png') no-repeat 0 0;
+    background-size: cover;
 }
 .albums__item9{
     background: url('../img/hyperspace.jpg') no-repeat 0 0;
+    background-size: cover;
 }
 .albums__item10{
     background: url('../img/lil.jpg') no-repeat 0 0;
+    background-size: cover;
 }
 .albums__item11 {
     background: url('../img/dj_shadow.png') no-repeat 0 0;
+    background-size: cover;
 }
 .albums__item12{
     background: url('../img/i_made_a_place.jpg') no-repeat 0 0;
+    background-size: cover;
 }
 .albums__item13{
     background: url('../img/chixtape.png') no-repeat 0 0;
+    background-size: cover;
 }
 .albums__item14 {
     background: url('../img/luce_combs.png') no-repeat 0 0;
+    background-size: cover;
 }
 .albums__item15{
     background: url('../img/one_of_the_best.jpeg') no-repeat 0 0;
+    background-size: cover;
 }
 .albums__item-checked:checked ~ input {
     display: block;
@@ -662,8 +679,124 @@ input[class^="albums__item"]{
 .albums__item13:checked ~ .albums__tracks13,.albums__item14:checked ~ .albums__tracks14,.albums__item15:checked ~ .albums__tracks15{
     display: block;
 }
+.contacts {
+    h3 {
+        @include title-style();
+    }
 
+}
 
+.contacts__inner {
+    display:grid;
+    grid-template-columns: 50% 50%;
+}
+.contacts__info {
+    display:flex;
+    flex-direction: column;
+    padding: 0 5%;
+    ul {
+        margin-top:0;
+        list-style-type: none;
+        padding-left: 0;
+    }
+    a {
+        color:$main-black;
+        text-decoration: none;
+    }
+    li {
+        line-height: 25px;
+    }
+    ul:first-child {
+        li {
+            height: 25%;
+        }
+    }
+}
+.contacts__info-top {
+    display: grid;
+    grid-template-columns: 48% 52%;
+    margin: 0 auto;
+    span {
+        font-weight: 700;
+    }
+    a:hover {
+        color:$main-violet;
+    }
+}
+.contacts__social-logo {
+    width: 15px;
+    padding-right: 1%;
+}
+.contacts__map {
+    iframe {
+        border: 0;
+        width: 90%;
+        height: 100%;
+    }
+}
+.contacts__form-fields {
+    display: grid;
+    grid-template-columns: repeat(2, 48.8%);
+    grid-gap: 1vw;
+    input {
+        line-height: 25px;
+        text-align: center;
+        outline: none;
+        border-radius: 25px;
+        background-color: $main-gray;
+        &:focus {
+            background-color: #fff;
+        }
+    }
+    select {
+        border-radius: 5px;
+        outline: none;
+        height: 25px;
+        align-self: center;
+    }
+
+}
+.contacts__info-bottom {
+    textarea {
+        width: 100%;
+        height: 11vw;
+        outline: none;
+        border-radius: 25px;
+        margin: 1vw 0 ;
+        padding: 13px;
+        resize: none;
+        background-color: $main-gray;
+        &:focus {
+            background-color: #fff;
+        }
+    }
+    form {
+        background-color: $main-black;
+        border-radius: 25px;
+        padding: 2%;
+    }
+}
+.contacts__form-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 30%);
+    justify-content: space-around;
+    input {
+        height: 25px;
+        outline: none;
+        
+        &:first-child {
+            background-color: $main-black;
+            border:1px solid #fff;
+            color:$main-yellow;
+        }
+        &:nth-child(2){
+            background-color: $main-yellow;
+            border:1px solid #fff;
+            color:$main-black;
+        }
+        @include btn-style();
+    }
+}
 // @for $i from 1 to 4 {
 //     .li-style:nth-child(#{$i}) {
 //         transition-delay: ($i + 1) * 0.15s;
