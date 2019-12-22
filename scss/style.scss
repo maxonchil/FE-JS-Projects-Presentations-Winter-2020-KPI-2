@@ -723,9 +723,8 @@ input[class^="albums__item"]{
         color:$main-violet;
     }
 }
-.contacts__social-logo {
+img[class$="social-logo"] {
     width: 15px;
-    padding-right: 1%;
 }
 .contacts__map {
     iframe {
@@ -797,6 +796,44 @@ input[class^="albums__item"]{
         @include btn-style();
     }
 }
+.footer {
+    background-color: $main-yellow;
+    ul {
+        list-style-type: none;
+        padding-left: 0;
+        margin: 0;
+    }
+    a {
+text-decoration: none;
+color:$main-black;
+    }
+    .footer__social {
+        width: 30%;
+        margin-left:auto;
+        display:grid;
+        grid-template-columns: repeat(4, 25%);
+        
+    }
+}
+.footer__inner  {
+    display:grid;
+    grid-template-columns: 35% 40% 25%;
+    align-items: center;
+}
+.footer_nav {
+    text-align: center;
+    display:grid;
+    grid-template-columns: repeat(3, 33%);
+    li:first-child {
+        border-left:2px solid #fff;
+    }
+    li {
+        border-right:2px solid #fff;
+        padding: 1vw 0;
+    }
+}
+
+
 // @for $i from 1 to 4 {
 //     .li-style:nth-child(#{$i}) {
 //         transition-delay: ($i + 1) * 0.15s;

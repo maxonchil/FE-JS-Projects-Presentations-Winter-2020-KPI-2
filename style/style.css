@@ -640,9 +640,8 @@ input[class^="albums__item"] {
   .contacts__info-top a:hover {
     color: #68009b; }
 
-.contacts__social-logo {
-  width: 15px;
-  padding-right: 1%; }
+img[class$="social-logo"] {
+  width: 15px; }
 
 .contacts__map iframe {
   border: 0;
@@ -707,5 +706,35 @@ input[class^="albums__item"] {
     .contacts__form-buttons input:hover {
       background-color: #68009b;
       color: #f4ff00; }
+
+.footer {
+  background-color: #f4ff00; }
+  .footer ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0; }
+  .footer a {
+    text-decoration: none;
+    color: #030200; }
+  .footer .footer__social {
+    width: 30%;
+    margin-left: auto;
+    display: grid;
+    grid-template-columns: repeat(4, 25%); }
+
+.footer__inner {
+  display: grid;
+  grid-template-columns: 35% 40% 25%;
+  align-items: center; }
+
+.footer_nav {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(3, 33%); }
+  .footer_nav li:first-child {
+    border-left: 2px solid #fff; }
+  .footer_nav li {
+    border-right: 2px solid #fff;
+    padding: 1vw 0; }
 
 /*# sourceMappingURL=style.css.map */
