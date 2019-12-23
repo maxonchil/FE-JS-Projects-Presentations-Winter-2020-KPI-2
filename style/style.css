@@ -143,8 +143,11 @@ body {
 .header__registation {
   display: flex;
   justify-content: space-around;
-  align-items: center; }
-  .header__registation .header__sign-up {
+  align-items: center;
+  height: 100%;
+  font-size: 1vw;
+  position: relative; }
+  .header__registation .header__registration-signUp {
     background-color: #030200;
     color: #f4ff00;
     border: 1px solid #e5e5e5;
@@ -152,10 +155,10 @@ body {
     line-height: 1.5vw;
     cursor: pointer;
     font-family: "menu font"; }
-    .header__registation .header__sign-up:hover {
+    .header__registation .header__registration-signUp:hover {
       background-color: #68009b;
       color: #f4ff00; }
-  .header__registation .header__create-account {
+  .header__registation .header__registration-createAccount {
     background-color: #f4ff00;
     color: #030200;
     border: 1px solid #e5e5e5;
@@ -164,9 +167,88 @@ body {
     cursor: pointer;
     font-family: "menu font";
     font-size: 0.9vw; }
-    .header__registation .header__create-account:hover {
+    .header__registation .header__registration-createAccount:hover {
       background-color: #68009b;
       color: #f4ff00; }
+
+.header__sing-upForm {
+  background-color: #000;
+  position: absolute;
+  top: 3vw;
+  z-index: 3;
+  border-radius: 0 0 5px 5px;
+  padding: 0 4% 4% 4%;
+  border-top: 1px solid #68009b; }
+
+.sign-upForm__fields {
+  line-height: 31px; }
+  .sign-upForm__fields input {
+    line-height: 20px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #e5e5e5;
+    border: 1px solid #fff; }
+    .sign-upForm__fields input:focus {
+      background-color: #fff; }
+
+.sign-upForm__buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2%; }
+
+.sign-upForm__cancel {
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  line-height: 1.5vw;
+  cursor: pointer;
+  font-family: "menu font";
+  background-color: #f4ff00;
+  color: #030200;
+  display: inline-block;
+  height: 23px;
+  text-align: center;
+  line-height: 23px;
+  width: 30%; }
+  .sign-upForm__cancel:hover {
+    background-color: #68009b;
+    color: #f4ff00; }
+
+.sign-upForm__submit {
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  line-height: 1.5vw;
+  cursor: pointer;
+  font-family: "menu font";
+  background-color: #030200;
+  color: #f4ff00; }
+  .sign-upForm__submit:hover {
+    background-color: #68009b;
+    color: #f4ff00; }
+
+.sign-upForm-close {
+  display: block;
+  margin-left: auto;
+  width: 15px;
+  height: 15px;
+  position: relative; }
+  .sign-upForm-close:before {
+    content: '';
+    background-color: #fff;
+    position: absolute;
+    width: 15px;
+    height: 2px;
+    top: 6px;
+    right: 0;
+    transform: rotate(45deg); }
+  .sign-upForm-close:after {
+    content: '';
+    background-color: #fff;
+    position: absolute;
+    width: 15px;
+    height: 2px;
+    top: 6px;
+    left: 0;
+    transform: rotate(-45deg); }
 
 .header__upload {
   text-align: center;

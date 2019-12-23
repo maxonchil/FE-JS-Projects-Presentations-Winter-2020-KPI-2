@@ -202,18 +202,101 @@ body {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    height: 100%;
+    font-size: 1vw;
+    position: relative;
 
-    .header__sign-up {
+    .header__registration-signUp {
         background-color: $main-black;
         color: $main-yellow;
         @include btn-style;
     }
 
-    .header__create-account {
+    .header__registration-createAccount {
         background-color: $main-yellow;
         color: $main-black;
         @include btn-style;
         font-size: 0.9vw;
+    }
+}
+
+.header__sing-upForm {
+    background-color: #000;
+    position: absolute;
+    top: 3vw;
+    z-index: 3;
+    border-radius: 0 0 5px 5px;
+    padding: 0 4% 4% 4%;
+    border-top:1px solid $main-violet;
+}
+
+.sign-upForm__fields {
+    line-height: 31px;
+
+    input {
+        line-height: 20px;
+        text-align: center;
+        border-radius: 5px;
+        background-color: $main-gray;
+        border: 1px solid #fff;
+
+        &:focus {
+            background-color: #fff;
+        }
+    }
+}
+
+.sign-upForm__buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2%;
+}
+
+.sign-upForm__cancel {
+    @include btn-style();
+    background-color: $main-yellow;
+    color: $main-black;
+    display: inline-block;
+    height: 23px;
+    text-align: center;
+    line-height: 23px;
+    width: 30%;
+
+}
+
+.sign-upForm__submit {
+    @include btn-style();
+    background-color: $main-black;
+    color: $main-yellow;
+}
+
+.sign-upForm-close {
+    display: block;
+    margin-left: auto;
+    width: 15px;
+    height: 15px;
+    position: relative;
+
+    &:before {
+        content: '';
+        background-color: #fff;
+        position: absolute;
+        width: 15px;
+        height: 2px;
+        top: 6px;
+        right: 0;
+        transform: rotate(45deg);
+    }
+
+    &:after {
+        content: '';
+        background-color: #fff;
+        position: absolute;
+        width: 15px;
+        height: 2px;
+        top: 6px;
+        left: 0;
+        transform: rotate(-45deg);
     }
 }
 
@@ -596,7 +679,8 @@ body {
     flex-direction: row;
     padding-left: 0;
     list-style-type: none;
-font-size: 1vw;
+    font-size: 1vw;
+
     li:first-child {
         img {
             height: 1.05vw;
@@ -677,8 +761,10 @@ font-size: 1vw;
     li {
         border: 1px solid $main-black;
         border-radius: 5px;
+
         &:hover {
             background-color: $main-violet;
+
             a {
                 color: $main-yellow;
             }
