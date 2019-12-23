@@ -579,6 +579,119 @@ body {
     transition: .5s;
 }
 
+.library__title {
+    @include title-style();
+}
+
+.library__top {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1%;
+    align-items: center;
+
+}
+
+.library__breadcrumbs {
+    display: flex;
+    flex-direction: row;
+    padding-left: 0;
+    list-style-type: none;
+font-size: 1vw;
+    li:first-child {
+        img {
+            height: 1.05vw;
+            float: left
+        }
+
+    }
+
+    li {
+        a {
+            float: left;
+            text-decoration: none;
+        }
+
+        svg {
+            height: 0.6vw;
+            transform: rotate(180deg);
+        }
+    }
+}
+
+.librart__filter {
+
+    select {
+        font-size: 0.6vw;
+    }
+}
+
+.library__main {
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-auto-rows: 20%;
+    align-items: center;
+    border-top: 2px solid $main-black;
+    border-bottom: 2px solid $main-black;
+    min-height: 480px;
+    max-height: 610px;
+    box-shadow: inset 0px 2px 2px $main-violet, inset 0px -2px 2px $main-violet;
+    padding-bottom: 1.5%;
+
+    audio {
+        outline: none;
+        height: 2vw;
+        width: 100%;
+    }
+
+    p {
+        font-size: 1.2vw;
+    }
+}
+
+.library__main-item {
+    margin: 0 auto;
+    width: 90%;
+    height: 100%;
+}
+
+.library__bottom {
+    text-align: center;
+}
+
+.library__bottom-paginaiton {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 0;
+    width: 13%;
+    margin: 1vw auto;
+
+    a {
+        text-decoration: none;
+        display: block;
+        padding: 2px 5px;
+        color: $main-black;
+    }
+
+    li {
+        border: 1px solid $main-black;
+        border-radius: 5px;
+        &:hover {
+            background-color: $main-violet;
+            a {
+                color: $main-yellow;
+            }
+        }
+
+    }
+}
+
+.library__bottom-active {
+    background-color: $main-violet;
+    color: $main-yellow;
+}
+
 .albums__inner {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -714,7 +827,7 @@ input[class^="albums__item"] {
     label {
         display: block;
         position: relative;
-        min-height: 3vw;
+        min-height: 2vw;
         min-width: 2vw;
         float: left;
         cursor: pointer;
@@ -722,11 +835,11 @@ input[class^="albums__item"] {
         &:before {
             content: '';
             position: absolute;
-            width: 2vw;
-            height: 2vw;
+            width: 1vw;
+            height: 1vw;
             box-shadow: 2px 2px 0 1px $main-black;
             transform: rotate(135deg);
-            top: 16%;
+            top: 18%;
             left: 40%;
         }
 
@@ -748,7 +861,7 @@ input[class^="albums__item"] {
         width: 90%;
     }
 
-    div {
+    .albums__tacks-item {
         margin: 0 auto;
         width: 100%;
     }

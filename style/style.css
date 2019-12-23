@@ -464,6 +464,88 @@ body {
   margin-left: -500%;
   transition: .5s; }
 
+.library__title {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: "title font";
+  font-size: 1.85vw; }
+
+.library__top {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1%;
+  align-items: center; }
+
+.library__breadcrumbs {
+  display: flex;
+  flex-direction: row;
+  padding-left: 0;
+  list-style-type: none;
+  font-size: 1vw; }
+  .library__breadcrumbs li:first-child img {
+    height: 1.05vw;
+    float: left; }
+  .library__breadcrumbs li a {
+    float: left;
+    text-decoration: none; }
+  .library__breadcrumbs li svg {
+    height: 0.6vw;
+    transform: rotate(180deg); }
+
+.librart__filter select {
+  font-size: 0.6vw; }
+
+.library__main {
+  display: grid;
+  grid-template-columns: repeat(2, 50%);
+  grid-auto-rows: 20%;
+  align-items: center;
+  border-top: 2px solid #030200;
+  border-bottom: 2px solid #030200;
+  min-height: 480px;
+  max-height: 610px;
+  box-shadow: inset 0px 2px 2px #68009b, inset 0px -2px 2px #68009b;
+  padding-bottom: 1.5%; }
+  .library__main audio {
+    outline: none;
+    height: 2vw;
+    width: 100%; }
+  .library__main p {
+    font-size: 1.2vw; }
+
+.library__main-item {
+  margin: 0 auto;
+  width: 90%;
+  height: 100%; }
+
+.library__bottom {
+  text-align: center; }
+
+.library__bottom-paginaiton {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 0;
+  width: 13%;
+  margin: 1vw auto; }
+  .library__bottom-paginaiton a {
+    text-decoration: none;
+    display: block;
+    padding: 2px 5px;
+    color: #030200; }
+  .library__bottom-paginaiton li {
+    border: 1px solid #030200;
+    border-radius: 5px; }
+    .library__bottom-paginaiton li:hover {
+      background-color: #68009b; }
+      .library__bottom-paginaiton li:hover a {
+        color: #f4ff00; }
+
+.library__bottom-active {
+  background-color: #68009b;
+  color: #f4ff00; }
+
 .albums__inner {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -607,7 +689,7 @@ input[class^="albums__item"] {
   .albums__tracks15 label {
     display: block;
     position: relative;
-    min-height: 3vw;
+    min-height: 2vw;
     min-width: 2vw;
     float: left;
     cursor: pointer; }
@@ -628,11 +710,11 @@ input[class^="albums__item"] {
     .albums__tracks15 label:before {
       content: '';
       position: absolute;
-      width: 2vw;
-      height: 2vw;
+      width: 1vw;
+      height: 1vw;
       box-shadow: 2px 2px 0 1px #030200;
       transform: rotate(135deg);
-      top: 16%;
+      top: 18%;
       left: 40%; }
     .albums__tracks1 label:hover:before,
     .albums__tracks2 label:hover:before,
@@ -660,7 +742,7 @@ input[class^="albums__item"] {
     outline: none;
     height: 2vw;
     width: 90%; }
-  .albums__tracks-inner div {
+  .albums__tracks-inner .albums__tacks-item {
     margin: 0 auto;
     width: 100%; }
   .albums__tracks-inner p {

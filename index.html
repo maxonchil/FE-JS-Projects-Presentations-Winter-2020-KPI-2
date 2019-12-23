@@ -210,30 +210,103 @@
 
         <section class="library" id="library">
             <div class="container">
+                <h3 class="library__title">Library</h3>
                 <div class="library__inner">
                     <div class="library__top">
-                        <ul>
-                            <li>Home</li>
-                        </ul>
-                        <div class="librari__filter">
-                            <select name="filter">
-                                <option value="disabled" selected>Filter</option>
-                                <option name="rating" value="By rating"></option>
-                                <option name="alphabet" value="By alphabet (artist)"></option>
-                                <option name="novelty" value="By novelty"></option>
-                            </select>
-                        </div>
-                        <button type="button">Up</button>
-                        <button type="button">Down</button>
-                        <button type="submit">Search/button>
+                        <nav>
+                            <ul class="library__breadcrumbs">
+                                <li><a href="#"><img src="img/home.svg" alt="homve csg" title="Back to home page">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240.823 240.823">
+                                            <path
+                                                d="M57.633 129.007l108.297 108.26a12.2 12.2 0 0 0 17.215 0c4.752-4.74 4.752-12.44 0-17.18l-99.707-99.67 99.695-99.67a12.15 12.15 0 0 0 0-17.191 12.2 12.2 0 0 0-17.215 0L57.62 111.816c-4.68 4.69-4.68 12.51.012 17.19z" />
+                                            </svg>
+                                    </a>
+
+                                </li>
+                                <li><a href="#library">Library
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240.823 240.823">
+                                            <path
+                                                d="M57.633 129.007l108.297 108.26a12.2 12.2 0 0 0 17.215 0c4.752-4.74 4.752-12.44 0-17.18l-99.707-99.67 99.695-99.67a12.15 12.15 0 0 0 0-17.191 12.2 12.2 0 0 0-17.215 0L57.62 111.816c-4.68 4.69-4.68 12.51.012 17.19z" />
+                                            </svg>
+                                    </a></li>
+                                <li><a href="">Top 10 Rock
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240.823 240.823">
+                                            <path
+                                                d="M57.633 129.007l108.297 108.26a12.2 12.2 0 0 0 17.215 0c4.752-4.74 4.752-12.44 0-17.18l-99.707-99.67 99.695-99.67a12.15 12.15 0 0 0 0-17.191 12.2 12.2 0 0 0-17.215 0L57.62 111.816c-4.68 4.69-4.68 12.51.012 17.19z" />
+                                            </svg>
+                                    </a></li>
+                                <li><a href="">Rating, populat first
+                                    </a></li>
+                            </ul>
+                        </nav>
+                        <select name="filter">
+                            <option value="disabled" disabled selected>Filter songs by:</option>
+                            <option name="rating">Rating, popular first</option>
+                            <option name="alphabet">Rating, unpopular first</option>
+                            <option name="novelty">Novelty, newest first</option>
+                            <option name="novelty">Novelty, oldest first</option>
+                            <option name="novelty">Alphabetically A-Z</option>
+                            <option name="novelty">Alphabetically Z-A</option>
+                        </select>
                     </div>
+
+
                     <div class="library__main">
-                        content
+                        <div class="library__main-item">
+                            <p>Harry Styles - Golden</p>
+                            <audio src="music/HarryStyles/harry_styles-golden.mp3" controls></audio>
+                        </div>
+                        <div class="library__main-item">
+                            <p>Harry Styles - Watermon Sudar</p>
+                            <audio src="music/HarryStyles/harry_styles-watermelon_sugar.mp3" controls></audio>
+                        </div>
+
+                        <div class="library__main-item">
+                            <p> Harry Styles - Adore You</p>
+                            <audio src="music/HarryStyles/harry_styles-adore_you.mp3" controls></audio>
+                        </div>
+                        <div class="library__main-item">
+                            <p>Harry Styles - Lights Up</p>
+                            <audio src="music/HarryStyles/harry_styles-lights_up.mp3" controls></audio>
+                        </div>
+                        <div class="library__main-item">
+                            <p>Harry Styles - Cherry</p>
+                            <audio src="music/HarryStyles/harry_styles-cherry.mp3" controls></audio>
+                        </div>
+                        <div class="library__main-item">
+                            <p>Harry Styles - Falling</p>
+                            <audio src="music/HarryStyles/harry_styles-falling.mp3" controls></audio>
+                        </div>
+                        <div class="library__main-item">
+                            <p>Harry Styles - To be so lonely</p>
+                            <audio src="music/HarryStyles/harry_styles-to_be_so_lonely.mp3" controls></audio>
+                        </div>
+                        <div class="library__main-item">
+                            <p>Harry Styles - She</p>
+                            <audio src="music/HarryStyles/harry_styles-she.mp3" controls></audio>
+                        </div>
+                        <div class="library__main-item">
+                            <p>Harry Styles - Sunflower vol 6</p>
+                            <audio src="music/HarryStyles/harry_styles-sunflower_vol_6.mp3" controls></audio>
+                        </div>
+                        <div class="library__main-item">
+                            <p>Harry Styles - Canyon moon</p>
+                            <audio src="music/HarryStyles/harry_styles-canyon_moon.mp3" controls></audio>
+                        </div>
                     </div>
                     <div class="library__bottom">
-                        client pagination
+                      <nav>
+                          <ul class="library__bottom-paginaiton">
+                              <li class="library__bottom-active"><a href="">1</a></li>
+                              <li><a href="">2</a></li>
+                              <li><a href="">3</a></li>
+                              <li><a href="">...</a></li>
+                              <li><a href="">11</a></li>
+                          </ul>
+                      </nav>
                     </div>
                 </div>
+            </div>
             </div>
         </section>
 
