@@ -35,7 +35,7 @@ $main-gray: #e5e5e5;
     text-align: center;
     text-transform: uppercase;
     font-family: "title font";
-    font-size: 1.85vw;
+    font-size: calc(16px + 1vw);
 }
 
 .test {
@@ -74,7 +74,7 @@ body {
         margin: 0;
         text-align: center;
         line-height: 3.1vw;
-        font-size: 2.7vw;
+        font-size: calc(2px + 3vw);
         font-family: "logo font";
     }
 }
@@ -91,7 +91,7 @@ body {
     grid-template-columns: repeat(3, minmax(35px, 1fr));
     grid-template-rows: 3vw;
     text-transform: uppercase;
-    font-size: 0.95vw;
+    font-size: calc(4px + 0.6vw);
     text-align: center;
     padding-left: 0;
     margin: 0;
@@ -177,7 +177,7 @@ body {
         border-radius: 5px;
         border: none;
         width: 100%;
-        font-size: 1vw;
+        font-size: calc(9px + 0.3vw);
         background-color: $main-gray;
 
         &:focus {
@@ -203,7 +203,6 @@ body {
     justify-content: space-around;
     align-items: center;
     height: 100%;
-    font-size: 1vw;
     position: relative;
 
     >input {
@@ -214,17 +213,17 @@ body {
         background-color: $main-black;
         color: $main-yellow;
         @include btn-style;
-        width: 45%;
+        width: 35%;
         text-align: center;
-        font-size: 0.9vw;
+        font-size: calc(3px + 0.7vw);
     }
 
     .header__registration-createAccount {
         background-color: $main-yellow;
         color: $main-black;
         @include btn-style;
-        font-size: 0.9vw;
-        width: 45%;
+        font-size: calc(3px + 0.6vw);
+        width: 60%;
         text-align: center;
     }
 }
@@ -244,7 +243,6 @@ body {
 .sign-upForm__fields {
     line-height: 2.5vw;
     margin: 0.7vw 0;
-    
 
     input {
         line-height: 1.6vw;
@@ -252,7 +250,9 @@ body {
         border-radius: 5px;
         background-color: $main-gray;
         border: 1px solid #fff;
-        font-size: 1.2vw;
+        font-size: calc(2px + 0.7vw);
+        width: 100%;
+
         &:focus {
             background-color: #fff;
         }
@@ -266,23 +266,84 @@ body {
 
 .sign-upForm__cancel {
     @include btn-style();
+    display: block;
     background-color: $main-yellow;
     color: $main-black;
     display: inline-block;
-    height: 1.7vw;
+    height: 1.8vw;
     text-align: center;
-    line-height: 1.7vw;
-    width: 30%;
-    font-size: 1vw;
+    line-height: 1.8vw;
+    font-size: calc(3px + 0.7vw);
+    min-width: 40%;
 }
 
 .sign-upForm__submit {
     @include btn-style();
     background-color: $main-black;
     color: $main-yellow;
-    font-size: 1vw;
-    width: 30%;
-    line-height: 1.4vw;
+    font-size: calc(3px + 0.7vw);
+    line-height: 1vw;
+}
+
+.header__create-acctountForm {
+    width: 205%;
+    right: -54%;
+}
+
+.create-accountForm__fields {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-row-gap: 1vw;
+    margin: 0.7vw 0;
+    width: 100%;
+
+    input {
+        width: 90%;
+        margin: 3% auto;
+        text-align: center;
+        border-radius: 5px;
+        background-color: $main-gray;
+        border: 1px solid #fff;
+        line-height: 1.6vw;
+        font-size: calc(2px + 0.7vw);
+
+        &:focus {
+            background-color: #fff;
+        }
+    }
+}
+
+.create-accoundForm__buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 1vw;
+
+    input:first-child {
+        @include btn-style();
+        background-color: $main-black;
+        color: $main-yellow;
+        width: 30%;
+        font-size: calc(4.5px + 0.7vw);
+    }
+
+    input:nth-child(2) {
+        @include btn-style();
+        background-color: $main-yellow;
+        color: $main-black;
+        width: 30%;
+        font-size: calc(4.5px + 0.7vw);
+    }
+}
+
+.sign-upForm__title,
+.create-accountForm__title {
+    color: #fff;
+    display: block;
+    width: 100%;
+    float: left;
+    text-align: center;
+    font-family: 'title font';
+    font-size: 1.1vw;
 }
 
 .sign-upForm__close,
@@ -293,6 +354,7 @@ body {
     height: 1vw;
     position: relative;
     cursor: pointer;
+    font-size: calc(4px + 0.9vw);
 
     &:before {
         content: '';
@@ -317,68 +379,6 @@ body {
     }
 }
 
-.sign-upForm__title,
-.create-accountForm__title {
-    color: #fff;
-    display: block;
-    width: 100%;
-    float: left;
-    text-align: center;
-    font-family: 'title font';
-    font-size: 1.1vw;
-}
-
-.header__create-acctountForm {
-    width: 205%;
-    right: -54%;
-}
-
-.create-accountForm__fields {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-row-gap: 1vw;
-    margin: 0.7vw 0;
-    width: 100%;
-
-
-    input {
-        width: 90%;
-        margin: 0 auto;
-        text-align: center;
-        border-radius: 5px;
-        background-color: $main-gray;
-        border: 1px solid #fff;
-        line-height: 1.6vw;
-        font-size: 1.1vw;
-
-        &:focus {
-            background-color: #fff;
-        }
-    }
-}
-
-.create-accoundForm__buttons {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 1vw;
-
-    input:first-child {
-        @include btn-style();
-        background-color: $main-black;
-        color: $main-yellow;
-        width: 30%;
-        font-size: 1.2vw;
-    }
-
-    input:nth-child(2) {
-        @include btn-style();
-        background-color: $main-yellow;
-        color: $main-black;
-        width: 30%;
-        font-size: 1.2vw;
-    }
-}
-
 #rc1:checked~.header__sign-upForm,
 #rc1:checked~.header__create-acctountForm {
     display: none;
@@ -395,7 +395,8 @@ body {
 .header__upload {
     text-align: center;
     font-weight: 700;
-    font-size: 1vw;
+    font-size: calc(2px + 1vw);
+    ;
     line-height: 3.1vw;
 
     &:hover {
@@ -444,12 +445,12 @@ body {
         list-style-type: none;
         padding: 0;
         margin-right: -10vw;
-        transform: translate(26%, -33vw);
+        transform: translate(26%, -37vw);
         transition: .4s;
         background-color: $main-black;
         text-align: center;
         text-transform: uppercase;
-        font-size: 1vw;
+        font-size: calc(5px + 0.55vw);
         border: 1px solid $main-violet;
         border-radius: 0 15px 15px 0;
 
@@ -469,7 +470,7 @@ body {
 
     &:hover>.aside__submenu-1 {
         transition: .4s;
-        transform: translate(25%, -9.5%);
+        transform: translate(25%, -5.5%);
     }
 }
 
@@ -623,7 +624,7 @@ body {
 
     h4 {
         margin: 0.5% auto 0.5%;
-        font-size: 1.23vw;
+        font-size: calc(5px + 1vw);
     }
 
     video {
@@ -771,11 +772,11 @@ body {
     flex-direction: row;
     padding-left: 0;
     list-style-type: none;
-    font-size: 1vw;
+    font-size: calc(5px + 0.7vw);
 
     li:first-child {
         img {
-            height: 1.05vw;
+            height: calc(8px + 0.6vw);
             float: left
         }
 
@@ -788,16 +789,16 @@ body {
         }
 
         svg {
-            height: 0.6vw;
+            height: calc(2px + 0.4vw);
             transform: rotate(180deg);
         }
     }
 }
 
-.librart__filter {
+.library__top {
 
     select {
-        font-size: 0.6vw;
+        font-size: calc(7px + 0.6vw);
     }
 }
 
@@ -820,7 +821,7 @@ body {
     }
 
     p {
-        font-size: 1.2vw;
+        font-size: calc(10px + 0.5vw);
     }
 }
 
@@ -848,6 +849,7 @@ body {
         display: block;
         padding: 2px 5px;
         color: $main-black;
+        font-size: calc(9px + 0.6vw);
     }
 
     li {
@@ -859,6 +861,7 @@ body {
 
             a {
                 color: $main-yellow;
+
             }
         }
 
@@ -1000,6 +1003,9 @@ input[class^="albums__item"] {
         text-align: center;
         text-transform: uppercase;
         font-family: "title font";
+        font-size: calc(7px + 0.7vw);
+        width: 95%;
+        margin: 0 auto;
     }
 
     label {
@@ -1045,7 +1051,7 @@ input[class^="albums__item"] {
     }
 
     p {
-        font-size: 1.5vw;
+        font-size: calc(10px + 0.5vw);
     }
 
 }
@@ -1084,20 +1090,16 @@ input[class^="albums__item"] {
     display: flex;
     flex-direction: column;
     padding: 0 5%;
+}
 
-    ul {
-        margin-top: 0;
-        list-style-type: none;
-        padding-left: 0;
-    }
+.contacts__info-top {
+    display: grid;
+    grid-template-columns: 48% 52%;
+    margin: 0 auto;
+    font-size: calc(3px + 1vw);
 
-    a {
-        color: $main-black;
-        text-decoration: none;
-    }
-
-    li {
-        line-height: 25px;
+    span {
+        font-weight: 700;
     }
 
     ul:first-child {
@@ -1105,15 +1107,21 @@ input[class^="albums__item"] {
             height: 25%;
         }
     }
-}
 
-.contacts__info-top {
-    display: grid;
-    grid-template-columns: 48% 52%;
-    margin: 0 auto;
+    ul {
+        margin-top: 0;
+        list-style-type: none;
+        padding-left: 0;
+    }
 
-    span {
-        font-weight: 700;
+    li {
+        line-height: 2vw;
+        font-size: calc(2.5px + 1vw);
+    }
+
+    a {
+        color: $main-black;
+        text-decoration: none;
     }
 
     a:hover {
@@ -1123,6 +1131,7 @@ input[class^="albums__item"] {
 
 img[class$="social-logo"] {
     width: 1vw;
+    height: 1vw;
 }
 
 .contacts__map {
@@ -1139,12 +1148,12 @@ img[class$="social-logo"] {
     grid-gap: 1vw;
 
     input {
-        line-height: 25px;
+        line-height: 2vw;
         text-align: center;
         outline: none;
         border-radius: 25px;
         background-color: $main-gray;
-        font-size: 1vw;
+        font-size: calc(5px + 0.7vw);
 
         &:focus {
             background-color: #fff;
@@ -1156,18 +1165,18 @@ img[class$="social-logo"] {
         outline: none;
         height: 100%;
         align-self: center;
-        font-size: 1vw;
+        font-size: calc(5px + 0.6vw);
     }
 
 }
 
 .contacts__info-bottom {
     textarea {
-        font-size: 1vw;
+        font-size: calc(5px + 0.7vw);
         width: 100%;
         height: 11vw;
         outline: none;
-        border-radius: 25px;
+        border-radius: 5px;
         margin: 1vw 0;
         padding: 13px;
         resize: none;
@@ -1180,7 +1189,7 @@ img[class$="social-logo"] {
 
     form {
         background-color: $main-black;
-        border-radius: 25px;
+        border-radius: 5px;
         padding: 2%;
     }
 }
@@ -1193,7 +1202,7 @@ img[class$="social-logo"] {
     input {
         height: 100%;
         outline: none;
-        font-size: 1vw;
+        font-size: calc(5px + 0.7vw);
 
         &:first-child {
             background-color: $main-black;
@@ -1215,7 +1224,7 @@ img[class$="social-logo"] {
     border-top: 2px solid $main-black;
     margin-top: 2%;
     font-family: "menu font";
-    font-size: 1vw;
+    font-size: calc(5px + 0.7vw);
 
     a {
         text-decoration: none;
@@ -1267,7 +1276,7 @@ img[class$="social-logo"] {
 .footer__button {
     width: 60%;
     margin: 0 auto;
-    font-size: 0.7vw;
+    font-size: calc(5px + 0.5vw);
     @include btn-style();
     background-color: #fff;
     border: 1px solid $main-black;
@@ -1276,6 +1285,10 @@ img[class$="social-logo"] {
         color: $main-black;
         display: block;
     }
+}
+
+.footer__left {
+    font-size: calc(4px + 0.7vw);
 }
 
 .footer__social {

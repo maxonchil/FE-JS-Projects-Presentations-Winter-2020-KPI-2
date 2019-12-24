@@ -37,7 +37,7 @@ body {
     margin: 0;
     text-align: center;
     line-height: 3.1vw;
-    font-size: 2.7vw;
+    font-size: calc(2px + 3vw);
     font-family: "logo font"; }
 
 .header__inner {
@@ -51,7 +51,7 @@ body {
   grid-template-columns: repeat(3, minmax(35px, 1fr));
   grid-template-rows: 3vw;
   text-transform: uppercase;
-  font-size: 0.95vw;
+  font-size: calc(4px + 0.6vw);
   text-align: center;
   padding-left: 0;
   margin: 0;
@@ -125,7 +125,7 @@ body {
     border-radius: 5px;
     border: none;
     width: 100%;
-    font-size: 1vw;
+    font-size: calc(9px + 0.3vw);
     background-color: #e5e5e5; }
     .header__search input:focus {
       background-color: #fff; }
@@ -145,7 +145,6 @@ body {
   justify-content: space-around;
   align-items: center;
   height: 100%;
-  font-size: 1vw;
   position: relative; }
   .header__registation > input {
     display: none; }
@@ -157,9 +156,9 @@ body {
     line-height: 1.5vw;
     cursor: pointer;
     font-family: "menu font";
-    width: 45%;
+    width: 35%;
     text-align: center;
-    font-size: 0.9vw; }
+    font-size: calc(3px + 0.7vw); }
     .header__registation .header__registration-signUp:hover {
       background-color: #68009b;
       color: #f4ff00; }
@@ -171,8 +170,8 @@ body {
     line-height: 1.5vw;
     cursor: pointer;
     font-family: "menu font";
-    font-size: 0.9vw;
-    width: 45%;
+    font-size: calc(3px + 0.6vw);
+    width: 60%;
     text-align: center; }
     .header__registation .header__registration-createAccount:hover {
       background-color: #68009b;
@@ -198,7 +197,8 @@ body {
     border-radius: 5px;
     background-color: #e5e5e5;
     border: 1px solid #fff;
-    font-size: 1.2vw; }
+    font-size: calc(2px + 0.7vw);
+    width: 100%; }
     .sign-upForm__fields input:focus {
       background-color: #fff; }
 
@@ -212,14 +212,15 @@ body {
   line-height: 1.5vw;
   cursor: pointer;
   font-family: "menu font";
+  display: block;
   background-color: #f4ff00;
   color: #030200;
   display: inline-block;
-  height: 1.7vw;
+  height: 1.8vw;
   text-align: center;
-  line-height: 1.7vw;
-  width: 30%;
-  font-size: 1vw; }
+  line-height: 1.8vw;
+  font-size: calc(3px + 0.7vw);
+  min-width: 40%; }
   .sign-upForm__cancel:hover {
     background-color: #68009b;
     color: #f4ff00; }
@@ -232,12 +233,74 @@ body {
   font-family: "menu font";
   background-color: #030200;
   color: #f4ff00;
-  font-size: 1vw;
-  width: 30%;
-  line-height: 1.4vw; }
+  font-size: calc(3px + 0.7vw);
+  line-height: 1vw; }
   .sign-upForm__submit:hover {
     background-color: #68009b;
     color: #f4ff00; }
+
+.header__create-acctountForm {
+  width: 205%;
+  right: -54%; }
+
+.create-accountForm__fields {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-row-gap: 1vw;
+  margin: 0.7vw 0;
+  width: 100%; }
+  .create-accountForm__fields input {
+    width: 90%;
+    margin: 3% auto;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #e5e5e5;
+    border: 1px solid #fff;
+    line-height: 1.6vw;
+    font-size: calc(2px + 0.7vw); }
+    .create-accountForm__fields input:focus {
+      background-color: #fff; }
+
+.create-accoundForm__buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1vw; }
+  .create-accoundForm__buttons input:first-child {
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    line-height: 1.5vw;
+    cursor: pointer;
+    font-family: "menu font";
+    background-color: #030200;
+    color: #f4ff00;
+    width: 30%;
+    font-size: calc(4.5px + 0.7vw); }
+    .create-accoundForm__buttons input:first-child:hover {
+      background-color: #68009b;
+      color: #f4ff00; }
+  .create-accoundForm__buttons input:nth-child(2) {
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    line-height: 1.5vw;
+    cursor: pointer;
+    font-family: "menu font";
+    background-color: #f4ff00;
+    color: #030200;
+    width: 30%;
+    font-size: calc(4.5px + 0.7vw); }
+    .create-accoundForm__buttons input:nth-child(2):hover {
+      background-color: #68009b;
+      color: #f4ff00; }
+
+.sign-upForm__title,
+.create-accountForm__title {
+  color: #fff;
+  display: block;
+  width: 100%;
+  float: left;
+  text-align: center;
+  font-family: 'title font';
+  font-size: 1.1vw; }
 
 .sign-upForm__close,
 .create-accountForm__close {
@@ -246,7 +309,8 @@ body {
   width: 1vw;
   height: 1vw;
   position: relative;
-  cursor: pointer; }
+  cursor: pointer;
+  font-size: calc(4px + 0.9vw); }
   .sign-upForm__close:before,
   .create-accountForm__close:before {
     content: '';
@@ -268,69 +332,6 @@ body {
     left: 0;
     transform: rotate(-45deg); }
 
-.sign-upForm__title,
-.create-accountForm__title {
-  color: #fff;
-  display: block;
-  width: 100%;
-  float: left;
-  text-align: center;
-  font-family: 'title font';
-  font-size: 1.1vw; }
-
-.header__create-acctountForm {
-  width: 205%;
-  right: -54%; }
-
-.create-accountForm__fields {
-  display: grid;
-  grid-template-columns: 50% 50%;
-  grid-row-gap: 1vw;
-  margin: 0.7vw 0;
-  width: 100%; }
-  .create-accountForm__fields input {
-    width: 90%;
-    margin: 0 auto;
-    text-align: center;
-    border-radius: 5px;
-    background-color: #e5e5e5;
-    border: 1px solid #fff;
-    line-height: 1.6vw;
-    font-size: 1.1vw; }
-    .create-accountForm__fields input:focus {
-      background-color: #fff; }
-
-.create-accoundForm__buttons {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 1vw; }
-  .create-accoundForm__buttons input:first-child {
-    border: 1px solid #e5e5e5;
-    border-radius: 3px;
-    line-height: 1.5vw;
-    cursor: pointer;
-    font-family: "menu font";
-    background-color: #030200;
-    color: #f4ff00;
-    width: 30%;
-    font-size: 1.2vw; }
-    .create-accoundForm__buttons input:first-child:hover {
-      background-color: #68009b;
-      color: #f4ff00; }
-  .create-accoundForm__buttons input:nth-child(2) {
-    border: 1px solid #e5e5e5;
-    border-radius: 3px;
-    line-height: 1.5vw;
-    cursor: pointer;
-    font-family: "menu font";
-    background-color: #f4ff00;
-    color: #030200;
-    width: 30%;
-    font-size: 1.2vw; }
-    .create-accoundForm__buttons input:nth-child(2):hover {
-      background-color: #68009b;
-      color: #f4ff00; }
-
 #rc1:checked ~ .header__sign-upForm,
 #rc1:checked ~ .header__create-acctountForm {
   display: none; }
@@ -344,7 +345,7 @@ body {
 .header__upload {
   text-align: center;
   font-weight: 700;
-  font-size: 1vw;
+  font-size: calc(2px + 1vw);
   line-height: 3.1vw; }
   .header__upload:hover {
     background-color: #f4ff00;
@@ -384,12 +385,12 @@ body {
   list-style-type: none;
   padding: 0;
   margin-right: -10vw;
-  transform: translate(26%, -33vw);
+  transform: translate(26%, -37vw);
   transition: .4s;
   background-color: #030200;
   text-align: center;
   text-transform: uppercase;
-  font-size: 1vw;
+  font-size: calc(5px + 0.55vw);
   border: 1px solid #68009b;
   border-radius: 0 15px 15px 0; }
   .aside__menu-item1 .aside__submenu-1 li {
@@ -403,7 +404,7 @@ body {
 
 .aside__menu-item1:hover > .aside__submenu-1 {
   transition: .4s;
-  transform: translate(25%, -9.5%); }
+  transform: translate(25%, -5.5%); }
 
 .aside__sumbenu1-item1 {
   border-radius: 0 15px 0 0; }
@@ -495,7 +496,7 @@ body {
   text-align: center;
   text-transform: uppercase;
   font-family: "title font";
-  font-size: 1.85vw;
+  font-size: calc(16px + 1vw);
   margin-bottom: 0; }
 
 .slider input[type="radio"] {
@@ -519,7 +520,7 @@ body {
   position: relative; }
   .slider__item h4 {
     margin: 0.5% auto 0.5%;
-    font-size: 1.23vw; }
+    font-size: calc(5px + 1vw); }
   .slider__item video {
     display: block;
     width: 76%;
@@ -641,7 +642,7 @@ body {
   text-align: center;
   text-transform: uppercase;
   font-family: "title font";
-  font-size: 1.85vw; }
+  font-size: calc(16px + 1vw); }
 
 .library__top {
   display: flex;
@@ -654,19 +655,19 @@ body {
   flex-direction: row;
   padding-left: 0;
   list-style-type: none;
-  font-size: 1vw; }
+  font-size: calc(5px + 0.7vw); }
   .library__breadcrumbs li:first-child img {
-    height: 1.05vw;
+    height: calc(8px + 0.6vw);
     float: left; }
   .library__breadcrumbs li a {
     float: left;
     text-decoration: none; }
   .library__breadcrumbs li svg {
-    height: 0.6vw;
+    height: calc(2px + 0.4vw);
     transform: rotate(180deg); }
 
-.librart__filter select {
-  font-size: 0.6vw; }
+.library__top select {
+  font-size: calc(7px + 0.6vw); }
 
 .library__main {
   display: grid;
@@ -684,7 +685,7 @@ body {
     height: 2vw;
     width: 100%; }
   .library__main p {
-    font-size: 1.2vw; }
+    font-size: calc(10px + 0.5vw); }
 
 .library__main-item {
   margin: 0 auto;
@@ -706,7 +707,8 @@ body {
     text-decoration: none;
     display: block;
     padding: 2px 5px;
-    color: #030200; }
+    color: #030200;
+    font-size: calc(9px + 0.6vw); }
   .library__bottom-paginaiton li {
     border: 1px solid #030200;
     border-radius: 5px; }
@@ -733,7 +735,7 @@ body {
   text-align: center;
   text-transform: uppercase;
   font-family: "title font";
-  font-size: 1.85vw; }
+  font-size: calc(16px + 1vw); }
 
 .albums__item-checked {
   display: none; }
@@ -844,7 +846,10 @@ input[class^="albums__item"] {
   .albums__tracks15 h4 {
     text-align: center;
     text-transform: uppercase;
-    font-family: "title font"; }
+    font-family: "title font";
+    font-size: calc(7px + 0.7vw);
+    width: 95%;
+    margin: 0 auto; }
   .albums__tracks1 label,
   .albums__tracks2 label,
   .albums__tracks3 label,
@@ -919,7 +924,7 @@ input[class^="albums__item"] {
     margin: 0 auto;
     width: 100%; }
   .albums__tracks-inner p {
-    font-size: 1.5vw; }
+    font-size: calc(10px + 0.5vw); }
 
 .albums__item1:checked ~ .albums__tracks1,
 .albums__item2:checked ~ .albums__tracks2,
@@ -942,7 +947,7 @@ input[class^="albums__item"] {
   text-align: center;
   text-transform: uppercase;
   font-family: "title font";
-  font-size: 1.85vw; }
+  font-size: calc(16px + 1vw); }
 
 .contacts__inner {
   display: grid;
@@ -952,29 +957,32 @@ input[class^="albums__item"] {
   display: flex;
   flex-direction: column;
   padding: 0 5%; }
-  .contacts__info ul {
-    margin-top: 0;
-    list-style-type: none;
-    padding-left: 0; }
-  .contacts__info a {
-    color: #030200;
-    text-decoration: none; }
-  .contacts__info li {
-    line-height: 25px; }
-  .contacts__info ul:first-child li {
-    height: 25%; }
 
 .contacts__info-top {
   display: grid;
   grid-template-columns: 48% 52%;
-  margin: 0 auto; }
+  margin: 0 auto;
+  font-size: calc(3px + 1vw); }
   .contacts__info-top span {
     font-weight: 700; }
+  .contacts__info-top ul:first-child li {
+    height: 25%; }
+  .contacts__info-top ul {
+    margin-top: 0;
+    list-style-type: none;
+    padding-left: 0; }
+  .contacts__info-top li {
+    line-height: 2vw;
+    font-size: calc(2.5px + 1vw); }
+  .contacts__info-top a {
+    color: #030200;
+    text-decoration: none; }
   .contacts__info-top a:hover {
     color: #68009b; }
 
 img[class$="social-logo"] {
-  width: 1vw; }
+  width: 1vw;
+  height: 1vw; }
 
 .contacts__map iframe {
   border: 0;
@@ -986,12 +994,12 @@ img[class$="social-logo"] {
   grid-template-columns: repeat(2, 48.8%);
   grid-gap: 1vw; }
   .contacts__form-fields input {
-    line-height: 25px;
+    line-height: 2vw;
     text-align: center;
     outline: none;
     border-radius: 25px;
     background-color: #e5e5e5;
-    font-size: 1vw; }
+    font-size: calc(5px + 0.7vw); }
     .contacts__form-fields input:focus {
       background-color: #fff; }
   .contacts__form-fields select {
@@ -999,14 +1007,14 @@ img[class$="social-logo"] {
     outline: none;
     height: 100%;
     align-self: center;
-    font-size: 1vw; }
+    font-size: calc(5px + 0.6vw); }
 
 .contacts__info-bottom textarea {
-  font-size: 1vw;
+  font-size: calc(5px + 0.7vw);
   width: 100%;
   height: 11vw;
   outline: none;
-  border-radius: 25px;
+  border-radius: 5px;
   margin: 1vw 0;
   padding: 13px;
   resize: none;
@@ -1016,7 +1024,7 @@ img[class$="social-logo"] {
 
 .contacts__info-bottom form {
   background-color: #030200;
-  border-radius: 25px;
+  border-radius: 5px;
   padding: 2%; }
 
 .contacts__form-buttons {
@@ -1026,7 +1034,7 @@ img[class$="social-logo"] {
   .contacts__form-buttons input {
     height: 100%;
     outline: none;
-    font-size: 1vw;
+    font-size: calc(5px + 0.7vw);
     border: 1px solid #e5e5e5;
     border-radius: 3px;
     line-height: 1.5vw;
@@ -1048,7 +1056,7 @@ img[class$="social-logo"] {
   border-top: 2px solid #030200;
   margin-top: 2%;
   font-family: "menu font";
-  font-size: 1vw; }
+  font-size: calc(5px + 0.7vw); }
   .footer a {
     text-decoration: none;
     color: #030200; }
@@ -1085,7 +1093,7 @@ img[class$="social-logo"] {
 .footer__button {
   width: 60%;
   margin: 0 auto;
-  font-size: 0.7vw;
+  font-size: calc(5px + 0.5vw);
   border: 1px solid #e5e5e5;
   border-radius: 3px;
   line-height: 1.5vw;
@@ -1099,6 +1107,9 @@ img[class$="social-logo"] {
   .footer__button a {
     color: #030200;
     display: block; }
+
+.footer__left {
+  font-size: calc(4px + 0.7vw); }
 
 .footer__social {
   list-style-type: none;
