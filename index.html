@@ -73,27 +73,44 @@
                 </form>
 
                 <div class="header__registation">
+                    
                     <input type="radio" name="registation-controls" checked id="rc1">
                     <input type="radio" name="registation-controls" id="rc2">
                     <input type="radio" name="registation-controls" id="rc3">
-                    <button class="header__registration-signUp" type="button">Sign up</button>
-                    <button class="header__registration-createAccount" type="button">Create account</button>
-                    
-                    <div class="header__sing-upForm">
-                        <label class="sign-upForm-close" for="rc1"></label>
+                    <label class="header__registration-signUp" for="rc2">Sign up</label>
+                    <label class="header__registration-createAccount" for="rc3">Create account</label>
+
+
+                    <div class="header__sign-upForm">
+                        <span class="sign-upForm__title">Sign up</span>
+                        <label class="sign-upForm__close" for="rc1"></label>
                         <form action="">
                             <div class="sign-upForm__fields">
-                            <input type="text" required name="sign-upLog" placeholder="User name">
-                            <input type="password" required name="sign-upPas" placeholder="Password">
+                                <input type="text" name="sign-upLog" placeholder="User name" required>
+                                <input type="password" name="sign-upPas" placeholder="Password" required>
+                            </div>
+                            <div class="sign-upForm__buttons">
+                                <label class="sign-upForm__cancel" for="rc1">Cancel</label>
+                                <button class="sign-upForm__submit" type="submit">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="header__create-acctountForm">
+                        <span class="create-accountForm__title">Create account</span>
+                        <label class="create-accountForm__close" for="rc1"></label>
+                        <form action="">
+                            <div class="create-accountForm__fields">
+                            <input type="text" name="user-name" placeholder="Your username" required>
+                            <input type="email" name="user-email" placeholder="Your email" required>
+                            <input type="password" name="user-password" placeholder="Choose a password" required>
+                            <input type="password" name="user-password2" placeholder="Repeat a password" required>
                         </div>
-                        <div class="sign-upForm__buttons">
-                            <label class="sign-upForm__cancel" for="rc1">Cancel</label>
-                            <button class="sign-upForm__submit" type="submit">Accsept</button>
+                        <div class="create-accoundForm__buttons">
+                            <input type="submit" value="Submit">
+                            <input type="reset" value="Reset">
                         </div>
                         </form>
                     </div>
-
-                    <div class="header__create-acctountForm"></div>
                 </div>
                 <a class="header__upload" href="/upload">Upload</a>
             </div>
@@ -151,7 +168,7 @@
         <section class="slider">
             <div class="container">
                 <h2 class="slider__title">Top Billboard charts</h2>
-                <input checked type="radio" name="slider-control" id="control1">
+                <input type="radio" name="slider-control" id="control1" checked>
                 <input type="radio" name="slider-control" id="control2">
                 <input type="radio" name="slider-control" id="control3">
                 <input type="radio" name="slider-control" id="control4">
@@ -1151,9 +1168,9 @@
                         <div class="contacts__info-bottom">
                             <form action="#">
                                 <div class="contacts__form-fields">
-                                    <input type="text" name="contacts-name" required placeholder="Your name">
-                                    <input type="email" name="contacts-email" required placeholder="Your email">
-                                    <input type="tel" name="contacts-tel" required placeholder="Your phone number">
+                                    <input type="text" name="contacts-name" placeholder="Your name" required>
+                                    <input type="email" name="contacts-email" placeholder="Your email" required>
+                                    <input type="tel" name="contacts-tel" placeholder="Your phone number" required>
                                     <select name="contacts-select" required>
                                         <option value="disabled" disabled selected>Reason of your appeal:</option>
                                         <option value="found-bug">I found a bug</option>

@@ -147,6 +147,8 @@ body {
   height: 100%;
   font-size: 1vw;
   position: relative; }
+  .header__registation > input {
+    display: none; }
   .header__registation .header__registration-signUp {
     background-color: #030200;
     color: #f4ff00;
@@ -154,7 +156,10 @@ body {
     border-radius: 3px;
     line-height: 1.5vw;
     cursor: pointer;
-    font-family: "menu font"; }
+    font-family: "menu font";
+    width: 45%;
+    text-align: center;
+    font-size: 0.9vw; }
     .header__registation .header__registration-signUp:hover {
       background-color: #68009b;
       color: #f4ff00; }
@@ -166,35 +171,40 @@ body {
     line-height: 1.5vw;
     cursor: pointer;
     font-family: "menu font";
-    font-size: 0.9vw; }
+    font-size: 0.9vw;
+    width: 45%;
+    text-align: center; }
     .header__registation .header__registration-createAccount:hover {
       background-color: #68009b;
       color: #f4ff00; }
 
-.header__sing-upForm {
+.header__sign-upForm,
+.header__create-acctountForm {
+  display: none;
   background-color: #000;
   position: absolute;
   top: 3vw;
   z-index: 3;
   border-radius: 0 0 5px 5px;
-  padding: 0 4% 4% 4%;
+  padding: 4%;
   border-top: 1px solid #68009b; }
 
 .sign-upForm__fields {
-  line-height: 31px; }
+  line-height: 2.5vw;
+  margin: 0.7vw 0; }
   .sign-upForm__fields input {
-    line-height: 20px;
+    line-height: 1.6vw;
     text-align: center;
     border-radius: 5px;
     background-color: #e5e5e5;
-    border: 1px solid #fff; }
+    border: 1px solid #fff;
+    font-size: 1.2vw; }
     .sign-upForm__fields input:focus {
       background-color: #fff; }
 
 .sign-upForm__buttons {
   display: flex;
-  justify-content: space-between;
-  margin-top: 2%; }
+  justify-content: space-between; }
 
 .sign-upForm__cancel {
   border: 1px solid #e5e5e5;
@@ -205,10 +215,11 @@ body {
   background-color: #f4ff00;
   color: #030200;
   display: inline-block;
-  height: 23px;
+  height: 1.7vw;
   text-align: center;
-  line-height: 23px;
-  width: 30%; }
+  line-height: 1.7vw;
+  width: 30%;
+  font-size: 1vw; }
   .sign-upForm__cancel:hover {
     background-color: #68009b;
     color: #f4ff00; }
@@ -220,35 +231,115 @@ body {
   cursor: pointer;
   font-family: "menu font";
   background-color: #030200;
-  color: #f4ff00; }
+  color: #f4ff00;
+  font-size: 1vw;
+  width: 30%;
+  line-height: 1.4vw; }
   .sign-upForm__submit:hover {
     background-color: #68009b;
     color: #f4ff00; }
 
-.sign-upForm-close {
+.sign-upForm__close,
+.create-accountForm__close {
   display: block;
   margin-left: auto;
-  width: 15px;
-  height: 15px;
-  position: relative; }
-  .sign-upForm-close:before {
+  width: 1vw;
+  height: 1vw;
+  position: relative;
+  cursor: pointer; }
+  .sign-upForm__close:before,
+  .create-accountForm__close:before {
     content: '';
     background-color: #fff;
     position: absolute;
-    width: 15px;
-    height: 2px;
+    width: 1vw;
+    height: 0.1vw;
     top: 6px;
     right: 0;
     transform: rotate(45deg); }
-  .sign-upForm-close:after {
+  .sign-upForm__close:after,
+  .create-accountForm__close:after {
     content: '';
     background-color: #fff;
     position: absolute;
-    width: 15px;
-    height: 2px;
+    width: 1vw;
+    height: 0.1vw;
     top: 6px;
     left: 0;
     transform: rotate(-45deg); }
+
+.sign-upForm__title,
+.create-accountForm__title {
+  color: #fff;
+  display: block;
+  width: 100%;
+  float: left;
+  text-align: center;
+  font-family: 'title font';
+  font-size: 1.1vw; }
+
+.header__create-acctountForm {
+  width: 205%;
+  right: -54%; }
+
+.create-accountForm__fields {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-row-gap: 1vw;
+  margin: 0.7vw 0;
+  width: 100%; }
+  .create-accountForm__fields input {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #e5e5e5;
+    border: 1px solid #fff;
+    line-height: 1.6vw;
+    font-size: 1.1vw; }
+    .create-accountForm__fields input:focus {
+      background-color: #fff; }
+
+.create-accoundForm__buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 1vw; }
+  .create-accoundForm__buttons input:first-child {
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    line-height: 1.5vw;
+    cursor: pointer;
+    font-family: "menu font";
+    background-color: #030200;
+    color: #f4ff00;
+    width: 30%;
+    font-size: 1.2vw; }
+    .create-accoundForm__buttons input:first-child:hover {
+      background-color: #68009b;
+      color: #f4ff00; }
+  .create-accoundForm__buttons input:nth-child(2) {
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    line-height: 1.5vw;
+    cursor: pointer;
+    font-family: "menu font";
+    background-color: #f4ff00;
+    color: #030200;
+    width: 30%;
+    font-size: 1.2vw; }
+    .create-accoundForm__buttons input:nth-child(2):hover {
+      background-color: #68009b;
+      color: #f4ff00; }
+
+#rc1:checked ~ .header__sign-upForm,
+#rc1:checked ~ .header__create-acctountForm {
+  display: none; }
+
+#rc2:checked ~ .header__sign-upForm {
+  display: block; }
+
+#rc3:checked ~ .header__create-acctountForm {
+  display: block; }
 
 .header__upload {
   text-align: center;
