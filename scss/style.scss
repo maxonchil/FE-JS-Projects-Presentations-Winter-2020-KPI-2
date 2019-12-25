@@ -112,13 +112,12 @@ body {
 }
 
 .header__submenu1,
-.header__submenu2,
 .header__submenu3 {
     transform: translateY(-31vw);
     background-color: #000;
     padding-left: 0;
     opacity: 0;
-    transition: .5s;
+    transition: 1s;
 
     a {
         display: block;
@@ -157,7 +156,7 @@ body {
 .header__menu-li1:hover>.header__submenu1 {
     transform: translateY(0);
     opacity: 1;
-    transition: .5s;
+    transition: 1s;
 }
 
 .header__menu-li3:hover>.header__submenu3 {
@@ -177,7 +176,7 @@ body {
         border-radius: 5px;
         border: none;
         width: 100%;
-        font-size: calc(9px + 0.3vw);
+        font-size: calc(2px + 0.8vw);
         background-color: $main-gray;
 
         &:focus {
@@ -205,7 +204,7 @@ body {
     height: 100%;
     position: relative;
 
-    >input {
+    & > input {
         display: none;
     }
 
@@ -442,17 +441,19 @@ body {
     }
 
     .aside__submenu-1 {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 100%;
+        width: 11vw;
         list-style-type: none;
         padding: 0;
-        margin-right: -10vw;
-        transform: translate(26%, -37vw);
-        transition: .4s;
         background-color: $main-black;
         text-align: center;
         text-transform: uppercase;
         font-size: calc(2px + 0.8vw);
         border: 1px solid $main-violet;
-        border-radius: 0 15px 15px 0;
+        border-radius: 0 5px 5px 0;
 
         li {
             z-index: 2;
@@ -464,22 +465,19 @@ body {
             width: 100%;
             height: 100%;
             padding: 3.5% 0;
-
         }
     }
 
     &:hover>.aside__submenu-1 {
-        transition: .4s;
-        transform: translate(25%, -5.5%);
+        display: block;
     }
 }
 
-.aside__sumbenu1-item1 {
-    border-radius: 0 15px 0 0;
-
-    &:hover {
-        border-radius: 0 15px 0 0;
-    }
+.aside__sumbenu1-item1:hover {
+        border-radius: 0 5px 0 0;
+}
+.aside__sumbenu1-item9:hover {
+    border-radius: 0 0 5px 0;
 }
 
 .aside__sumbenu1-item1:hover,
@@ -496,10 +494,6 @@ body {
     a {
         color: $main-black;
     }
-}
-
-.aside__sumbenu1-item9:hover {
-    border-radius: 0 0 15px 0;
 }
 
 .aside__menu-item1,
