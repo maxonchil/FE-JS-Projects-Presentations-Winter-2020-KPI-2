@@ -204,7 +204,7 @@ body {
     height: 100%;
     position: relative;
 
-    & > input {
+    &>input {
         display: none;
     }
 
@@ -474,8 +474,9 @@ body {
 }
 
 .aside__sumbenu1-item1:hover {
-        border-radius: 0 5px 0 0;
+    border-radius: 0 5px 0 0;
 }
+
 .aside__sumbenu1-item9:hover {
     border-radius: 0 0 5px 0;
 }
@@ -701,6 +702,7 @@ body {
     position: absolute;
     top: 46%;
     right: 5%;
+    cursor: pointer;
 
     &:after {
         content: '';
@@ -711,7 +713,6 @@ body {
         transform: rotate(-45deg);
         top: 16%;
         right: 28%;
-        cursor: pointer;
     }
 
     &:hover:after {

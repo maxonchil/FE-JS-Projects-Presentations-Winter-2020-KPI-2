@@ -586,7 +586,8 @@ body {
   min-height: 6vw;
   position: absolute;
   top: 46%;
-  right: 5%; }
+  right: 5%;
+  cursor: pointer; }
   #control1:checked ~ .slider__window .slider__item:first-child label:after,
   #control2:checked ~ .slider__window .slider__item:nth-child(2) label[for="control3"]:after,
   #control3:checked ~ .slider__window .slider__item:nth-child(3) label[for="control4"]:after,
@@ -599,8 +600,7 @@ body {
     box-shadow: 5px 5px 0 1px #030200;
     transform: rotate(-45deg);
     top: 16%;
-    right: 28%;
-    cursor: pointer; }
+    right: 28%; }
   #control1:checked ~ .slider__window .slider__item:first-child label:hover:after,
   #control2:checked ~ .slider__window .slider__item:nth-child(2) label[for="control3"]:hover:after,
   #control3:checked ~ .slider__window .slider__item:nth-child(3) label[for="control4"]:hover:after,

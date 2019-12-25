@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
         reg_userEmail = document.querySelectorAll("[name='user-email']")[0].value,
         reg_userPassword = document.querySelectorAll("[name='user-password']")[0].value,
         reg_userPassword2 = document.querySelectorAll("[name='user-password2']")[0].value,
-        email_regexp = /.+@.+\..+/;
+        email_regexp = /\w+@\w+\.\w+/i;
         if (reg_userPassword !== reg_userPassword2) {
             alert("Passwords do not match!");
             return;
