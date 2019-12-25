@@ -251,7 +251,7 @@ body {
   width: 100%; }
   .create-accountForm__fields input {
     width: 90%;
-    margin: 3% auto;
+    margin: 0.32vw auto;
     text-align: center;
     border-radius: 5px;
     background-color: #e5e5e5;
@@ -390,7 +390,7 @@ body {
   background-color: #030200;
   text-align: center;
   text-transform: uppercase;
-  font-size: calc(5px + 0.55vw);
+  font-size: calc(2px + 0.8vw);
   border: 1px solid #68009b;
   border-radius: 0 15px 15px 0; }
   .aside__menu-item1 .aside__submenu-1 li {
@@ -400,7 +400,7 @@ body {
     display: block;
     width: 100%;
     height: 100%;
-    padding: 0.4vw 0; }
+    padding: 3.5% 0; }
 
 .aside__menu-item1:hover > .aside__submenu-1 {
   transition: .4s;
@@ -519,7 +519,7 @@ body {
   transition: .5s;
   position: relative; }
   .slider__item h4 {
-    margin: 0.5% auto 0.5%;
+    margin: 0.43vw auto 0.43vw;
     font-size: calc(5px + 1vw); }
   .slider__item video {
     display: block;
@@ -532,7 +532,7 @@ body {
   width: 10vw;
   margin: 0 auto;
   justify-content: space-around;
-  padding: 1vw 0; }
+  padding: 1% 0; }
   .slider__controls-dots label {
     width: 1.3vw;
     height: 1.3vw;
@@ -1016,7 +1016,7 @@ img[class$="social-logo"] {
   outline: none;
   border-radius: 5px;
   margin: 1vw 0;
-  padding: 13px;
+  padding: 2%;
   resize: none;
   background-color: #e5e5e5; }
   .contacts__info-bottom textarea:focus {
@@ -1054,7 +1054,7 @@ img[class$="social-logo"] {
 
 .footer {
   border-top: 2px solid #030200;
-  margin-top: 2%;
+  margin-top: 2vw;
   font-family: "menu font";
   font-size: calc(5px + 0.7vw); }
   .footer a {
