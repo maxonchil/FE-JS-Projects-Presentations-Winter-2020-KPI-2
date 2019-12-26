@@ -74,7 +74,7 @@ body {
         margin: 0;
         text-align: center;
         line-height: 3.1vw;
-        font-size: calc(2px + 3vw);
+        font-size: calc(2px + 2.8vw);
         font-family: "logo font";
     }
 }
@@ -208,7 +208,7 @@ body {
         display: none;
     }
 
-    .header__registration-signUp {
+    .header__registration-signIn {
         background-color: $main-black;
         color: $main-yellow;
         @include btn-style;
@@ -227,7 +227,7 @@ body {
     }
 }
 
-.header__sign-upForm,
+.header__sign-inForm,
 .header__create-acctountForm {
     display: none;
     background-color: #000;
@@ -239,7 +239,7 @@ body {
     border-top: 1px solid $main-violet;
 }
 
-.sign-upForm__fields {
+.sign-inForm__fields {
     line-height: 2.5vw;
     margin: 0.7vw 0;
 
@@ -258,12 +258,12 @@ body {
     }
 }
 
-.sign-upForm__buttons {
+.sign-inForm__buttons {
     display: flex;
     justify-content: space-between;
 }
 
-.sign-upForm__cancel {
+.sign-inForm__cancel {
     @include btn-style();
     display: block;
     background-color: $main-yellow;
@@ -276,7 +276,7 @@ body {
     min-width: 40%;
 }
 
-.sign-upForm__submit {
+.sign-inForm__submit {
     @include btn-style();
     background-color: $main-black;
     color: $main-yellow;
@@ -334,7 +334,7 @@ body {
     }
 }
 
-.sign-upForm__title,
+.sign-inForm__title,
 .create-accountForm__title {
     color: #fff;
     display: block;
@@ -345,7 +345,7 @@ body {
     font-size: 1.1vw;
 }
 
-.sign-upForm__close,
+.sign-inForm__close,
 .create-accountForm__close {
     display: block;
     margin-left: auto;
@@ -378,12 +378,12 @@ body {
     }
 }
 
-#rc1:checked~.header__sign-upForm,
+#rc1:checked~.header__sign-inForm,
 #rc1:checked~.header__create-acctountForm {
     display: none;
 }
 
-#rc2:checked~.header__sign-upForm {
+#rc2:checked~.header__sign-inForm {
     display: block;
 }
 

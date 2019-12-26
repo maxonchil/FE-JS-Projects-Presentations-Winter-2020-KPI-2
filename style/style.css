@@ -37,7 +37,7 @@ body {
     margin: 0;
     text-align: center;
     line-height: 3.1vw;
-    font-size: calc(2px + 3vw);
+    font-size: calc(2px + 2.8vw);
     font-family: "logo font"; }
 
 .header__inner {
@@ -143,7 +143,7 @@ body {
   position: relative; }
   .header__registation > input {
     display: none; }
-  .header__registation .header__registration-signUp {
+  .header__registation .header__registration-signIn {
     background-color: #030200;
     color: #f4ff00;
     border: 1px solid #e5e5e5;
@@ -154,7 +154,7 @@ body {
     width: 35%;
     text-align: center;
     font-size: calc(3px + 0.7vw); }
-    .header__registation .header__registration-signUp:hover {
+    .header__registation .header__registration-signIn:hover {
       background-color: #68009b;
       color: #f4ff00; }
   .header__registation .header__registration-createAccount {
@@ -172,7 +172,7 @@ body {
       background-color: #68009b;
       color: #f4ff00; }
 
-.header__sign-upForm,
+.header__sign-inForm,
 .header__create-acctountForm {
   display: none;
   background-color: #000;
@@ -183,10 +183,10 @@ body {
   padding: 4%;
   border-top: 1px solid #68009b; }
 
-.sign-upForm__fields {
+.sign-inForm__fields {
   line-height: 2.5vw;
   margin: 0.7vw 0; }
-  .sign-upForm__fields input {
+  .sign-inForm__fields input {
     line-height: 1.6vw;
     text-align: center;
     border-radius: 5px;
@@ -194,14 +194,14 @@ body {
     border: 1px solid #fff;
     font-size: calc(2px + 0.7vw);
     width: 100%; }
-    .sign-upForm__fields input:focus {
+    .sign-inForm__fields input:focus {
       background-color: #fff; }
 
-.sign-upForm__buttons {
+.sign-inForm__buttons {
   display: flex;
   justify-content: space-between; }
 
-.sign-upForm__cancel {
+.sign-inForm__cancel {
   border: 1px solid #e5e5e5;
   border-radius: 3px;
   line-height: 1.5vw;
@@ -216,11 +216,11 @@ body {
   line-height: 1.8vw;
   font-size: calc(3px + 0.7vw);
   min-width: 40%; }
-  .sign-upForm__cancel:hover {
+  .sign-inForm__cancel:hover {
     background-color: #68009b;
     color: #f4ff00; }
 
-.sign-upForm__submit {
+.sign-inForm__submit {
   border: 1px solid #e5e5e5;
   border-radius: 3px;
   line-height: 1.5vw;
@@ -230,7 +230,7 @@ body {
   color: #f4ff00;
   font-size: calc(3px + 0.7vw);
   line-height: 1vw; }
-  .sign-upForm__submit:hover {
+  .sign-inForm__submit:hover {
     background-color: #68009b;
     color: #f4ff00; }
 
@@ -287,7 +287,7 @@ body {
       background-color: #68009b;
       color: #f4ff00; }
 
-.sign-upForm__title,
+.sign-inForm__title,
 .create-accountForm__title {
   color: #fff;
   display: block;
@@ -297,7 +297,7 @@ body {
   font-family: 'title font';
   font-size: 1.1vw; }
 
-.sign-upForm__close,
+.sign-inForm__close,
 .create-accountForm__close {
   display: block;
   margin-left: auto;
@@ -306,7 +306,7 @@ body {
   position: relative;
   cursor: pointer;
   font-size: calc(4px + 0.9vw); }
-  .sign-upForm__close:before,
+  .sign-inForm__close:before,
   .create-accountForm__close:before {
     content: '';
     background-color: #fff;
@@ -316,7 +316,7 @@ body {
     top: 6px;
     right: 0;
     transform: rotate(45deg); }
-  .sign-upForm__close:after,
+  .sign-inForm__close:after,
   .create-accountForm__close:after {
     content: '';
     background-color: #fff;
@@ -327,11 +327,11 @@ body {
     left: 0;
     transform: rotate(-45deg); }
 
-#rc1:checked ~ .header__sign-upForm,
+#rc1:checked ~ .header__sign-inForm,
 #rc1:checked ~ .header__create-acctountForm {
   display: none; }
 
-#rc2:checked ~ .header__sign-upForm {
+#rc2:checked ~ .header__sign-inForm {
   display: block; }
 
 #rc3:checked ~ .header__create-acctountForm {
