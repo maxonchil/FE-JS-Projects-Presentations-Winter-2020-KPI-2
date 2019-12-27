@@ -18,6 +18,40 @@ $main-gray: #e5e5e5;
     src: url('../fonts/open_sans.ttf');
 }
 
+//Added SVG icons like a Font Style
+@font-face {
+    font-family: 'icomoon';
+    src: url('../fonts/icomoon.eot?2syzyf');
+    src: url('../fonts/icomoon.eot?2syzyf#iefix') format('embedded-opentype'),
+        url('../fonts/icomoon.ttf?2syzyf') format('truetype'),
+        url('../fonts/icomoon.woff?2syzyf') format('woff'),
+        url('../fonts/icomoon.svg?2syzyf#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+[class^="icon__"] {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    color: $main-yellow;
+    text-align: center;
+    display: block;
+    width: 100%;
+    height: 100%;
+    font-size: calc(3px + 2.5vw);
+
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 @mixin btn-style {
     border: 1px solid $main-gray;
     border-radius: 3px;
@@ -184,17 +218,24 @@ body {
         }
     }
 
-    .header__button-search {
-        -webkit-appearance: none;
-        border: none;
-        background: url('../img/search.svg') 0 0 no-repeat;
-        height: 85%;
-        width: calc(100% / 15);
+
+
+    .icon__search {
+        font-size: calc(1px + 1vw);
+        color: $main-black;
         position: absolute;
-        top: 5%;
-        right: .5%;
-        outline: none;
+        width: calc(100% / 15);
+        height: 85%;
+        top: 12%;
+        right: 0;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &:before {
+            content: "\e90a";
+        }
     }
+
 }
 
 .header__registation {
@@ -416,8 +457,7 @@ body {
     a {
         text-decoration: none;
         color: $main-yellow;
-        width: 2.6vw;
-        margin: 0 auto;
+        width: 100%;
     }
 }
 
@@ -434,11 +474,25 @@ body {
     &>a {
         display: block;
         height: 100%;
-        background: url(../img/top10.svg) no-repeat right center;
+        width: 90%;
         margin-left: auto;
-        margin-right: 0;
-        width: 3.1vw;
     }
+
+    .icon__top10 {
+        font-size: calc(3px + 3vw);
+
+
+        &:before {
+            content: "\e90c";
+            position: absolute;
+            display: inline;
+            width: 100%;
+            vertical-align: bottom;
+            left: 5%;
+            top: calc(10% + .5vw);
+        }
+    }
+
 
     .aside__submenu-1 {
         display: none;
@@ -473,14 +527,6 @@ body {
     }
 }
 
-.aside__sumbenu1-item1:hover {
-    border-radius: 0 5px 0 0;
-}
-
-.aside__sumbenu1-item9:hover {
-    border-radius: 0 0 5px 0;
-}
-
 .aside__sumbenu1-item1:hover,
 .aside__sumbenu1-item2:hover,
 .aside__sumbenu1-item3:hover,
@@ -507,82 +553,117 @@ body {
 .aside__menu-item8,
 .aside__menu-item9,
 .aside__menu-item10 {
+    a {
+        display: block;
+        height: 100%;
+    }
+
     &:hover {
         background-color: $main-violet;
     }
-}
 
-.aside__menu-item2 {
-    a {
-        display: block;
-        height: 100%;
-        background: url('../img/rock_and_roll.svg') no-repeat center center;
-    }
-}
-
-.aside__menu-item3 {
-    a {
-        display: block;
-        height: 100%;
-        background: url('../img/kpop.svg') no-repeat center center;
-    }
+    position: relative;
 
 }
 
-.aside__menu-item4 {
-    a {
-        display: block;
-        height: 100%;
-        background: url('../img/jazz.svg') no-repeat center center;
-    }
+.icon__rock_and_roll:before {
+    content: "\e909";
+    position: absolute;
+    display: inline;
+    width: 100%;
+    vertical-align: bottom;
+    left: 0;
+    top: calc(10% + .5vw);
 }
 
-.aside__menu-item5 {
-    a {
-        display: block;
-        height: 100%;
-        background: url('../img/dabstep.svg') no-repeat center center;
-    }
+.icon__kpop:before {
+    content: "\e907";
+    position: absolute;
+    display: inline;
+    width: 100%;
+    vertical-align: bottom;
+    left: 0;
+    top: calc(10% + .5vw);
 }
 
-.aside__menu-item6 {
-    a {
-        display: block;
-        height: 100%;
-        background: url('../img/electro.svg') no-repeat center center;
-    }
+.icon__jazz:before {
+    content: "\e906";
+    position: absolute;
+    display: inline;
+    width: 100%;
+    vertical-align: bottom;
+    left: 0;
+    top: calc(10% + .5vw);
 }
 
-.aside__menu-item7 {
-    a {
-        display: block;
-        height: 100%;
-        background: url('../img/blues.svg') no-repeat center center;
-    }
+.icon__dabstep:before {
+    content: "\e903";
+    position: absolute;
+    display: inline;
+    width: 100%;
+    vertical-align: bottom;
+    left: 0;
+    top: calc(10% + .5vw);
 }
 
-.aside__menu-item8 {
-    a {
-        display: block;
-        height: 100%;
-        background: url('../img/techno.svg') no-repeat center center;
-    }
+.icon__electro:before {
+    content: "\e904";
+    position: absolute;
+    display: inline;
+    width: 100%;
+    vertical-align: bottom;
+    left: 0;
+    top: calc(10% + .5vw);
 }
 
-.aside__menu-item9 {
-    a {
-        display: block;
-        height: 100%;
-        background: url('../img/country.svg') no-repeat center center;
-    }
+.icon__blues:before {
+    content: "\e901";
+    position: absolute;
+    display: inline;
+    width: 100%;
+    vertical-align: bottom;
+    left: 0;
+    top: calc(10% + .5vw);
 }
 
-.aside__menu-item10 {
-    a {
-        display: block;
-        height: 100%;
-        background: url('../img/pop.svg') no-repeat center center;
-    }
+.icon__techno:before {
+    content: "\e90b";
+    position: absolute;
+    display: inline;
+    width: 100%;
+    vertical-align: bottom;
+    left: 0;
+    top: calc(10% + .5vw);
+}
+
+.icon__pop:before {
+    content: "\e908";
+    position: absolute;
+    display: inline;
+    width: 100%;
+    vertical-align: bottom;
+    left: 0;
+    top: calc(10% + .5vw);
+}
+
+.icon__country:before {
+    content: "\e902";
+    position: absolute;
+    display: inline;
+    width: 100%;
+    vertical-align: bottom;
+    left: 0;
+    top: calc(10% + .5vw);
+}
+
+
+
+.aside__sumbenu1-item1:hover {
+    border-radius: 0 5px 0 0;
+}
+
+.aside__sumbenu1-item9:hover {
+    border-radius: 0 0 5px 0;
 }
 
 .slider__title {
@@ -679,7 +760,7 @@ body {
         position: absolute;
         width: 4vw;
         height: 4vw;
-        box-shadow: 5px 5px 0 1px $main-black;
+        box-shadow: 4px 4px 0 4px $main-black;
         transform: rotate(135deg);
         top: 16%;
         left: 28%;
@@ -769,24 +850,12 @@ body {
     list-style-type: none;
     font-size: calc(5px + 0.7vw);
 
-    li:first-child {
-        img {
-            height: calc(8px + 0.6vw);
-            float: left
-        }
-
-    }
-
     li {
         a {
             float: left;
             text-decoration: none;
         }
 
-        svg {
-            height: calc(2px + 0.4vw);
-            transform: rotate(180deg);
-        }
     }
 }
 
@@ -795,6 +864,31 @@ body {
     select {
         font-size: calc(7px + 0.6vw);
     }
+}
+
+.icon__home {
+    float: left;
+    font-size: calc(8px + 0.6vw);
+    color: $main-black;
+
+    &:before {
+        content: "\e905";
+    }
+
+}
+
+.icon__arrow {
+    display: inline-block;
+    font-size: calc(2px + 0.4vw);
+    transform: rotate(180deg);
+    color: $main-black;
+    height: 40%;
+    width: 1vw;
+
+    &:before {
+        content: "\e900";
+    }
+
 }
 
 .library__main {
@@ -836,7 +930,7 @@ body {
     flex-direction: row;
     justify-content: space-between;
     padding-left: 0;
-    width: 13%;
+    width: 180px;
     margin: 1vw auto;
 
     a {
