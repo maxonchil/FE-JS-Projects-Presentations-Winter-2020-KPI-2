@@ -79,15 +79,17 @@
                     <input type="radio" name="registation-controls" id="rc3">
                     <label class="header__registration-signIn" for="rc2">Sign in</label>
                     <label class="header__registration-createAccount" for="rc3">Create account</label>
-
+                    <div class="sign-inForm__success"> </div>
+                    <button type="submit" class="sign-inForm__logOut">Log out</button>
 
                     <div class="header__sign-inForm">
                         <span class="sign-inForm__title">Sign in</span>
                         <label class="sign-inForm__close" for="rc1"></label>
-                        <form action="">
+                        <form action="" name="sign-inForm">
                             <div class="sign-inForm__fields">
                                 <input type="text" name="sign-inLog" placeholder="User name" required>
                                 <input type="password" name="sign-inPas" placeholder="Password" required>
+                                <div class="sign-inForm__error"></div>
                             </div>
                             <div class="sign-inForm__buttons">
                                 <label class="sign-inForm__cancel" for="rc1">Cancel</label>
@@ -98,12 +100,17 @@
                     <div class="header__create-acctountForm">
                         <span class="create-accountForm__title">Create account</span>
                         <label class="create-accountForm__close" for="rc1"></label>
-                        <form action="">
+                        <div class="create-accountForm__success">Account has been created successfully!</div>
+                        <form action="" name="create-acctountForm">
                             <div class="create-accountForm__fields">
                                 <input type="text" name="user-name" placeholder="Your username" required>
+
                                 <input type="email" name="user-email" placeholder="Your email" size="30" required>
+                                <div class="create-accountForm__errorName"></div>
+                                <div class="create-accountForm__errorEmail"></div>
                                 <input type="password" name="user-password" placeholder="Choose a password" required>
                                 <input type="password" name="user-password2" placeholder="Repeat a password" required>
+                                <div class="create-accountForm__errorPas"></div>
                             </div>
                             <div class="create-accoundForm__buttons">
                                 <input type="reset" value="Reset">
@@ -113,7 +120,8 @@
                         </form>
                     </div>
                 </div>
-                <a class="header__upload" href="/upload">Upload</a>
+                <input type="file"id="upload" accept="audio/*" multiple >
+                <label class="header__upload" for="upload">Upload</label>
             </div>
         </div>
 
