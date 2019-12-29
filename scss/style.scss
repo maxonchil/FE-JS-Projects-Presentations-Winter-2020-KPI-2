@@ -364,7 +364,7 @@ body {
 .create-accountForm__errorPas,.create-accountForm__errorName,.create-accountForm__errorEmail,.sign-inForm__error{
     color: $error-color;
     text-align: center;
-    font-size: calc(8px + 0.3vw);
+    font-size: calc(3px + 0.8vw);
     min-height: 15px;
     line-height: 1vw;
 }
