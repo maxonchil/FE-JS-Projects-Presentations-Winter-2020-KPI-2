@@ -1,0 +1,15 @@
+[
+    {
+        "users_counter": "2"
+    },
+    {
+        "user_name": "max",
+        "user_email": "maxonchil@gmail.com",
+        "user_password": "12345"
+    },
+    {
+        "user_name": "test",
+        "user_email": "maxonchil2@gmail.com",
+        "user_password": "12345"  
+    }
+]
