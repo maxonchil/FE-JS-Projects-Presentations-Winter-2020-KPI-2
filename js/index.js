@@ -137,7 +137,9 @@ document.addEventListener("DOMContentLoaded", () => {
             logOut_btn.style.display = "block";
             signIN_success.innerHTML = `Hi, ${users_base[user_index].user_name}`;
             signIN_success.style.display = "block";
-            document.cookie = "logIn=true";
+            console.log('test1');
+            document.cookie = "logIn=true;";     
+            console.log('test2');    
             document.querySelectorAll("input[name^='sign-in']").forEach(e => {
                 e.value = "";
             })

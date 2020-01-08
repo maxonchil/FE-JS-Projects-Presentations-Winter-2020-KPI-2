@@ -261,7 +261,7 @@ body {
 .sign-inForm__success {
   display: none;
   color: #f4ff00;
-  font-size: calc(7px + 0.7vw); }
+  font-size: calc(4px + 0.7vw); }
 
 .sign-inForm__logOut {
   display: none;
@@ -399,7 +399,7 @@ body {
 .header__upload {
   text-align: center;
   font-weight: 700;
-  font-size: calc(2px + 1vw);
+  font-size: calc(2px + 0.9vw);
   color: #f4ff00;
   line-height: 3.1vw;
   cursor: pointer; }
@@ -456,7 +456,7 @@ body {
   background-color: #030200;
   text-align: center;
   text-transform: uppercase;
-  font-size: calc(2px + 0.8vw);
+  font-size: calc(2px + 0.7vw);
   border: 1px solid #68009b;
   border-radius: 0 5px 5px 0; }
   .aside__menu-item1 .aside__submenu-1 li {
@@ -809,7 +809,7 @@ body {
   font-size: calc(2px + 0.4vw);
   transform: rotate(180deg);
   color: #030200;
-  height: 40%;
+  height: 30%;
   width: 1vw; }
   .icon__arrow:before {
     content: "\e900"; }
