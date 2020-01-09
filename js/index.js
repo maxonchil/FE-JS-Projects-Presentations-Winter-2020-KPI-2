@@ -32,23 +32,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (localStorage.getItem("users_base") === null) {
             let lsKey = "users_base",
-                lsValue = JSON.stringify([{
-                    "users_counter": 1
-                }, reg_userData]);
+                lsValue = JSON.stringify([reg_userData]);
 
             ((key, item) => {
                 try {
                     localStorage.setItem(key, item);
-                    users_base = [{
-                        "users_counter": 1
-                    }, reg_userData];
+                    users_base = [reg_userData];
                 } catch (error) {
                     if (error.name === "QUOTA_EXCEEDED_ERR" || error.name === 'NS_ERROR_DOM_QUOTA_REACHED') {
                         localStorage.clear();
                         localStorage.setItem(key, item);
-                        users_base = [{
-                            "users_counter": 1
-                        }, reg_userData];
+                        users_base = [reg_userData];
                     }
                 }
             })(lsKey, lsValue)
@@ -63,18 +57,18 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
 
         } else {
-            let users_counter = users_base[0].users_counter;
+            let users_counter = users_base.length;
             //start loop from i = 1 becouse of inde 0 is a users counter
-            for (let i = 1; i <= users_counter; i++) {
-                if (users_base[i].user_name === reg_userName) {
+            for (let i = 0; i < users_counter; i++) {
+                if (users_base[i].user_name.toLowerCase() === reg_userName.toLowerCase()) {
                     reg_erroName.innerHTML = "Nickname is already taken";
                     reg_errorPas.innerHTML = "";
                     reg_errorEmail.innerHTML = "";
                     return;
                 }
             }
-            for (let i = 1; i <= users_counter; i++) {
-                if (users_base[i].user_email === reg_userEmail) {
+            for (let i = 0; i < users_counter; i++) {
+                if (users_base[i].user_email.toLowerCase() === reg_userEmail.toLowerCase()) {
                     reg_errorEmail.innerHTML = "This email is alredy used";
                     reg_erroName.innerHTML = "";
                     reg_errorPas.innerHTML = "";
@@ -83,7 +77,6 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             users_base.push(reg_userData);
-            users_base[0].users_counter++
             let lsKey = "users_base",
                 lsValue = JSON.stringify(users_base);
             ((key, item) => {
@@ -116,12 +109,12 @@ document.addEventListener("DOMContentLoaded", () => {
             signIn_btn = document.querySelector(".header__registration-signIn"),
             logOut_btn = document.querySelector(".sign-inForm__logOut"),
             signIN_success = document.querySelector(".sign-inForm__success"),
-            users_counter = users_base[0].users_counter,
+            users_counter = users_base.length,
             user_index = 0,
             check_log = false,
             check_pas = true;
 
-        for (let i = 1; i <= users_counter; i++) {
+        for (let i = 0; i < users_counter; i++) {
             if (signIn_log === users_base[i].user_name) {
                 check_log = true;
                 user_index = i;
@@ -137,9 +130,7 @@ document.addEventListener("DOMContentLoaded", () => {
             logOut_btn.style.display = "block";
             signIN_success.innerHTML = `Hi, ${users_base[user_index].user_name}`;
             signIN_success.style.display = "block";
-            console.log('test1');
-            document.cookie = "logIn=true;";     
-            console.log('test2');    
+            document.cookie = "logIn=true;";
             document.querySelectorAll("input[name^='sign-in']").forEach(e => {
                 e.value = "";
             })
@@ -166,19 +157,5 @@ document.addEventListener("DOMContentLoaded", () => {
 
     }
 
-    document.querySelector(".header__upload").onclick = (event) => {
-        if (/^logIn/.test(document.cookie)) {
-            let input_upload = document.getElementById("upload");
-            input_upload.onchange = () => {
-                for (i = 0; i < input_upload.files.length; i++) {
-                    console.log(input_upload.files[i].name);
-                }
-            }
-
-        } else {
-            alert("Please login first or create acount!")
-            event.preventDefault();
-            return;
-        }
-    }
+  
 })

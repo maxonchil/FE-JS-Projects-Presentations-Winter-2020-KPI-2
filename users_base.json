@@ -1,15 +1,82 @@
 [
     {
-        "users_counter": "2"
-    },
-    {
-        "user_name": "max",
+        "user_name": "Max",
         "user_email": "maxonchil@gmail.com",
         "user_password": "12345"
     },
     {
-        "user_name": "test",
+        "user_name": "Test",
         "user_email": "maxonchil2@gmail.com",
         "user_password": "12345"  
+    },
+    {
+        "user_name": "John",
+        "user_email": "vinchester@gmail.com",
+        "user_password": "zxcasdqwe"
+    },
+    {
+        "user_name": "Anatan",
+        "user_email": "anatan1@gmail.com",
+        "user_password": "jakli123"  
+    },
+    {
+        "user_name": "Adrian",
+        "user_email": "andre777@gmail.com",
+        "user_password": "12345qwert"
+    },
+    {
+        "user_name": "Nadia",
+        "user_email": "nadia_me@gmail.com",
+        "user_password": "nadia123"  
+    },
+    {
+        "user_name": "Monika",
+        "user_email": "mo_nick_a@gmail.com",
+        "user_password": "123zxcasdqwe"
+    },
+    {
+        "user_name": "Rachel",
+        "user_email": "rachel.prince@gmail.com",
+        "user_password": "rache73737"  
+    },
+    {
+        "user_name": "Merlin",
+        "user_email": "wamymag@gmail.com",
+        "user_password": "magik123"
+    },
+    {
+        "user_name": "Khalib",
+        "user_email": "g7g7g7g7@gmail.com",
+        "user_password": "sexybamboe"  
+    },
+    {
+        "user_name": "Daeneris",
+        "user_email": "targarien@gmail.com",
+        "user_password": "targarien4343"
+    },
+    {
+        "user_name": "Suzy",
+        "user_email": "callmeby_name@gmail.com",
+        "user_password": "wtf789"  
+    },
+    {
+        "user_name": "Winda",
+        "user_email": "i_like_windows@gmail.com",
+        "user_password": "clicktoopen1"
+    },
+    {
+        "user_name": "ElFaker",
+        "user_email": "elfakerino@gmail.com",
+        "user_password": "smoke333"  
+    },
+    {
+        "user_name": "V1lat",
+        "user_email": "maincast@gmail.com",
+        "user_password": "komentator122"
+    },
+    {
+        "user_name": "Zelya322",
+        "user_email": "prezident111@gmail.com",
+        "user_password": "japobedil4444"  
     }
 ]
