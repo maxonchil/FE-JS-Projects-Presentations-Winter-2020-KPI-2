@@ -99,7 +99,6 @@ document.addEventListener("DOMContentLoaded", () => {
             reg_errorPas.innerHTML.innerHTML = "";
         }
 
-
     }
 
     document.querySelector(".sign-inForm__submit").onclick = () => {
