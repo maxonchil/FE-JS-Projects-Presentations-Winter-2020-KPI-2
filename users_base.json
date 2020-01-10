@@ -1,5 +1,4 @@
-[
-    {
+[{
         "user_name": "Max",
         "user_email": "maxonchil@gmail.com",
         "user_password": "12345"
@@ -7,7 +6,7 @@
     {
         "user_name": "Test",
         "user_email": "maxonchil2@gmail.com",
-        "user_password": "12345"  
+        "user_password": "12345"
     },
     {
         "user_name": "John",
@@ -17,7 +16,7 @@
     {
         "user_name": "Anatan",
         "user_email": "anatan1@gmail.com",
-        "user_password": "jakli123"  
+        "user_password": "jakli123"
     },
     {
         "user_name": "Adrian",
@@ -27,7 +26,7 @@
     {
         "user_name": "Nadia",
         "user_email": "nadia_me@gmail.com",
-        "user_password": "nadia123"  
+        "user_password": "nadia123"
     },
     {
         "user_name": "Monika",
@@ -37,7 +36,7 @@
     {
         "user_name": "Rachel",
         "user_email": "rachel.prince@gmail.com",
-        "user_password": "rache73737"  
+        "user_password": "rache73737"
     },
     {
         "user_name": "Merlin",
@@ -47,7 +46,7 @@
     {
         "user_name": "Khalib",
         "user_email": "g7g7g7g7@gmail.com",
-        "user_password": "sexybamboe"  
+        "user_password": "sexybamboe"
     },
     {
         "user_name": "Daeneris",
@@ -57,7 +56,7 @@
     {
         "user_name": "Suzy",
         "user_email": "callmeby_name@gmail.com",
-        "user_password": "wtf789"  
+        "user_password": "wtf789"
     },
     {
         "user_name": "Winda",
@@ -67,7 +66,7 @@
     {
         "user_name": "ElFaker",
         "user_email": "elfakerino@gmail.com",
-        "user_password": "smoke333"  
+        "user_password": "smoke333"
     },
     {
         "user_name": "V1lat",
@@ -77,6 +76,6 @@
     {
         "user_name": "Zelya322",
         "user_email": "prezident111@gmail.com",
-        "user_password": "japobedil4444"  
+        "user_password": "japobedil4444"
     }
 ]
