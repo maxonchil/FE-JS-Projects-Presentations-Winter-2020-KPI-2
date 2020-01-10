@@ -74,103 +74,103 @@
 {
     "src":"music/Burial%20-%20Ashtray%20wasp.mp3",
     "trackName": "Burial - Ashtray wasp",
-    "genre":"Dubstap",
+    "genre":"Dubstep",
     "rating": []
 },
 {
     "src":"music/Burial%20-%20Beachfires.mp3",
     "trackName": "Burial - Beachfires",
-    "genre":"Dubstap",
+    "genre":"Dubstep",
     "rating": []
 },
 {
     "src":"music/Burial%20-%20Claustro.mp3",
     "trackName": "Burial - Claustro",
-    "genre":"Dubstap",
+    "genre":"Dubstep",
     "rating": []
 },
 {
     "src":"music/Burial%20-%20Come%20down%20to%20us.mp3",
     "trackName": "Burial - Come down to us",
-    "genre":"Dubstap",
+    "genre":"Dubstep",
     "rating": []
 },
 {
     "src":"music/Burial%20-%20Hiders.mp3",
     "trackName": "Burial - Hiders",
-    "genre":"Dubstap",
+    "genre":"Dubstep",
     "rating": []
 },
 {
     "src":"music/Burial%20-%20Kindred.mp3",
     "trackName": "Burial - Kindred",
-    "genre":"Dubstap",
+    "genre":"Dubstep",
     "rating": []
 },
 {
     "src":"music/Burial%20-%20Loner.mp3",
     "trackName": "Burial - Loner",
-    "genre":"Dubstap",
+    "genre":"Dubstep",
     "rating": []
 },
 {
     "src":"music/Burial%20-%20Nightmarket.mp3",
     "trackName": "Burial - Nightmarket",
-    "genre":"Dubstap",
+    "genre":"Dubstep",
     "rating": []
 },
 {
     "src":"music/Burial%20-%20NYC.mp3",
     "trackName": "Burial - NYC",
-    "genre":"Dubstap",
+    "genre":"Dubstep",
     "rating": []
 },
 {
     "src":"music/Burial%20-%20Rival%20dealer.mp3",
     "trackName": "Burial - Rival dealer",
-    "genre":"Dubstap",
+    "genre":"Dubstep",
     "rating": []
 },
 {
     "src":"music/Burial%20-%20Rough%20sleeper.mp3",
     "trackName": "Burial - Rough sleeper",
-    "genre":"Dubstap",
+    "genre":"Dubstep",
     "rating": []
 },
 {
     "src":"music/Burial%20-%20State%20forest.mp3",
     "trackName": "Burial - State forest",
-    "genre":"Dubstap",
+    "genre":"Dubstep",
     "rating": []
 },
 {
     "src":"music/Burial%20-%20Stolen%20dog.mp3",
     "trackName": "Burial - Stolen dog",
-    "genre":"Dubstap",
+    "genre":"Dubstep",
     "rating": []
 },
 {
     "src":"music/Burial%20-%20Street%20halo.mp3",
     "trackName": "Burial - Street halo",
-    "genre":"Dubstap",
+    "genre":"Dubstep",
     "rating": []
 },
 {
     "src":"music/Burial%20-%20Subtemple.mp3",
     "trackName": "Burial - Subtemple",
-    "genre":"Dubstap",
+    "genre":"Dubstep",
     "rating": []
 },
 {
     "src":"music/Burial%20-%20Truant.mp3",
     "trackName": "Burial - Truant",
-    "genre":"Dubstap",
+    "genre":"Dubstep",
     "rating": []
 },
 {
     "src":"music/Burial%20-%20Young%20death.mp3",
     "trackName": "Burial - Young death",
-    "genre":"Dubstap",
+    "genre":"Dubstep",
     "rating": []
 },
 {
@@ -1509,6 +1509,462 @@
     "src":"music/Will%20Oldham-Drinking%20Woman.mp3",
     "trackName": "Will Oldham - Drinking Woman",
     "genre":"Country",
+    "rating": []
+},
+{
+    "src":"music/Black%20Pink%20-%20Playing%20with%20fire.mp3",
+    "trackName": "Black Pink - Playing with fire",
+    "genre":"K-pop",
+    "rating": []
+},
+{
+    "src":"music/Black%20Pink%20-%20Boombayah.mp3",
+    "trackName": "Black Pink - Boombayah",
+    "genre":"K-pop",
+    "rating": []
+},
+{
+    "src":"music/BTS%20-%20Love%20myself.mp3",
+    "trackName": "BTS - Love myself",
+    "genre":"K-pop",
+    "rating": []
+},
+{
+    "src":"music/BTS%20-%20Tony%20montana.mp3",
+    "trackName": "BTS - Tony montana",
+    "genre":"K-pop",
+    "rating": []
+},
+{
+    "src":"music/BTS%20-%20I%20need%20u.mp3",
+    "trackName": "BTS - I need you",
+    "genre":"K-pop",
+    "rating": []
+},
+{
+    "src":"music/BTS%20-%20Pied%20piper.mp3",
+    "trackName": "BTS - Pied piper",
+    "genre":"K-pop",
+    "rating": []
+},
+{
+    "src":"music/BTS%20-%20Go%20go.mp3",
+    "trackName": "BTS- Go go",
+    "genre":"K-pop",
+    "rating": []
+},
+{
+    "src":"music/BTS%20-%202u%20cover.mp3",
+    "trackName": "BTS - 2u cover",
+    "genre":"K-pop",
+    "rating": []
+},
+{
+    "src":"music/BTS%20-%20Blood%20sweat%20tears.mp3",
+    "trackName": "BTS - Blood sweat&tears",
+    "genre":"K-pop",
+    "rating": []
+},
+{
+    "src":"music/BTS%20-%20Fire.mp3",
+    "trackName": "BTS - Fire",
+    "genre":"K-pop",
+    "rating": []
+},
+{
+    "src":"music/BTS%20-%20Save%20me.mp3",
+    "trackName": "BTS - Save me",
+    "genre":"K-pop",
+    "rating": []
+},
+{
+    "src":"music/BTS%20-%20Boy%20with%20luv.mp3",
+    "trackName": "BTS - Boy with luv",
+    "genre":"K-pop",
+    "rating": []
+},
+{
+    "src":"music/BTS%20-%20Best%20of%20me.mp3",
+    "trackName": "BTS - Best of me",
+    "genre":"K-pop",
+    "rating": []
+},
+{
+    "src":"music/Jennie%20-%20Solo.mp3",
+    "trackName": "Jennie - Solo",
+    "genre":"K-pop",
+    "rating": []
+},
+{
+    "src":"music/GOT7%20-%20You%20calling%20my%20name.mp3",
+    "trackName": "GOT7 - You calling my name",
+    "genre":"K-pop",
+    "rating": []
+},
+{
+    "src":"music/Miles%20Davis%20-%20Lonely%20fire.mp3",
+    "trackName": "Miles Davis - Lonely fire",
+    "genre":"Jazz",
+    "rating": []
+},
+{
+    "src":"music/Pleasurekraft%20-%20Coltrane.mp3",
+    "trackName": "Pleasurekraft - Coltrane",
+    "genre":"Jazz",
+    "rating": []
+},
+{
+    "src":"music/Norah%20Jones%20-%20Say%20goodbye.mp3",
+    "trackName": "Norah Jones - Say goodbye",
+    "genre":"Jazz",
+    "rating": []
+},
+{
+    "src":"music/Norah%20Jones%20-%20Sunrise.mp3",
+    "trackName": "Norah Jones - Sunrise",
+    "genre":"Jazz",
+    "rating": []
+},
+{
+    "src":"music/Sammy%20Davis%20-%20There%20will%20never%20be%20another%20you.mp3",
+    "trackName": "Sammy Davis - There will never be another you",
+    "genre":"Jazz",
+    "rating": []
+},
+{
+    "src":"music/Frenk%20Sinatra%20-%20Strangers%20in%20the%20night.mp3",
+    "trackName": "Frenk Sinatra - Strangers in the night",
+    "genre":"Jazz",
+    "rating": []
+},
+{
+    "src":"music/Frank%20Sinatra%20-%20Thats%20life.mp3",
+    "trackName": "Frenk Sinatra - Thats life",
+    "genre":"Jazz",
+    "rating": []
+},
+{
+    "src":"music/Frank%20Sinatra%20-%20I%20love%20you%20baby.mp3",
+    "trackName": "Frenk Sinatra - Love you baby",
+    "genre":"Jazz",
+    "rating": []
+},
+{
+    "src":"music/Frenk%20Sinatra%20-%20My%20way.mp3",
+    "trackName": "Frenk Sinatra - My way",
+    "genre":"Jazz",
+    "rating": []
+},
+{
+    "src":"music/John%20Coltrane%20-%20Equinox.mp3",
+    "trackName": "John Coltrane - Equinox",
+    "genre":"Jazz",
+    "rating": []
+},
+{
+    "src":"music/John%20Coltrane%20-%20Naima.mp3",
+    "trackName": "John Coltrane - Naima",
+    "genre":"Jazz",
+    "rating": []
+},
+{
+    "src":"music/Norah%20Jones%20-%20Chasing%20pirates.mp3",
+    "trackName": "Norah Jones - Chasing pirates",
+    "genre":"Jazz",
+    "rating": []
+},
+{
+    "src":"music/Miles%20Davis%20-%20The%20gaslight%20anthem.mp3",
+    "trackName": "Miles Davis - The gaslight anthem",
+    "genre":"Jazz",
+    "rating": []
+},
+{
+    "src":"music/Louis%20Armstrong%20-%20Mack%20the%20knife.mp3",
+    "trackName": "Louis Armstrong - Mack the knife",
+    "genre":"Jazz",
+    "rating": []
+},
+{
+    "src":"music/Louis%20Armstrong&Frank%20Sinatra%20-%20The%20christmas%20song.mp3",
+    "trackName": "Louis Armstrong & Frank Sinatra - The christmas song",
+    "genre":"Jazz",
+    "rating": []
+},
+{
+    "src":"music/Louis%20Armstrong%20-%20What%20a%20wonderful%20world.mp3",
+    "trackName": "Louis Armstrong - What a wonderful world",
+    "genre":"Jazz",
+    "rating": []
+},
+{
+    "src":"music/Kraftwerk%20-%20The%20man%20machine.mp3",
+    "trackName": "Kraftwerk - The man machine",
+    "genre":"Electro",
+    "rating": []
+},
+{
+    "src":"music/Kraftwerk%20-%20Kraftwerk%20popcorn.mp3",
+    "trackName": "Kraftwerk - Kraftwerk popcorn",
+    "genre":"Electro",
+    "rating": []
+},
+{
+    "src":"music/Kraftwerk%20-%20Die%20roboter.mp3",
+    "trackName": "Kraftwerk - Die roboter",
+    "genre":"Electro",
+    "rating": []
+},
+{
+    "src":"music/Deadmouse%20-%20Moar%20ghosts%20n%20stuff.mp3",
+    "trackName": "Deadmouse - Moar ghosts on stuff",
+    "genre":"Electro",
+    "rating": []
+},
+{
+    "src":"music/Deadmouse%20-%20Not%20exactly.mp3",
+    "trackName": "Deadmouse - Not exactly",
+    "genre":"Electro",
+    "rating": []
+},
+{
+    "src":"music/Tiesto%20-%20Ritual.mp3",
+    "trackName": "Tiesto - Ritual",
+    "genre":"Electro",
+    "rating": []
+},
+{
+    "src":"music/Tiesto%20-%20Grapevine%20carta%20remix.mp3",
+    "trackName": "Tiesto - Grapevine carta(remix)",
+    "genre":"Electro",
+    "rating": []
+},
+{
+    "src":"music/Scrillex%20-%20Monster.mp3",
+    "trackName": "Scrillex - Monster",
+    "genre":"Electro",
+    "rating": []
+},
+{
+    "src":"music/Scrillex%20-%20Kill%20everybody.mp3",
+    "trackName": "Scrillex - Kill everbody",
+    "genre":"Electro",
+    "rating": []
+},
+{
+    "src":"music/Scrillex%20-%20First%20of%20the%20year.mp3",
+    "trackName": "Scrillex - First of the year",
+    "genre":"Electro",
+    "rating": []
+},
+{
+    "src":"music/Deadmouse%20-%20Deadmouse.mp3",
+    "trackName": "Deadmouse - Deadmouse",
+    "genre":"Electro",
+    "rating": []
+},
+{
+    "src":"music/Tiesto%20-%20God%20is%20a%20dancer.mp3",
+    "trackName": "Tiesto - God is a dancer",
+    "genre":"Electro",
+    "rating": []
+},
+{
+    "src":"music/Daft%20Punk%20-%20One%20more%20time.mp3",
+    "trackName": "Daft Punk - One more time",
+    "genre":"Electro",
+    "rating": []
+},
+{
+    "src":"music/Daft%20Punk%20-%20Get%20lucky%20original.mp3",
+    "trackName": "Daft Punk - Get lucky original",
+    "genre":"Electro",
+    "rating": []
+},
+{
+    "src":"music/Daft%20Punk%20-%20Harder%20better%20faster%20stronger.mp3",
+    "trackName": "Daft Punk - Harder, better, faster, stronger",
+    "genre":"Electro",
+    "rating": []
+},
+{
+    "src":"music/Muddy%20Waters%20-%20She%20moves%20me.mp3",
+    "trackName": "Muddy Waters - She moves me",
+    "genre":"Blues",
+    "rating": []
+},
+{
+    "src":"music/Muddy%20Waters%20-%20Muddy%20jumps%20one.mp3",
+    "trackName": "Muddy Waters - Muddy jumps one",
+    "genre":"Blues",
+    "rating": []
+},
+{
+    "src":"music/Muddy%20Waters%20-%20They%20call%20me%20muddy%20waters.mp3",
+    "trackName": "Muddy Waters - They call me Muddy Waters",
+    "genre":"Blues",
+    "rating": []
+},
+{
+    "src":"music/Robert%20Johnson%20-%20Sweet%20home%20chicago.mp3",
+    "trackName": "Robert Johnson - Sweet home Chicago",
+    "genre":"Blues",
+    "rating": []
+},
+{
+    "src":"music/Robert%20Johnson%20-%20I%20believe%20i'll%20dust%20my%20broom.mp3",
+    "trackName": "Robert Johnson - I belive i'll dust my broom",
+    "genre":"Blues",
+    "rating": []
+},
+{
+    "src":"music/Tom%20Hooker%20-%20Talk%20with%20your%20body.mp3",
+    "trackName": "Tom Hooker- Talk with your body",
+    "genre":"Blues",
+    "rating": []
+},
+{
+    "src":"music/Buddy%20Guy%20-%20Night%20flight.mp3",
+    "trackName": "Buddy Guy- Night light",
+    "genre":"Blues",
+    "rating": []
+},
+{
+    "src":"music/John%20Lee%20Hooker%20-%20Boom%20boom.mp3",
+    "trackName": "John Lee Hooker - Boom boom",
+    "genre":"Blues",
+    "rating": []
+},
+{
+    "src":"music/Buddy%20Guy%20-%20Crazy%20love.mp3",
+    "trackName": "Buddy Guy - Crazy Love",
+    "genre":"Blues",
+    "rating": []
+},
+{
+    "src":"music/John%20Lee%20Hooker%20-%20The%20healer.mp3",
+    "trackName": "John Lee Hooker - The healer",
+    "genre":"Blues",
+    "rating": []
+},
+{
+    "src":"music/Robert%20Johnson%20-%20Cross%20road%20blues.mp3",
+    "trackName": "Robert Johnson - Cross road blues",
+    "genre":"Blues",
+    "rating": []
+},
+{
+    "src":"music/Albert%20King%20-%20Born%20under%20a%20bad%20sign.mp3",
+    "trackName": "Albert King - Born under a bad sign",
+    "genre":"Blues",
+    "rating": []
+},
+{
+    "src":"music/Albert%20King%20-%20Call%20it%20stormy%20mondayalbert%20king.mp3",
+    "trackName": "Albert King - Call it stormy mondayalbert king",
+    "genre":"Blues",
+    "rating": []
+},
+{
+    "src":"music/Albert%20King%20-%20For%20the%20love%20of%20a%20woman.mp3",
+    "trackName": "Albert King - For the love of a woman",
+    "genre":"Blues",
+    "rating": []
+},
+{
+    "src":"music/Buddy%20Guy%20-%20Let%20me%20love%20you%20baby.mp3",
+    "trackName": "Buddy Guy - Let me love you baby",
+    "genre":"Blues",
+    "rating": []
+},
+{
+    "src":"music/Josh%20Wink%20-%20Dont%20laugh.mp3",
+    "trackName": "Josh Wink - Don't laugh",
+    "genre":"Techno",
+    "rating": []
+},
+{
+    "src":"music/Kink%20-%20Da%20funk.mp3",
+    "trackName": "Kink - Da funk",
+    "genre":"Techno",
+    "rating": []
+},
+{
+    "src":"music/Kink%20-%20Cloud%20generator.mp3",
+    "trackName": "Kink - Cloud generator",
+    "genre":"Techno",
+    "rating": []
+},
+{
+    "src":"music/Josh%20Wink%20-%20Are%20you%20there.mp3",
+    "trackName": "Josh Wink - Are you there",
+    "genre":"Techno",
+    "rating": []
+},
+{
+    "src":"music/Josh%20Wink%20-%20Wink.mp3",
+    "trackName": "Josh Wink - Wink",
+    "genre":"Techno",
+    "rating": []
+},
+{
+    "src":"music/Christian%20Hornbostel%20-%20Etat%20desprit.mp3",
+    "trackName": "Christian Hornbostel - Etat disprit",
+    "genre":"Techno",
+    "rating": []
+},
+{
+    "src":"music/Adam%20Beyer%20-%20Remainings%20111.mp3",
+    "trackName": "Adam Beyer - Remainings 111",
+    "genre":"Techno",
+    "rating": []
+},
+{
+    "src":"music/Christian%20Hornbostel%20-%20So%20much%20music%20(dub%20mix).mp3",
+    "trackName": "Christian Hornbostel - So much music(dub mix)",
+    "genre":"Techno",
+    "rating": []
+},
+{
+    "src":"music/Adam%20Beyer%20-%20Ignition%20key.mp3",
+    "trackName": "Adam Beyer - Ignition Key",
+    "genre":"Techno",
+    "rating": []
+},
+{
+    "src":"music/Tiger%20Stripes%20-%20Spirited%20away.mp3",
+    "trackName": "Tiger Stripes - Spirited away",
+    "genre":"Techno",
+    "rating": []
+},
+{
+    "src":"music/Kink%20-%20e79.mp3",
+    "trackName": "Tink - e79",
+    "genre":"Techno",
+    "rating": []
+},
+{
+    "src":"music/Hornbostel%20Thammer%20-%20Shadowing%20(ultradub).mp3",
+    "trackName": "Hornbostel Thammer - Shadowing(ultradub)",
+    "genre":"Techno",
+    "rating": []
+},
+{
+    "src":"music/Adam%20Beyer%20-%20Sthlm.mp3",
+    "trackName": "Adam Beyer - Sthlm",
+    "genre":"Techno",
+    "rating": []
+},
+{
+    "src":"music/Tiger%20Stripes%20feat%20Hanna%20Hais%20-%20Consecration.mp3",
+    "trackName": "Tiger Stripes feat Hanna Hais - Consecration",
+    "genre":"Techno",
+    "rating": []
+},
+{
+    "src":"music/Tiger%20Stripes%20-%20Runaways.mp3",
+    "trackName": "Tiger Stripes - Runaways",
+    "genre":"Techno",
     "rating": []
 }
 ]
