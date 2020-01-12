@@ -840,7 +840,7 @@ body {
 .library__bottom {
   text-align: center; }
 
-.library__bottom-paginaiton {
+.library__bottom-controls {
   list-style-type: none;
   display: flex;
   flex-direction: row;
@@ -848,23 +848,22 @@ body {
   padding-left: 0;
   width: 180px;
   margin: 1vw auto; }
-  .library__bottom-paginaiton a {
-    text-decoration: none;
+  .library__bottom-controls button[class^="library__bottom-controlsItem"] {
     display: block;
     padding: 2px 5px;
     color: #030200;
-    font-size: calc(9px + 0.6vw); }
-  .library__bottom-paginaiton li {
+    font-size: calc(9px + 0.6vw);
     border: 1px solid #030200;
+    border-radius: 5px;
+    cursor: pointer; }
+    .library__bottom-controls button[class^="library__bottom-controlsItem"]:hover {
+      background-color: #68009b;
+      color: #f4ff00; }
+  .library__bottom-controls li {
     border-radius: 5px; }
-    .library__bottom-paginaiton li:hover {
-      background-color: #68009b; }
-      .library__bottom-paginaiton li:hover a {
-        color: #f4ff00; }
-
-.library__bottom-active {
-  background-color: #68009b;
-  color: #f4ff00; }
+  .library__bottom-controls button[class$="-active"] {
+    background-color: #68009b;
+    color: #f4ff00; }
 
 .albums__inner {
   display: grid;

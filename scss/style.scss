@@ -960,7 +960,7 @@ cursor: pointer;
     text-align: center;
 }
 
-.library__bottom-paginaiton {
+.library__bottom-controls {
     list-style-type: none;
     display: flex;
     flex-direction: row;
@@ -969,34 +969,29 @@ cursor: pointer;
     width: 180px;
     margin: 1vw auto;
 
-    a {
-        text-decoration: none;
+    button[class^="library__bottom-controlsItem"] {
         display: block;
         padding: 2px 5px;
         color: $main-black;
         font-size: calc(9px + 0.6vw);
-    }
-
-    li {
         border: 1px solid $main-black;
         border-radius: 5px;
-
+        cursor: pointer;
         &:hover {
             background-color: $main-violet;
-
-            a {
-                color: $main-yellow;
-
-            }
+            color:$main-yellow;
         }
-
+    }
+    li {
+        border-radius: 5px;
+    }
+    button[class$="-active"] {
+        background-color: $main-violet;
+        color: $main-yellow;
     }
 }
 
-.library__bottom-active {
-    background-color: $main-violet;
-    color: $main-yellow;
-}
+
 
 .albums__inner {
     display: grid;

@@ -1,4 +1,23 @@
-document.addEventListener("DOMContentLoaded", () => {
+let xhr = new XMLHttpRequest();
+xhr.onreadystatechange = function () {
+    if (xhr.readyState == 4 && xhr.status == 200) {
+        try {
+            localStorage.setItem("users_base", xhr.responseText);
+            registration();
+        } catch (error) {
+            if (error.name === "QUOTA_EXCEEDED_ERR" || error.name === 'NS_ERROR_DOM_QUOTA_REACHED') {
+                localStorage.clear();
+                localStorage.setItem("users_base", xhr.responseText);
+            }
+        }
+
+    }
+}
+
+xhr.open('GET', '../users_base.json');
+xhr.send();
+
+function registration() {
     let users_base = JSON.parse(localStorage.getItem('users_base'));
     if (/^logIn/.test(document.cookie)) {
         document.cookie = "logIn=true; max-age=0";
@@ -155,6 +174,4 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     }
-
-  
-})
+}
