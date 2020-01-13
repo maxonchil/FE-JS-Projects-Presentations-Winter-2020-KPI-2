@@ -52,6 +52,7 @@ $error-color: #FF3333;
     font-family: "title font";
     font-size: calc(16px + 1vw);
 }
+
 // Service styles start
 [class^="icon__"] {
     font-family: 'icomoon';
@@ -323,16 +324,18 @@ body {
     font-size: calc(3px + 0.7vw);
     line-height: 1vw;
 }
+
 .sign-inForm__success {
-    display:none;
-    color:$main-yellow;
+    display: none;
+    color: $main-yellow;
     font-size: calc(4px + 0.7vw);
 }
+
 .sign-inForm__logOut {
     display: none;
     @include btn-style();
     background-color: $main-black;
-    color:$main-yellow;
+    color: $main-yellow;
 }
 
 .header__create-acctountForm {
@@ -361,22 +364,29 @@ body {
         }
     }
 }
-.create-accountForm__errorPas,.create-accountForm__errorName,.create-accountForm__errorEmail,.sign-inForm__error{
+
+.create-accountForm__errorPas,
+.create-accountForm__errorName,
+.create-accountForm__errorEmail,
+.sign-inForm__error {
     color: $error-color;
     text-align: center;
     font-size: calc(3px + 0.8vw);
     min-height: 15px;
     line-height: 1vw;
 }
+
 .create-accountForm__errorPas {
     grid-column: 1/3;
 }
+
 .create-accountForm__success {
     display: none;
-    color:#22BB33;
+    color: #22BB33;
     text-align: center;
     font-size: calc(3px + 1vw);
 }
+
 .create-accoundForm__buttons {
     display: flex;
     justify-content: space-around;
@@ -454,16 +464,19 @@ body {
 #rc3:checked~.header__create-acctountForm {
     display: block;
 }
+
 #upload {
-    display:none;
+    display: none;
 }
+
 .header__upload {
     text-align: center;
     font-weight: 700;
     font-size: calc(2px + 0.9vw);
-    color:$main-yellow;
+    color: $main-yellow;
     line-height: 3.1vw;
-cursor: pointer;
+    cursor: pointer;
+
     &:hover {
         background-color: $main-yellow;
         color: $main-black;
@@ -798,8 +811,8 @@ cursor: pointer;
         cursor: pointer;
     }
 
-    &:hover{
-       color:$main-yellow;
+    &:hover {
+        color: $main-yellow;
     }
 }
 
@@ -833,9 +846,9 @@ cursor: pointer;
         cursor: pointer;
     }
 
-    &:hover{
-        color:$main-yellow;
-     }
+    &:hover {
+        color: $main-yellow;
+    }
 }
 
 #control1:checked~.slider__window .slider__item {
@@ -966,7 +979,7 @@ cursor: pointer;
     flex-direction: row;
     justify-content: space-between;
     padding-left: 0;
-    width: 180px;
+    width: 350px;
     margin: 1vw auto;
 
     button[class^="library__bottom-controlsItem"] {
@@ -977,17 +990,31 @@ cursor: pointer;
         border: 1px solid $main-black;
         border-radius: 5px;
         cursor: pointer;
+        min-width: 31px;
+
         &:hover {
             background-color: $main-violet;
-            color:$main-yellow;
+            color: $main-yellow;
         }
     }
+
     li {
         border-radius: 5px;
     }
+
     button[class$="-active"] {
         background-color: $main-violet;
         color: $main-yellow;
+    }
+
+    .library_bottom-beginning-btn,
+    .library_bottom-end-btn {
+        font-size: calc(4px + 0.6vw);
+        text-decoration: none;
+    }
+    li:first-child, li:last-child {
+        display:flex;
+        align-items: center;
     }
 }
 
