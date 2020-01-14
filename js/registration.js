@@ -1,27 +1,38 @@
-let xhr = new XMLHttpRequest();
-xhr.onreadystatechange = function () {
-    if (xhr.readyState == 4 && xhr.status == 200) {
-        try {
-            localStorage.setItem("users_base", xhr.responseText);
-            registration();
-        } catch (error) {
-            if (error.name === "QUOTA_EXCEEDED_ERR" || error.name === 'NS_ERROR_DOM_QUOTA_REACHED') {
-                localStorage.clear();
-                localStorage.setItem("users_base", xhr.responseText);
+//Create a promise of AJAX request to set up a item on localeStorage first and then use it
+async function ajax_usersBase() {
+    return new Promise(function (resolve, reject) {
+        let xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                resolve(xhr.responseText);
             }
         }
-
-    }
+        xhr.open('GET', '../users_base.json');
+        xhr.send();
+    })
 }
+//Check by async function is in localeStorage exist users base or not. 
+(async () => {
+    let data;
+    if (!localStorage.getItem("users_base")) {
+        data = await ajax_usersBase();
+        localStorage.setItem("users_base", data);
+    } else {
+        data = localStorage.getItem("users_base");
+    }
+    registration(JSON.parse(data));
+})();
 
-xhr.open('GET', '../users_base.json');
-xhr.send();
+function registration(data) {
+    //Create an array with all users
+    let users_base = data;
 
-function registration() {
-    let users_base = JSON.parse(localStorage.getItem('users_base'));
+    //On page reload logout user
     if (/^logIn/.test(document.cookie)) {
         document.cookie = "logIn=true; max-age=0";
     }
+
+    //Selected all needed DOM elements
     document.getElementsByClassName("create-accountForm__submit")[0].onclick = () => {
         let reg_userName = document.querySelector("[name='user-name']").value,
             reg_userEmail = document.querySelector("[name='user-email']").value,
@@ -35,6 +46,8 @@ function registration() {
                 "user_email": reg_userEmail,
                 "user_password": reg_userPassword
             };
+
+        //Registration check 
         if (!/\w+@\w+\.\w+/i.test(reg_userEmail)) {
             reg_errorEmail.innerHTML = "Please use a correct email";
             return;
@@ -49,7 +62,8 @@ function registration() {
             return;
         }
 
-        if (localStorage.getItem("users_base") === null) {
+        //If users_base  is undefined (ajax require is fail) then set up in localeStorage new key with user data
+        if (users_base === undefined) {
             let lsKey = "users_base",
                 lsValue = JSON.stringify([reg_userData]);
 
@@ -76,8 +90,10 @@ function registration() {
             return;
 
         } else {
+            //If 'users_base' is not undefined(ajax require is ok), then get users numbers by array.length
             let users_counter = users_base.length;
-            //start loop from i = 1 becouse of inde 0 is a users counter
+
+            //Check on taken nickname and email
             for (let i = 0; i < users_counter; i++) {
                 if (users_base[i].user_name.toLowerCase() === reg_userName.toLowerCase()) {
                     reg_erroName.innerHTML = "Nickname is already taken";
@@ -96,6 +112,7 @@ function registration() {
             }
 
             users_base.push(reg_userData);
+
             let lsKey = "users_base",
                 lsValue = JSON.stringify(users_base);
             ((key, item) => {
@@ -119,7 +136,7 @@ function registration() {
         }
 
     }
-
+    //Sign in form functionality
     document.querySelector(".sign-inForm__submit").onclick = () => {
         let signIn_log = document.querySelector("[name='sign-inLog']").value,
             signIn_pas = document.querySelector("[name='sign-inPas']").value,
@@ -132,6 +149,7 @@ function registration() {
             check_log = false,
             check_pas = true;
 
+        //Looking for a registred user with entered nickname
         for (let i = 0; i < users_counter; i++) {
             if (signIn_log === users_base[i].user_name) {
                 check_log = true;
@@ -139,8 +157,10 @@ function registration() {
                 break;
             }
         }
+        //If entered nickname allready registred, then compare the correctness of the entered password
         signIn_pas === users_base[user_index].user_password ? check_pas = true : check_pas = false;
 
+        //If log check and pas chek is ok, then user loged in
         if (check_log === true && check_pas === true) {
             document.getElementById('rc1').checked = 'checked';
             createAcc_btn.style.display = "none";
@@ -154,7 +174,7 @@ function registration() {
             })
             document.querySelector(".sign-inForm__error").innerHTML = "";
 
-
+            //If user loged in, then show him logout button
             logOut_btn.onclick = () => {
                 document.cookie = "logIn=true; max-age=0";
                 logOut_btn.style.display = "none";
@@ -165,6 +185,7 @@ function registration() {
                 document.querySelector("[name='create-acctountForm']").style.display = "block";
             }
 
+            //If no such username or password is wrong, show message
         } else {
             document.querySelectorAll("input[name^='sign-in']").forEach(e => {
                 e.value = "";
