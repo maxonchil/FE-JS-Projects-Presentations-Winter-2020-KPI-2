@@ -32,9 +32,8 @@ async function ajax_soundtracks() {
 
 //Main function to work with data
 function useSoundTracks(filtred) {
-    //Create an array with all soundtracks, array for вata output for different sortings and max page
 
-    let soundtracks_array = filtred === undefined ? soundtracks_base.slice() : filtred,
+    let soundtracks_array = filtred === undefined ? soundtracks_base.slice() : filtred, //temporary storage for the data that will be displayed to the user
         max_page = Math.ceil(soundtracks_array.length / 10),
         controls_list = document.querySelector(".library__bottom-controls"),
         pages = Math.ceil(soundtracks_array.length / 10) >= 5 ? 5 : Math.ceil(soundtracks_array.length / 10);
@@ -65,7 +64,7 @@ function useSoundTracks(filtred) {
     }
 
 
-    //Selected controls, audio elements and their 'p' tag for show a soundtrack name
+    //Selected controls, audio elements and their 'p' tag for show a soundtrack name and set up src
     let library_titles = document.querySelectorAll(".library__main-title"),
         library_audio = document.querySelectorAll(".library__main-audio"),
         library_controls = document.querySelectorAll(".library__bottom-controlsItem");
@@ -104,10 +103,10 @@ function useSoundTracks(filtred) {
     }
 
 
-    // Bring songs and their names to the page
+    // Display songs and their names to the page
     displayContent(soundtracks_array);
 
-    //Added -active class to set up defoult chosed controler
+    //Added '-active' class to set up defoult chosed controler
     library_controls[0] === undefined ? true : library_controls[0].className += "-active";
 
 
@@ -120,11 +119,9 @@ function useSoundTracks(filtred) {
                 soundtracks_count = library_controls[i].innerText + 0,
                 show_on_page = soundtracks_array.slice(+soundtracks_count - 10, +soundtracks_count);
 
-            // If on a last page is less that 10 elements, then hide other 'audio' tag by delete controls tag
-            displayContent(show_on_page);
+            displayContent(show_on_page); 
 
             //Redrawing Controls when user click on it
-
             if (curent_page === max_page) {
                 for (let i = 0; i < library_controls.length; i++) {
                     if (library_controls[i].classList.contains("library__bottom-controlsItem-active")) {
@@ -161,23 +158,12 @@ function useSoundTracks(filtred) {
                 e.target.className += "-active"
             }
 
-
         }
     }
 
     //Event for 'go to first page' button
     document.querySelector(".library__bottom-beginning-btn").onclick = () => {
-        for (i = 0; i < 10; i++) {
-            if (library_audio[i].hasAttribute("controls")) {
-                library_audio[i].setAttribute("src", soundtracks_array[i].src);
-                library_titles[i].innerText = soundtracks_array[i].trackName;
-
-            } else {
-                library_audio[i].setAttribute("controls", "controls");
-                library_audio[i].setAttribute("src", soundtracks_array[i].src);
-                library_titles[i].innerText = soundtracks_array[i].trackName;
-            }
-        }
+        displayContent(soundtracks_array);
         controllersRedrawing(1, 0, 0);
     }
 
