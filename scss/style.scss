@@ -74,6 +74,10 @@ $error-color: #FF3333;
     -moz-osx-font-smoothing: grayscale;
 }
 
+.hiden {
+    display: none;
+}
+
 // Service styles end
 
 * {
@@ -170,6 +174,10 @@ body {
             }
         }
     }
+}
+
+.header__submenu-span {
+    display: block;
 }
 
 .header__submenu3 {
@@ -452,16 +460,16 @@ body {
     }
 }
 
-#rc1:checked~.header__sign-inForm,
-#rc1:checked~.header__create-acctountForm {
+#reg_controler1:checked~.header__sign-inForm,
+#reg_controler1:checked~.header__create-acctountForm {
     display: none;
 }
 
-#rc2:checked~.header__sign-inForm {
+#reg_controler2:checked~.header__sign-inForm {
     display: block;
 }
 
-#rc3:checked~.header__create-acctountForm {
+#reg_controler3:checked~.header__create-acctountForm {
     display: block;
 }
 
@@ -982,39 +990,44 @@ body {
     width: 350px;
     margin: 1vw auto;
 
-    button[class^="library__bottom-controlsItem"] {
-        display: block;
-        padding: 2px 5px;
-        color: $main-black;
-        font-size: calc(9px + 0.6vw);
-        border: 1px solid $main-black;
-        border-radius: 5px;
-        cursor: pointer;
-        min-width: 31px;
-
-        &:hover {
-            background-color: $main-violet;
-            color: $main-yellow;
-        }
-    }
-
     li {
         border-radius: 5px;
     }
 
-    button[class$="-active"] {
+}
+
+button[class^="library__bottom-controlsItem"] {
+    display: block;
+    padding: 2px 5px;
+    color: $main-black;
+    font-size: calc(9px + 0.6vw);
+    border: 1px solid $main-black;
+    border-radius: 5px;
+    cursor: pointer;
+    min-width: 31px;
+
+    &:hover {
         background-color: $main-violet;
         color: $main-yellow;
     }
+}
 
-    .library_bottom-beginning-btn,
-    .library_bottom-end-btn {
-        font-size: calc(4px + 0.6vw);
-        text-decoration: none;
-    }
-    li:first-child, li:last-child {
-        display:flex;
-        align-items: center;
+
+
+button[class$="-active"] {
+    background-color: $main-violet;
+    color: $main-yellow;
+}
+
+.library__bottom-beginning-btn,
+.library__bottom-end-btn {
+    display: flex;
+    align-items: center;
+    font-size: calc(4px + 0.6vw);
+    cursor: pointer;
+
+    &:hover {
+        color: $main-violet;
     }
 }
 

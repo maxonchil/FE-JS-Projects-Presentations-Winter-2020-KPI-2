@@ -35,6 +35,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+.hiden {
+  display: none; }
+
 * {
   box-sizing: border-box; }
 
@@ -108,6 +111,9 @@ body {
       .header__submenu1 li:hover a,
       .header__submenu3 li:hover a {
         color: #030200; }
+
+.header__submenu-span {
+  display: block; }
 
 .header__submenu3 {
   transform: translateY(-18vw); }
@@ -851,30 +857,35 @@ body {
   padding-left: 0;
   width: 350px;
   margin: 1vw auto; }
-  .library__bottom-controls button[class^="library__bottom-controlsItem"] {
-    display: block;
-    padding: 2px 5px;
-    color: #030200;
-    font-size: calc(9px + 0.6vw);
-    border: 1px solid #030200;
-    border-radius: 5px;
-    cursor: pointer;
-    min-width: 31px; }
-    .library__bottom-controls button[class^="library__bottom-controlsItem"]:hover {
-      background-color: #68009b;
-      color: #f4ff00; }
   .library__bottom-controls li {
     border-radius: 5px; }
-  .library__bottom-controls button[class$="-active"] {
+
+button[class^="library__bottom-controlsItem"] {
+  display: block;
+  padding: 2px 5px;
+  color: #030200;
+  font-size: calc(9px + 0.6vw);
+  border: 1px solid #030200;
+  border-radius: 5px;
+  cursor: pointer;
+  min-width: 31px; }
+  button[class^="library__bottom-controlsItem"]:hover {
     background-color: #68009b;
     color: #f4ff00; }
-  .library__bottom-controls .library_bottom-beginning-btn,
-  .library__bottom-controls .library_bottom-end-btn {
-    font-size: calc(4px + 0.6vw);
-    text-decoration: none; }
-  .library__bottom-controls li:first-child, .library__bottom-controls li:last-child {
-    display: flex;
-    align-items: center; }
+
+button[class$="-active"] {
+  background-color: #68009b;
+  color: #f4ff00; }
+
+.library__bottom-beginning-btn,
+.library__bottom-end-btn {
+  display: flex;
+  align-items: center;
+  font-size: calc(4px + 0.6vw);
+  cursor: pointer; }
+  .library__bottom-beginning-btn:hover,
+  .library__bottom-end-btn:hover {
+    color: #68009b; }
 
 .albums__inner {
   display: grid;

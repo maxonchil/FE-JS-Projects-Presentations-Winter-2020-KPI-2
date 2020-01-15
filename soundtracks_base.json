@@ -1505,42 +1505,7 @@
         "genre": "Country",
         "rating": []
     },
-    {
-        "src": "music/Black_Pink-Playing_with_fire.mp3",
-        "trackName": "Black Pink - Playing with fire",
-        "genre": "K-pop",
-        "rating": []
-    },
-    {
-        "src": "music/Black_Pink-Boombayah.mp3",
-        "trackName": "Black Pink - Boombayah",
-        "genre": "K-pop",
-        "rating": []
-    },
-    {
-        "src": "music/BTS-Love_myself.mp3",
-        "trackName": "BTS - Love myself",
-        "genre": "K-pop",
-        "rating": []
-    },
-    {
-        "src": "music/BTS-Tony_montana.mp3",
-        "trackName": "BTS - Tony montana",
-        "genre": "K-pop",
-        "rating": []
-    },
-    {
-        "src": "music/BTS-I_need_u.mp3",
-        "trackName": "BTS - I need you",
-        "genre": "K-pop",
-        "rating": []
-    },
-    {
-        "src": "music/BTS-Pied_piper.mp3",
-        "trackName": "BTS - Pied piper",
-        "genre": "K-pop",
-        "rating": []
-    },
+    
     {
         "src": "music/BTS-Go_go.mp3",
         "trackName": "BTS- Go go",

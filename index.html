@@ -31,16 +31,16 @@
                         <li class="header__menu-li1">
                             <a href="#library">Library</a>
                             <ul class="header__submenu1">
-                                <li class="header__submenu1-item1"><a href="#"><span>Rock</span></a></li>
-                                <li class="header__submenu1-item2"><a href="#"><span>K-Pop</span></a></li>
-                                <li class="header__submenu1-item3"><a href="#"><span>Jazz</span></a></li>
-                                <li class="header__submenu1-item4"><a href="#"><span>Dubstep</span></a></li>
-                                <li class="header__submenu1-item5"><a href="#"><span>Electronic</span></a></li>
-                                <li class="header__submenu1-item6"><a href="#"><span>RBlues</span></a></li>
-                                <li class="header__submenu1-item7"><a href="#"><span>Techno</span></a></li>
-                                <li class="header__submenu1-item8"><a href="#"><span>Country Music</span></a>
+                                <li class="header__submenu1-item1"><a href="#library"><span class="header__submenu-span" data-genre="Rock">Rock</span></a></li>
+                                <li class="header__submenu1-item2"><a href="#library"><span class="header__submenu-span" data-genre="K-pop">K-Pop</span></a></li>
+                                <li class="header__submenu1-item3"><a href="#library"><span class="header__submenu-span" data-genre="Jazz">Jazz</span></a></li>
+                                <li class="header__submenu1-item4"><a href="#library"><span class="header__submenu-span" data-genre="Dubstep">Dubstep</span></a></li>
+                                <li class="header__submenu1-item5"><a href="#library"><span class="header__submenu-span" data-genre="Electro">Electro</span></a></li>
+                                <li class="header__submenu1-item6"><a href="#library"><span class="header__submenu-span" data-genre="Blues">Blues</span></a></li>
+                                <li class="header__submenu1-item7"><a href="#library"><span class="header__submenu-span" data-genre="Techno">Techno</span></a></li>
+                                <li class="header__submenu1-item8"><a href="#library"><span class="header__submenu-span" data-genre="Country">Country Music</span></a>
                                 </li>
-                                <li class="header__submenu1-item9"><a href="#"><span>Pop Music</span></a></li>
+                                <li class="header__submenu1-item9"><a href="#library"><span data-genre="Pop">Pop Music</span></a></li>
                             </ul>
                         </li>
 
@@ -74,17 +74,17 @@
 
                 <div class="header__registation">
 
-                    <input type="radio" name="registation-controls" checked id="rc1">
-                    <input type="radio" name="registation-controls" id="rc2">
-                    <input type="radio" name="registation-controls" id="rc3">
-                    <label class="header__registration-signIn" for="rc2">Sign in</label>
-                    <label class="header__registration-createAccount" for="rc3">Create account</label>
+                    <input type="radio" name="registation-controls" checked id="reg_controler1">
+                    <input type="radio" name="registation-controls" id="reg_controler2">
+                    <input type="radio" name="registation-controls" id="reg_controler3">
+                    <label class="header__registration-signIn" for="reg_controler2">Sign in</label>
+                    <label class="header__registration-createAccount" for="reg_controler3"">Create account</label>
                     <div class="sign-inForm__success"> </div>
                     <button type="submit" class="sign-inForm__logOut">Log out</button>
 
                     <div class="header__sign-inForm">
                         <span class="sign-inForm__title">Sign in</span>
-                        <label class="sign-inForm__close" for="rc1"></label>
+                        <label class="sign-inForm__close" for="reg_controler1"></label>
                         <form action="" name="sign-inForm">
                             <div class="sign-inForm__fields">
                                 <input type="text" name="sign-inLog" placeholder="User name" required>
@@ -92,14 +92,14 @@
                                 <div class="sign-inForm__error"></div>
                             </div>
                             <div class="sign-inForm__buttons">
-                                <label class="sign-inForm__cancel" for="rc1">Cancel</label>
+                                <label class="sign-inForm__cancel" for="reg_controler1">Cancel</label>
                                 <button class="sign-inForm__submit" type="button">Submit</button>
                             </div>
                         </form>
                     </div>
                     <div class="header__create-acctountForm">
                         <span class="create-accountForm__title">Create account</span>
-                        <label class="create-accountForm__close" for="rc1"></label>
+                        <label class="create-accountForm__close" for="reg_controler1"></label>
                         <div class="create-accountForm__success">Account has been created successfully!</div>
                         <form action="" name="create-acctountForm">
                             <div class="create-accountForm__fields">
@@ -120,7 +120,7 @@
                         </form>
                     </div>
                 </div>
-                <input type="file"id="upload" accept="audio/*" multiple >
+                <input type="file" id="upload" accept="audio/*" multiple>
                 <label class="header__upload" for="upload">Upload</label>
             </div>
         </div>
@@ -145,31 +145,40 @@
                         </ul>
                     </li>
                     <li class="aside__menu-item2">
-                        <a title="Rock songs" href="#library"><span class="icon__rock_and_roll"></span></a>
+                        <a title="Rock songs" href="#library"><span data-genre="Rock"
+                                class="icon__rock_and_roll aside__icon"></span></a>
                     </li>
                     <li class="aside__menu-item3">
-                        <a title="K-pop songs" href="#library"><span class="icon__kpop"></span></a>
+                        <a title="K-pop songs" href="#library"><span data-genre="K-pop"
+                                class="icon__kpop aside__icon"></span></a>
                     </li>
                     <li class="aside__menu-item4">
-                        <a title="Jazz songs" href="#library"><span class="icon__jazz"></span></a>
+                        <a title="Jazz songs" href="#library"><span data-genre="Jazz"
+                                class="icon__jazz aside__icon"></span></a>
                     </li>
                     <li class="aside__menu-item5">
-                        <a title="Dabstep songs" href="#library"><span class="icon__dabstep"></span></a>
+                        <a title="Dabstep songs" href="#library"><span data-genre="Dubstep"
+                                class="icon__dabstep aside__icon"></span></a>
                     </li>
                     <li class="aside__menu-item6">
-                        <a title="Electro songs" href="#library"><span class="icon__electro"></span></a>
+                        <a title="Electro songs" href="#library"><span data-genre="Electro"
+                                class="icon__electro aside__icon"></span></a>
                     </li>
                     <li class="aside__menu-item7">
-                        <a title="Blues songs" href="#library"><span class="icon__blues"></span></a>
+                        <a title="Blues songs" href="#library"><span data-genre="Blues"
+                                class="icon__blues aside__icon"></span></a>
                     </li>
                     <li class="aside__menu-item8">
-                        <a title="Techno songs" href="#library"><span class="icon__techno"></span></a>
+                        <a title="Techno songs" href="#library"><span data-genre="Techno"
+                                class="icon__techno aside__icon"></span></a>
                     </li>
                     <li class="aside__menu-item9">
-                        <a title="Country songs" href="#library"><span class="icon__country"></span></a>
+                        <a title="Country songs" href="#library"><span data-genre="Country"
+                                class="icon__country aside__icon"></span></a>
                     </li>
                     <li class="aside__menu-item10">
-                        <a title="Pop songs" href="#library"><span class="icon__pop"></span></a>
+                        <a title="Pop songs" href="#library"><span data-genre="Pop"
+                                class="icon__pop aside__icon"></span></a>
                     </li>
                 </ul>
             </nav>
@@ -334,15 +343,7 @@
                     </div>
                     <div class="library__bottom">
                         <nav>
-                            <ul class="library__bottom-controls">
-                                <li class="library_bottom-beginning-btn"> < First Page</li>
-                                <li><button class="library__bottom-controlsItem">1</button> </li>
-                                <li><button class="library__bottom-controlsItem">2</button></li>
-                                <li><button class="library__bottom-controlsItem">3</button></li>
-                                <li><button class="library__bottom-controlsItem">4</button></li>
-                                <li><button class="library__bottom-controlsItem">5</button></li>
-                                <li class="library_bottom-end-btn">Last page > </li>
-                            </ul>
+                            <ul class="library__bottom-controls"></ul>
                         </nav>
                     </div>
                 </div>
@@ -1233,11 +1234,12 @@
             </div>
         </div>
     </footer>
-    
-   
+
+
     <script src="js/registration.js"></script>
     <script src="js/soundtracks_library.js"></script>
     <script src="js/upload.js"></script>
+    <script src="js/aside_pagination.js"></script>
 </body>
 
 </html>

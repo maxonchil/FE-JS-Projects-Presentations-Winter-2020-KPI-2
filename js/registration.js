@@ -41,6 +41,8 @@ function registration(data) {
             reg_errorEmail = document.querySelector(".create-accountForm__errorEmail"),
             reg_erroName = document.querySelector(".create-accountForm__errorName"),
             reg_errorPas = document.querySelector(".create-accountForm__errorPas"),
+            reg_successForm = document.querySelector(".create-accountForm__success"),
+            reg_createForm = document.querySelector(".[name='create-acctountForm']"),
             reg_userData = {
                 "user_name": reg_userName,
                 "user_email": reg_userEmail,
@@ -49,16 +51,16 @@ function registration(data) {
 
         //Registration check 
         if (!/\w+@\w+\.\w+/i.test(reg_userEmail)) {
-            reg_errorEmail.innerHTML = "Please use a correct email";
+            reg_errorEmail.innerText = "Please use a correct email";
             return;
         }
         if (reg_userPassword.length < 5) {
-            reg_errorPas.innerHTML = "Password must be longer than 5 characters";
-            reg_errorEmail.innerHTML = "";
+            reg_errorPas.innerText = "Password must be longer than 5 characters";
+            reg_errorEmail.innerText = "";
             return;
         } else if (reg_userPassword !== reg_userPassword2) {
-            reg_errorPas.innerHTML = "Passwords do not match";
-            reg_errorEmail.innerHTML = "";
+            reg_errorPas.innerText = "Passwords do not match";
+            reg_errorEmail.innerText = "";
             return;
         }
 
@@ -79,14 +81,17 @@ function registration(data) {
                     }
                 }
             })(lsKey, lsValue)
-            document.querySelector("[name='create-acctountForm']").style.display = "none";
-            document.querySelector(".create-accountForm__success").style.display = "block";
+
+            //Clean all fields and error messages when reg is done
+            reg_createForm.style.display = "none";
+            reg_successForm.style.display = "block";
+
             document.querySelectorAll("input[name^='user-']").forEach(e => {
                 e.value = "";
             })
-            reg_errorEmail.innerHTML = "";
-            reg_erroName.innerHTML = "";
-            reg_errorPas.innerHTML = "";
+            reg_errorEmail.innerText = "";
+            reg_erroName.innerText = "";
+            reg_errorPas.innerText = "";
             return;
 
         } else {
@@ -96,17 +101,17 @@ function registration(data) {
             //Check on taken nickname and email
             for (let i = 0; i < users_counter; i++) {
                 if (users_base[i].user_name.toLowerCase() === reg_userName.toLowerCase()) {
-                    reg_erroName.innerHTML = "Nickname is already taken";
-                    reg_errorPas.innerHTML = "";
-                    reg_errorEmail.innerHTML = "";
+                    reg_erroName.innerText = "Nickname is already taken";
+                    reg_errorPas.innerText = "";
+                    reg_errorEmail.innerText = "";
                     return;
                 }
             }
             for (let i = 0; i < users_counter; i++) {
                 if (users_base[i].user_email.toLowerCase() === reg_userEmail.toLowerCase()) {
-                    reg_errorEmail.innerHTML = "This email is alredy used";
-                    reg_erroName.innerHTML = "";
-                    reg_errorPas.innerHTML = "";
+                    reg_errorEmail.innerText = "This email is alredy used";
+                    reg_erroName.innerText = "";
+                    reg_errorPas.innerText = "";
                     return;
                 }
             }
@@ -115,6 +120,7 @@ function registration(data) {
 
             let lsKey = "users_base",
                 lsValue = JSON.stringify(users_base);
+
             ((key, item) => {
                 try {
                     localStorage.setItem(key, item);
@@ -125,14 +131,16 @@ function registration(data) {
                     }
                 }
             })(lsKey, lsValue)
-            document.querySelector("[name='create-acctountForm']").style.display = "none";
-            document.querySelector(".create-accountForm__success").style.display = "block";
+
+            reg_createForm.style.display = "none";
+            reg_successForm.style.display = "block";
+
             document.querySelectorAll("input[name^='user-']").forEach(e => {
                 e.value = "";
             })
-            reg_errorEmail.innerHTML = "";
-            reg_erroName.innerHTML = "";
-            reg_errorPas.innerHTML.innerHTML = "";
+            reg_errorEmail.innerText = "";
+            reg_erroName.innerText = "";
+            reg_errorPas.innerText = "";
         }
 
     }
@@ -157,22 +165,25 @@ function registration(data) {
                 break;
             }
         }
+
         //If entered nickname allready registred, then compare the correctness of the entered password
         signIn_pas === users_base[user_index].user_password ? check_pas = true : check_pas = false;
 
         //If log check and pas chek is ok, then user loged in
         if (check_log === true && check_pas === true) {
-            document.getElementById('rc1').checked = 'checked';
+            document.getElementById('reg_controler_1').checked = 'checked';
             createAcc_btn.style.display = "none";
             signIn_btn.style.display = "none";
             logOut_btn.style.display = "block";
-            signIN_success.innerHTML = `Hi, ${users_base[user_index].user_name}`;
+            signIN_success.innerText = `Hi, ${users_base[user_index].user_name}`;
             signIN_success.style.display = "block";
+
             document.cookie = "logIn=true;";
+
             document.querySelectorAll("input[name^='sign-in']").forEach(e => {
                 e.value = "";
             })
-            document.querySelector(".sign-inForm__error").innerHTML = "";
+            document.querySelector(".sign-inForm__error").innerText = "";
 
             //If user loged in, then show him logout button
             logOut_btn.onclick = () => {
@@ -181,8 +192,8 @@ function registration(data) {
                 signIN_success.style.display = "none";
                 createAcc_btn.style.display = "block";
                 signIn_btn.style.display = "block";
-                document.querySelector('.create-accountForm__success').style.display = "none";
-                document.querySelector("[name='create-acctountForm']").style.display = "block";
+                reg_successForm.style.display = "none";
+                reg_createForm.style.display = "block";
             }
 
             //If no such username or password is wrong, show message
@@ -190,9 +201,7 @@ function registration(data) {
             document.querySelectorAll("input[name^='sign-in']").forEach(e => {
                 e.value = "";
             })
-            document.querySelector(".sign-inForm__error").innerHTML = "Wrong email or password";
+            document.querySelector(".sign-inForm__error").innerText = "Wrong email or password";
         }
-
-
     }
 }
