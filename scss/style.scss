@@ -75,7 +75,7 @@ $error-color: #FF3333;
 }
 
 .hiden {
-    display: none;
+    visibility: hidden;
 }
 
 // Service styles end
@@ -898,46 +898,28 @@ body {
     justify-content: space-between;
     padding: 0 1%;
     align-items: center;
-}
-
-.library__breadcrumbs {
-    display: flex;
-    flex-direction: row;
-    padding-left: 0;
-    list-style-type: none;
-    font-size: calc(5px + 0.7vw);
-
-    li {
-        a {
-            float: left;
-            text-decoration: none;
-        }
-
-    }
-}
-
-.library__top {
 
     select {
         font-size: calc(7px + 0.6vw);
     }
 }
 
-.icon__home {
-    float: left;
-    font-size: calc(8px + 0.6vw);
-    color: $main-black;
+.library__top-back {
+    cursor: pointer;
+    font-size: calc(8px + 0.4vw);
 
-    &:before {
-        content: "\e905";
+    &:hover {
+        color: $main-violet;
     }
 
+    &:hover>span {
+        color: $main-violet;
+    }
 }
 
 .icon__arrow {
     display: inline-block;
-    font-size: calc(2px + 0.4vw);
-    transform: rotate(180deg);
+    font-size: calc(5px + 0.4vw);
     color: $main-black;
     height: 30%;
     width: 1vw;
@@ -1031,14 +1013,12 @@ button[class$="-active"] {
     }
 }
 
-
-
 .albums__inner {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-row-gap: 1vw;
     max-height: 615px;
-    min-height: 615px;
+    min-height: 315px;
     width: 83%;
     margin: 0 auto;
     overflow: auto;
@@ -1048,11 +1028,7 @@ button[class$="-active"] {
     @include title-style;
 }
 
-.albums__item-checked {
-    display: none;
-}
-
-input[class^="albums__item"] {
+.albums__cover {
     -webkit-appearance: none;
     display: none;
     min-width: 300px;
@@ -1137,26 +1113,14 @@ input[class^="albums__item"] {
     background: url('../img/one_of_the_best.jpeg') no-repeat 0 0;
     background-size: cover;
 }
-
-.albums__item-checked:checked~input {
+.albums__item-checked{
+    display: none; //if display of this element is not 'none', grid layout is broken
+}
+.albums__item-checked:checked~.albums__cover {
     display: block;
 }
 
-.albums__tracks1,
-.albums__tracks2,
-.albums__tracks3,
-.albums__tracks4,
-.albums__tracks5,
-.albums__tracks6,
-.albums__tracks7,
-.albums__tracks8,
-.albums__tracks9,
-.albums__tracks10,
-.albums__tracks11,
-.albums__tracks12,
-.albums__tracks13,
-.albums__tracks14,
-.albums__tracks15 {
+.albums__tracks {
     display: none;
 
     h4 {
@@ -1167,30 +1131,10 @@ input[class^="albums__item"] {
         width: 95%;
         margin: 0 auto;
     }
-
-    label {
-        display: block;
-        position: relative;
-        min-height: 2vw;
-        min-width: 2vw;
-        float: left;
-        cursor: pointer;
-
-        &:before {
-            content: '';
-            position: absolute;
-            width: 1vw;
-            height: 1vw;
-            box-shadow: 2px 2px 0 1px $main-black;
-            transform: rotate(135deg);
-            top: 18%;
-            left: 40%;
-        }
-
-        &:hover:before {
-            box-shadow: 2px 2px 0 1px $main-yellow;
-        }
+    span {
+        font-size: calc(9px + 0.5vw);
     }
+
 }
 
 .albums__tracks-inner {
@@ -1198,6 +1142,8 @@ input[class^="albums__item"] {
     grid-template-columns: repeat(2, 50%);
     grid-auto-rows: 7vw;
     align-items: center;
+    min-height: 315px;
+    max-height: 615px;
 
     audio {
         outline: none;
@@ -1216,21 +1162,21 @@ input[class^="albums__item"] {
 
 }
 
-.albums__item1:checked~.albums__tracks1,
-.albums__item2:checked~.albums__tracks2,
-.albums__item3:checked~.albums__tracks3,
-.albums__item4:checked~.albums__tracks4,
-.albums__item5:checked~.albums__tracks5,
-.albums__item6:checked~.albums__tracks6,
-.albums__item7:checked~.albums__tracks7,
-.albums__item8:checked~.albums__tracks8,
-.albums__item9:checked~.albums__tracks9,
-.albums__item10:checked~.albums__tracks10,
-.albums__item11:checked~.albums__tracks11,
-.albums__item12:checked~.albums__tracks12,
-.albums__item13:checked~.albums__tracks13,
-.albums__item14:checked~.albums__tracks14,
-.albums__item15:checked~.albums__tracks15 {
+.albums__item1:checked~.albums__tracks,
+.albums__item2:checked~.albums__tracks,
+.albums__item3:checked~.albums__tracks,
+.albums__item4:checked~.albums__tracks,
+.albums__item5:checked~.albums__tracks,
+.albums__item6:checked~.albums__tracks,
+.albums__item7:checked~.albums__tracks,
+.albums__item8:checked~.albums__tracks,
+.albums__item9:checked~.albums__tracks,
+.albums__item10:checked~.albums__tracks,
+.albums__item11:checked~.albums__tracks,
+.albums__item12:checked~.albums__tracks,
+.albums__item13:checked~.albums__tracks,
+.albums__item14:checked~.albums__tracks,
+.albums__item15:checked~.albums__tracks {
     display: block;
 }
 

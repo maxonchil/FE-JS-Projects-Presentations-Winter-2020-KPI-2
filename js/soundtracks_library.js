@@ -33,12 +33,23 @@ async function ajax_soundtracks() {
 //Main function to work with data
 function useSoundTracks(filtred) {
 
-    let soundtracks_array = filtred === undefined ? soundtracks_base.slice() : filtred, //temporary storage for the data that will be displayed to the user
-        max_page = Math.ceil(soundtracks_array.length / 10),
+    let soundtracks_array; //temporary storage for the data that will be displayed to the user
+
+    //If no search results, then show message and if user in not on main library, then show him 'Back to main library' button
+
+    if (filtred === undefined) {
+        document.getElementsByClassName("library__top-back")[0].className += " hiden";
+        soundtracks_array = soundtracks_base.slice();
+    } else {
+        document.getElementsByClassName("library__top-back")[0].className += "library__top-back";
+        soundtracks_array =filtred;
+    }
+
+    let max_page = Math.ceil(soundtracks_array.length / 10),
         controls_list = document.querySelector(".library__bottom-controls"),
         pages = Math.ceil(soundtracks_array.length / 10) >= 5 ? 5 : Math.ceil(soundtracks_array.length / 10);
 
-
+   
     //Added pagination controls 
     if (controls_list.hasChildNodes()) {
         controls_list.innerHTML = "";
@@ -100,6 +111,8 @@ function useSoundTracks(filtred) {
                 }
             }
         }
+        if (array.length === 0)
+            library_titles[0].innerText = "No matches...";
     }
 
 
@@ -119,7 +132,7 @@ function useSoundTracks(filtred) {
                 soundtracks_count = library_controls[i].innerText + 0,
                 show_on_page = soundtracks_array.slice(+soundtracks_count - 10, +soundtracks_count);
 
-            displayContent(show_on_page); 
+            displayContent(show_on_page);
 
             //Redrawing Controls when user click on it
             if (curent_page === max_page) {
