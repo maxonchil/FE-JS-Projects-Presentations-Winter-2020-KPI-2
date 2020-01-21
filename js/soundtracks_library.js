@@ -1,5 +1,6 @@
 //Create a promise of AJAX request to set up a item on localeStorage first and then use it
 var soundtracks_base;
+
 async function ajax_soundtracks() {
     return new Promise(function (resolve, reject) {
         let xhr2 = new XMLHttpRequest();
@@ -38,18 +39,18 @@ function useSoundTracks(filtred) {
     //If no search results, then show message and if user in not on main library, then show him 'Back to main library' button
 
     if (filtred === undefined) {
-        document.getElementsByClassName("library__top-back")[0].className += " hiden";
+        document.getElementsByClassName("library__top-back")[0].className += " hidden";
         soundtracks_array = soundtracks_base.slice();
     } else {
         document.getElementsByClassName("library__top-back")[0].className += "library__top-back";
-        soundtracks_array =filtred;
+        soundtracks_array = filtred;
     }
 
     let max_page = Math.ceil(soundtracks_array.length / 10),
         controls_list = document.querySelector(".library__bottom-controls"),
         pages = Math.ceil(soundtracks_array.length / 10) >= 5 ? 5 : Math.ceil(soundtracks_array.length / 10);
 
-   
+
     //Added pagination controls 
     if (controls_list.hasChildNodes()) {
         controls_list.innerHTML = "";
@@ -78,8 +79,10 @@ function useSoundTracks(filtred) {
     //Selected controls, audio elements and their 'p' tag for show a soundtrack name and set up src
     let library_titles = document.querySelectorAll(".library__main-title"),
         library_audio = document.querySelectorAll(".library__main-audio"),
-        library_controls = document.querySelectorAll(".library__bottom-controlsItem");
-
+        library_controls = document.querySelectorAll(".library__bottom-controlsItem"),
+        rate_container = document.getElementsByClassName("library__main-rate"),
+        rate_input = document.getElementsByClassName("library__main-checkbox"),
+        rate_text = document.getElementsByClassName("library__main-rated");
 
     //Function for rewriting innerText of controls when user click on it
     function controllersRedrawing(left_shift, basic_page, active_e) {
@@ -97,12 +100,24 @@ function useSoundTracks(filtred) {
 
     //Сontent output function
     function displayContent(array) {
+        for (let i = 0; i < rate_input.length; i++) {
+            rate_input[i].checked = false;
+        }
+        if (rate_text.length !== 0) {
+            for (let i = 0; i < rate_text.length; i++) {
+                rate_text[i].innerText = "";
+            }
+        }
         for (let i = 0; i < 10; i++) {
             if (array[i] === undefined) {
                 library_audio[i].removeAttribute("controls");
                 library_titles[i].innerText = "";
+                rate_container[i].className += " none";
+
             } else {
                 library_titles[i].innerText = array[i].trackName;
+                rate_container[i].classList.contains("none") ? rate_container[i].className = "library__main-rate" : true;
+                rate_container[i].setAttribute("data-track", array[i].trackName);
                 if (library_audio[i].hasAttribute("controls")) {
                     library_audio[i].setAttribute("src", array[i].src);
                 } else {

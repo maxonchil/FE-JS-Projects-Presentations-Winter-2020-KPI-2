@@ -1,3 +1,4 @@
+let users_base;
 //Create a promise of AJAX request to set up a item on localeStorage first and then use it
 async function ajax_usersBase() {
     return new Promise(function (resolve, reject) {
@@ -25,12 +26,8 @@ async function ajax_usersBase() {
 
 function registration(data) {
     //Create an array with all users
-    let users_base = data;
+    users_base = data;
 
-    //On page reload logout user
-    if (/^logIn/.test(document.cookie)) {
-        document.cookie = "logIn=true; max-age=0";
-    }
 
     //Selected all needed DOM elements
     document.getElementsByClassName("create-accountForm__submit")[0].onclick = () => {
@@ -42,7 +39,7 @@ function registration(data) {
             reg_erroName = document.querySelector(".create-accountForm__errorName"),
             reg_errorPas = document.querySelector(".create-accountForm__errorPas"),
             reg_successForm = document.querySelector(".create-accountForm__success"),
-            reg_createForm = document.querySelector(".[name='create-acctountForm']"),
+            reg_createForm = document.querySelector("[name='create-acctountForm']"),
             reg_userData = {
                 "user_name": reg_userName,
                 "user_email": reg_userEmail,
@@ -171,29 +168,41 @@ function registration(data) {
 
         //If log check and pas chek is ok, then user loged in
         if (check_log === true && check_pas === true) {
-            document.getElementById('reg_controler_1').checked = 'checked';
+            let rate_container = document.getElementsByClassName("library__main-rate");
+
+            document.getElementById("reg_controler1").checked = 'checked'
             createAcc_btn.style.display = "none";
             signIn_btn.style.display = "none";
             logOut_btn.style.display = "block";
             signIN_success.innerText = `Hi, ${users_base[user_index].user_name}`;
             signIN_success.style.display = "block";
 
-            document.cookie = "logIn=true;";
+            document.cookie = "logIn=" + user_index + ";";
 
             document.querySelectorAll("input[name^='sign-in']").forEach(e => {
                 e.value = "";
             })
             document.querySelector(".sign-inForm__error").innerText = "";
 
+            for (let i = 0; i < rate_container.length; i++) {
+                if (rate_container[i].classList.contains("none")) {
+                    rate_container[i].className = "library__main-rate";
+                }
+            }
+
             //If user loged in, then show him logout button
             logOut_btn.onclick = () => {
-                document.cookie = "logIn=true; max-age=0";
+                document.cookie = "logIn=" + user_index + ";" + "max-age=0;";
                 logOut_btn.style.display = "none";
                 signIN_success.style.display = "none";
                 createAcc_btn.style.display = "block";
                 signIn_btn.style.display = "block";
-                reg_successForm.style.display = "none";
-                reg_createForm.style.display = "block";
+                document.querySelector(".create-accountForm__success").style.display = "none";
+                document.querySelector("[name='create-acctountForm']").style.display = "block";
+
+                for(let i = 0; i < rate_container.length; i ++) {
+                    rate_container[i].className += " none";
+                }
             }
 
             //If no such username or password is wrong, show message
