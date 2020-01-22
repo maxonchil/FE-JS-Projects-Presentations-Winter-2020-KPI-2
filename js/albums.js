@@ -1,14 +1,15 @@
 document.addEventListener("DOMContentLoaded", () => {
+
     document.getElementById("albums__item-checked").checked = true;
+
     let albums = document.getElementsByClassName("albums__cover"),
         inner = document.getElementsByClassName("albums__tracks-inner")[0],
         top_inner = document.getElementsByClassName("albums__track-top")[0];
 
     for (let i = 0; i < albums.length; i++) {
         albums[i].onchange = () => {
+            
             inner.innerHTML = "";
-
-
             soundtracks_base.filter(e => e.album === albums[i].dataset.album).forEach(element => {
 
                 let div = document.createElement("div"),

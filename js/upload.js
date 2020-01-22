@@ -1,4 +1,5 @@
 document.querySelector(".header__upload").onclick = (event) => {
+    
     if (/^logIn/.test(document.cookie)) {
         let input_upload = document.getElementById("upload");
         input_upload.onchange = () => {

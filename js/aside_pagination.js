@@ -1,18 +1,11 @@
-document.addEventListener("DOMContentLoaded", function() {
-    let aside_items = document.getElementsByClassName("aside__icon");
-    let submenu_items = document.getElementsByClassName("header__submenu-span");
-    for(let i = 0; i < aside_items.length; i++) {
-        aside_items[i].onclick = (element) => {
-           let filtred =  soundtracks_base.filter(e=>e.genre === element.target.dataset.genre)
-           useSoundTracks(filtred);
+document.addEventListener("DOMContentLoaded", function () {
+    //Take together all items for filtering by genre
+    let genre_items = Array.from(document.getElementsByClassName("aside__icon"))
+    .concat(Array.from(document.getElementsByClassName("header__submenu-span")));
+
+    Array.from(genre_items, (item) => {
+        item.onclick = (e) => {
+            useSoundTracks(soundtracks_base.filter(element => element.genre === e.target.dataset.genre))
         }
-    }
-    for(let i = 0; i < submenu_items.length; i++) {
-        submenu_items[i].onclick = (element) => {
-            let filtred =  soundtracks_base.filter(e=>e.genre === element.target.dataset.genre);
-            useSoundTracks(filtred);
-        }
-    }
-       
-    
+    })
 })

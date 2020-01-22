@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
             curent_container.className += " none";
 
             let span = document.createElement("span");
-            span.innerText = "Rated!";
+            span.innerText = "Voted!";
             span.className = "library__main-rated"
             e_target.appendChild(span);
         }
