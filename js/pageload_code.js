@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
             createAcc_btn = document.querySelector(".header__registration-createAccount"),
             signIn_btn = document.querySelector(".header__registration-signIn"),
             logOut_btn = document.querySelector(".sign-inForm__logOut"),
-            signIN_success = document.querySelector(".sign-inForm__success");
+            signIN_success = document.querySelector(".sign-inForm__success"),
+            rate_text = document.getElementsByClassName("library__main-rated");
 
         document.getElementById("reg_controler1").checked = 'checked';
         createAcc_btn.style.display = "none";
@@ -30,7 +31,11 @@ document.addEventListener("DOMContentLoaded", () => {
             signIN_success.style.display = "none";
             for (let i = 0; i < rate_container.length; i++) {
                 rate_container[i].className += " none";
+                rate_text[i].innerText = "";
             }
+
+            rated = [];
+            localStorage.setItem("rated", "[]");
         }
     }
 })

@@ -202,7 +202,10 @@ function registration(data) {
 
                 for(let i = 0; i < rate_container.length; i ++) {
                     rate_container[i].className += " none";
+                    rate_text[i].innerText = "";
                 }
+                rated = [];
+                localStorage.setItem("rated", "[]");
             }
 
             //If no such username or password is wrong, show message

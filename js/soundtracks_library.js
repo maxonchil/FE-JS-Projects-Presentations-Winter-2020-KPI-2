@@ -1,5 +1,16 @@
 //Create a promise of AJAX request to set up a item on localeStorage first and then use it
 var soundtracks_base;
+var rated = [];
+if (/^logIn/.test(document.cookie)) {
+    if (localStorage.getItem("rated")) {
+        rated = JSON.parse(localStorage.getItem("rated"));
+    } else {
+        localStorage.setItem("rated", "[]");
+    }
+
+} else {
+    localStorage.setItem("rated", "[]");
+}
 
 async function ajax_soundtracks() {
     return new Promise(function (resolve, reject) {
@@ -100,36 +111,52 @@ function useSoundTracks(filtred) {
 
     //Сontent output function
     function displayContent(array) {
-        for (let i = 0; i < rate_input.length; i++) {
-            rate_input[i].checked = false;
-        }
-        if (rate_text.length !== 0) {
-            for (let i = 0; i < rate_text.length; i++) {
-                rate_text[i].innerText = "";
+        if (/^logIn/.test(document.cookie)) {
+            for (let i = 0; i < rate_input.length; i++) {
+                rate_input[i].checked = false;
             }
         }
+
         for (let i = 0; i < 10; i++) {
             if (array[i] === undefined) {
                 library_audio[i].removeAttribute("controls");
                 library_titles[i].innerText = "";
-                rate_container[i].className += " none";
+                if (/^logIn/.test(document.cookie)) {
+                    rate_container[i].className += " none";
+                }
+
 
             } else {
                 library_titles[i].innerText = array[i].trackName;
-                rate_container[i].classList.contains("none") ? rate_container[i].className = "library__main-rate" : true;
-                rate_container[i].setAttribute("data-track", array[i].trackName);
+
                 if (library_audio[i].hasAttribute("controls")) {
                     library_audio[i].setAttribute("src", array[i].src);
                 } else {
                     library_audio[i].setAttribute("controls", "controls");
                     library_audio[i].setAttribute("src", array[i].src);
                 }
-            }
-        }
-        if (array.length === 0)
-            library_titles[0].innerText = "No matches...";
-    }
+                if (/^logIn/.test(document.cookie)) {
+                    rate_container[i].classList.contains("none") ? rate_container[i].className = "library__main-rate" : false;
+                    rate_container[i].setAttribute("data-track", array[i].trackName);
+                    if (rated.length !== 0) {
+                        for (let k = 0; k < rated.length; k++) {
+                            if (rated[k] === array[i].trackName) {
+                                rate_container[i].classList.contains("none") ? true : rate_container[i].className += " none";
+                                console.log(rate_container[i])
+                                rate_text[i].innerHTML = "Voted!"
+                            }
+                            console.log(2)
+                            console.log(rated)
+                        }
+                    }
+                }
 
+            }
+            if (array.length === 0)
+                library_titles[0].innerText = "No matches...";
+        }
+
+    }
 
     // Display songs and their names to the page
     displayContent(soundtracks_array);
