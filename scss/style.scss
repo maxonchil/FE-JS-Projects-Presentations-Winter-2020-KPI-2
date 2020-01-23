@@ -973,9 +973,7 @@ body {
 .library__main-rated {
     font-size: calc(4px + 0.6vw);
     padding: 0 2%;
-    display: flex;
-    align-items: center;
-    height: 2vw;
+    display: inline;    
 }
 .library__main-checkbox {
     -webkit-appearance: none;

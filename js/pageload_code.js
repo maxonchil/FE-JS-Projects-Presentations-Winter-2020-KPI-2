@@ -17,11 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
         signIN_success.style.display = "block";
        
 
-        for (let i = 0; i < rate_container.length; i++) {
-            if (rate_container[i].classList.contains("none")) {
-                rate_container[i].className = "library__main-rate";
-            }
-        }
+      
         //If page was reloaded, add event on logou btn
         logOut_btn.onclick = () => {
             document.cookie = "logIn=" + [document.cookie.split("=")[1]] + ";" + "max-age=0;";
