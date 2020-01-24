@@ -893,11 +893,13 @@ body {
     margin-left: -500%;
     transition: .5s;
 }
+
 .library {
     border-top: 2px solid $main-black;
     border-bottom: 2px solid $main-black;
-    box-shadow: inset 0px 2px 2px  $main-violet, inset 0px -2px 2px $main-violet;
+    box-shadow: inset 0px 2px 2px $main-violet, inset 0px -2px 2px $main-violet;
 }
+
 .library__title {
     @include title-style();
 }
@@ -943,10 +945,10 @@ body {
     grid-template-columns: repeat(2, 50%);
     grid-auto-rows: 20%;
     align-items: center;
-   
+
     min-height: 480px;
     max-height: 610px;
-    
+
     padding-bottom: 1.5%;
 
     p {
@@ -958,7 +960,7 @@ body {
 .library__main-audio {
     outline: none;
     height: 2vw;
-    width: 89%;
+    width: 86%;
     float: left;
 }
 
@@ -969,12 +971,15 @@ body {
     flex-direction: row;
     height: 2vw;
     padding: 0 1%;
+    float: left;
 }
+
 .library__main-rated {
     font-size: calc(4px + 0.6vw);
     padding: 0 2%;
-    display: inline;    
+    display: inline;
 }
+
 .library__main-checkbox {
     -webkit-appearance: none;
     display: inline-block;
@@ -1451,6 +1456,259 @@ img[class$="social-logo"] {
     grid-template-columns: repeat(4, 25%);
     align-items: center;
 
+}
+
+
+
+.header__nav-mobile {
+    font-size: calc(4px + 0.6vw);
+}
+
+.header__burger-line {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    width: 10px;
+    height: 1px;
+    background-color: rgb(136, 7, 7);
+    transform: rotate(45deg);
+}
+
+.header__burger-line2 {
+    display: block;
+    position: absolute;
+    top: -2px;
+    right: 10px;
+    width: 10px;
+    height: 1px;
+    background-color: #fff;
+}
+
+.header__burger-secondLine2 {
+    top: 1px;
+}
+
+.header__burger-secondLine {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+
+/*burger mobile icon menu end*/
+
+
+label[for^="header__li"] {
+    color: $main-yellow;
+    display: block;
+
+    &:hover {
+        color: $main-black;
+    }
+}
+
+label[for="header__burger2"] {
+    display: none;
+}
+
+label[for^="header__burger"] {
+    position: relative;
+}
+
+#header__burger {
+    display: none;
+    -webkit-appearance: none;
+}
+
+#header__burger2 {
+    display: none;
+    -webkit-appearance: none;
+}
+
+/*functionality of burger start*/
+#header__burger:checked~label[for="header__burger"] {
+    display: none;
+}
+
+#header__burger:checked~label[for="header__burger2"] {
+    display: block;
+}
+
+#header__burger2:checked~.header__nav-mobile {
+    display: block;
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+    -webkit-transition: 1s;
+    transition: 1s;
+}
+
+#header__li1,
+#header__li3 {
+    -webkit-appearance: none;
+    display: none;
+}
+
+#header__li1:checked~.header__nav-mobile .header__submenu1 {
+    display: block;
+    transform: translate(-50px, -11px);
+}
+
+#header__li1:checked~.header__nav-mobile {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+    -webkit-transition: 1s;
+    transition: 1s;
+}
+
+
+#header__li3:checked~.header__nav-mobile .header__submenu3 {
+    display: block;
+    transform: translate(-50px, -11px);
+}
+
+#header__li3:checked~.header__nav-mobile {
+    opacity: 1;
+    -webkit-transform: translateY(0%);
+    transform: translateY(0%);
+    -webkit-transition: 1s;
+    transition: 1s;
+}
+
+
+@media screen and (max-width: 700px) {
+    .header h1 {
+        font-size: calc(2px + 2.5vw);
+    }
+
+    .header__nav {
+        display: none;
+    }
+
+    .header__nav-mobile {
+        position: absolute;
+        top: 3vw;
+        right: 0;
+        opacity: 0;
+        -webkit-transform: translateY(0%);
+        transform: translateY(0%);
+        -webkit-transition: 1s;
+        transition: 1s;
+        background: black;
+        z-index: 2;
+        width: 50px;
+
+        li {
+            border-right: none;
+            border-left: none;
+            border-top: 1px solid #fff;
+
+            &:first-child {
+                border-left: none;
+            }
+        }
+    }
+
+    .header__menu {
+        font-size: calc(2px + 0.6vw);
+        display: flex;
+        flex-direction: column;
+    }
+
+    [class^="header__menu-li"] {
+        max-height: 10px;
+    }
+
+    .header__submenu1,
+    .header__submenu3 {
+        display: none;
+    }
+
+    li[class^="header__submenu1-item"],
+    li[class^="header__submenu3-item"] {
+        border-right: 1px solid #fff;
+    }
+
+    .header__sign-inForm {
+        width: 70px;
+    }
+
+
+    .sign-inForm__error {
+        margin-top: 3px;
+        min-height: 3px;
+        font-size: calc(3px + 0.6vw);
+    }
+
+    .sign-inForm__submit {
+        width: 40%;
+        text-align: center;
+        padding: 1px;
+        line-height: 8px;
+    }
+
+    .sign-inForm__cancel {
+        width: 40%;
+        height: 12px;
+        line-height: 11px;
+    }
+
+    .header__create-acctountForm {
+        width: 100px;
+    }
+
+    .create-accountForm__errorEmail,
+    .create-accountForm__errorName,
+    .create-accountForm__errorPas {
+        min-height: 3px;
+        font-size: calc(3px + 0.4vw);
+    }
+
+    .create-accountForm__fields input {
+        font-size: calc(2px + 0.6vw);
+    }
+
+    .sign-inForm__title,
+    .create-accountForm__title {
+        font-size: calc(3px + 0.6vw);
+    }
+
+    .create-accoundForm__buttons input:first-child,
+    .create-accoundForm__buttons input:nth-child(2) {
+        font-size: calc(3px + 0.7vw);
+        width: 36%;
+    }
+
+    .sign-inForm__close:before,
+    .create-accountForm__close:before {
+        content: '';
+        background-color: #fff;
+        position: absolute;
+        width: 1vw;
+        height: 1px;
+        top: 0;
+        right: 0;
+        transform: rotate(45deg);
+
+    }
+
+    .sign-inForm__close:after,
+    .create-accountForm__close:after {
+        content: '';
+        background-color: #fff;
+        position: absolute;
+        width: 1vw;
+        height: 1px;
+        top: 0;
+        right: 0;
+        transform: rotate(-45deg);
+    }
+
+    .header__search .icon__search {
+        top: 15%;
+        right: 2px;
+    }
 }
 
 // @for $i from 1 to 4 {

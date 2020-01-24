@@ -21,6 +21,13 @@
     <header class="header" id="header">
         <div class="container">
             <div class="header__inner">
+
+                <input type="radio" id="header__burger" name="header__li1" checked>
+                <input type="radio" id="header__burger2" name="header__li1">
+                <input type="radio" id="header__li1" name="header__li1">
+                <input type="radio" id="header__li3" name="header__li1">
+
+               
                 <div class="header__title">
                     <a href="#">
                         <h1>Be3x Music</h1>
@@ -53,7 +60,7 @@
                             </ul>
                         </li>
 
-                        <li class="header__menu-li2"><a href="#albums"> Latest albums</a></li>
+                        <li class="header__menu-li2"><a href="#albums">Latest albums</a></li>
 
                         <li class="header__menu-li3"><a href="#contacts">Contacts</a>
                             <ul class="header__submenu3">
@@ -76,6 +83,7 @@
                         </li>
                     </ul>
                 </nav>
+                
                 <form action="" class="header__search">
                     <input type="search" placeholder="Search for tracks..." autocomplete="off" name="header-search">
                     <span class="icon__search"></span>
@@ -131,6 +139,67 @@
             </div>
             <input type="file" id="upload" accept="audio/*" multiple>
             <label class="header__upload" for="upload">Upload</label>
+            <label for="header__burger">
+                <span class="header__burger-line header__burger-firstLine"></span>
+                <span class="header__burger-line header__burger-secondLine"></span>
+            </label>
+
+            <label for="header__burger2">
+                <span class="header__burger-line2 header__burger-firstLine2"></span>
+                <span class="header__burger-line2 header__burger-secondLine2"></span>
+            </label>
+            <nav class="header__nav-mobile">
+                <ul class="header__menu">
+                    <li class="header__menu-li1">
+                        <label for="header__li1">Library</label>
+                        <ul class="header__submenu1">
+                            <li class="header__submenu1-item1"><a href="#library"><span class="header__submenu-span"
+                                        data-genre="Rock">Rock</span></a></li>
+                            <li class="header__submenu1-item2"><a href="#library"><span class="header__submenu-span"
+                                        data-genre="K-pop">K-Pop</span></a></li>
+                            <li class="header__submenu1-item3"><a href="#library"><span class="header__submenu-span"
+                                        data-genre="Jazz">Jazz</span></a></li>
+                            <li class="header__submenu1-item4"><a href="#library"><span class="header__submenu-span"
+                                        data-genre="Dubstep">Dubstep</span></a></li>
+                            <li class="header__submenu1-item5"><a href="#library"><span class="header__submenu-span"
+                                        data-genre="Electro">Electro</span></a></li>
+                            <li class="header__submenu1-item6"><a href="#library"><span class="header__submenu-span"
+                                        data-genre="Blues">Blues</span></a></li>
+                            <li class="header__submenu1-item7"><a href="#library"><span class="header__submenu-span"
+                                        data-genre="Techno">Techno</span></a></li>
+                            <li class="header__submenu1-item8"><a href="#library"><span class="header__submenu-span"
+                                        data-genre="Country">Country Music</span></a>
+                            </li>
+                            <li class="header__submenu1-item9"><a href="#library"><span data-genre="Pop">Pop
+                                        Music</span></a></li>
+                        </ul>
+                    </li>
+
+                    <li class="header__menu-li2"><a href="#albums">Latest albums</a></li>
+
+
+                    <li class="header__menu-li3">
+                        <label for="header__li3">Contacts</label>
+                        <ul class="header__submenu3">
+                            <li class="header__submenu3-item1">
+                                <a target="_blank"
+                                    href="https://www.instagram.com/be3x_voice/"><span>Instagram</span></a>
+                            </li>
+                            <li class="header__submenu3-item1">
+                                <a target="_blank"
+                                    href="https://www.facebook.com/maxonchil"><span>Facebook</span></a>
+                            </li>
+                            <li class="header__submenu3-item1">
+                                <a href="skype:richard77352"><span>Skype</span></a>
+                            </li>
+                            <li class="header__submenu3-item1">
+                                <a target="_blank"
+                                    href="https://github.com/maxonchil/FE14/invitations"><span>GitHub</span></a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
         </div>
         </div>
 
