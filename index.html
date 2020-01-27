@@ -342,16 +342,15 @@
 
         <section class="library" id="library">
             <div class="container">
-                <h3 class="library__title">Library</h3>
+                
                 <div class="library__inner">
                     <div class="library__top">
                         <p class="library__top-back"><span class="icon__arrow"></span>Back to main list</p>
+                        <h3 class="library__title">Library</h3>
                         <select name="filter">
-                            <option value="disabled" disabled selected>Filter songs by:</option>
+                            <option value="disabled" disabled selected>Sort songs by:</option>
                             <option name="rating">Rating, popular first</option>
                             <option name="alphabet">Rating, unpopular first</option>
-                            <option name="novelty">Novelty, newest first</option>
-                            <option name="novelty">Novelty, oldest first</option>
                             <option name="novelty">Alphabetically A-Z</option>
                             <option name="novelty">Alphabetically Z-A</option>
                         </select>
@@ -493,7 +492,7 @@
 
         <section class="albums" id="albums">
             <div class="container">
-                <h2 class="albums__title">New Albums 2019</h2>
+                <h2 class="albums__title">Latest albums</h2>
 
                 <div class="albums__inner">
                     <input type="radio" name="albums-radio" class="albums__checked" id="albums__item-checked">
@@ -544,7 +543,7 @@
         </section>
         <section class="contacts" id="contacts">
             <div class="container">
-                <h3>Contacts</h3>
+                <h3 class="contacts__title">Contacts</h3>
                 <div class="contacts__inner">
                     <div class="contacts__info">
                         <div class="contacts__info-top">
@@ -572,7 +571,7 @@
                                 <div class="contacts__form-fields">
                                     <input type="text" name="contacts-name" placeholder="Your name" required>
                                     <input type="email" name="contacts-email" placeholder="Your email" required>
-                                    <input type="tel" name="contacts-tel" placeholder="Your phone number" required>
+                                    <input type="tel" name="contacts-tel" placeholder="Your phone" required>
                                     <select name="contacts-select" required>
                                         <option value="disabled" disabled selected>Reason of your appeal:</option>
                                         <option value="found-bug">I found a bug</option>
@@ -602,14 +601,12 @@
     <footer class="footer">
         <div class="container">
             <div class="footer__inner">
-                <div class="footer__left">
-                    Be3x Music 2019. All rights reserved &#169;
-                </div>
+                <div class="footer__left"> Be3x Music 2019. All rights reserved&#169;</div>
                 <div class="footer__middle">
                     <nav>
                         <ul class="footer_nav">
                             <li><a href="#library">Library</a></li>
-                            <li><a href="#albums">New albums 2019</a></li>
+                            <li><a href="#albums">Latest albums</a></li>
                             <li><a href="#contacts">Contacts</a></li>
                         </ul>
                     </nav>

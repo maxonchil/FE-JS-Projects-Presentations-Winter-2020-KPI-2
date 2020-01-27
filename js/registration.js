@@ -63,9 +63,6 @@ function registration(data) {
 
         //If users_base  is undefined (ajax require is fail) then set up in localeStorage new key with user data
         if (users_base === undefined) {
-            let lsKey = "users_base",
-                lsValue = JSON.stringify([reg_userData]);
-
             ((key, item) => {
                 try {
                     localStorage.setItem(key, item);
@@ -77,7 +74,7 @@ function registration(data) {
                         users_base = [reg_userData];
                     }
                 }
-            })(lsKey, lsValue)
+            })("users_base", JSON.stringify([reg_userData]))
 
             //Clean all fields and error messages when reg is done
             reg_createForm.style.display = "none";
@@ -115,9 +112,7 @@ function registration(data) {
 
             users_base.push(reg_userData);
 
-            let lsKey = "users_base",
-                lsValue = JSON.stringify(users_base);
-
+           
             ((key, item) => {
                 try {
                     localStorage.setItem(key, item);
@@ -127,7 +122,7 @@ function registration(data) {
                         localStorage.setItem(key, item);
                     }
                 }
-            })(lsKey, lsValue)
+            })("users_base", JSON.stringify(users_base))
 
             reg_createForm.style.display = "none";
             reg_successForm.style.display = "block";
@@ -200,14 +195,15 @@ function registration(data) {
                 document.querySelector(".create-accountForm__success").style.display = "none";
                 document.querySelector("[name='create-acctountForm']").style.display = "block";
 
-                for(let i = 0; i < rate_container.length; i ++) {
+                for (let i = 0; i < rate_container.length; i++) {
                     rate_container[i].className += " none";
                     rate_text[i].innerText = "";
                 }
                 rated = [];
                 localStorage.setItem("rated", "[]");
+                Array.from(document.getElementsByClassName("library__main-audio"), e => e.className = "library__main-audio");
             }
-
+            Array.from(document.getElementsByClassName("library__main-audio"), e => e.className += " audio-loged");
             //If no such username or password is wrong, show message
         } else {
             document.querySelectorAll("input[name^='sign-in']").forEach(e => {

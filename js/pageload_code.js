@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    
+
     //If page was reloaded, rewriting registration elements
     if (/^logIn/.test(document.cookie)) {
         let rate_container = document.getElementsByClassName("library__main-rate"),
@@ -15,9 +15,12 @@ document.addEventListener("DOMContentLoaded", () => {
         logOut_btn.style.display = "block";
         signIN_success.innerText = `Hi, ${users_base[document.cookie.split("=")[1]].user_name}`;
         signIN_success.style.display = "block";
-       
+        Array.from(document.getElementsByClassName("library__main-audio"),
+            e => e.classList.contains("audio-loged") ?
+            true :
+            e.className += " audio-loged");
 
-      
+
         //If page was reloaded, add event on logou btn
         logOut_btn.onclick = () => {
             document.cookie = "logIn=" + [document.cookie.split("=")[1]] + ";" + "max-age=0;";
@@ -32,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             rated = [];
             localStorage.setItem("rated", "[]");
+            Array.from(document.getElementsByClassName("library__main-audio"), e => e.className = "library__main-audio");
         }
     }
 })
