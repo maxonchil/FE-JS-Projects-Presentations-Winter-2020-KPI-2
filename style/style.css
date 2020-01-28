@@ -972,17 +972,17 @@ label[for^="header__burger"] {
 .library__main-rated {
   font-size: calc(4px + 0.6vw);
   padding: 0 2%;
-  display: flex;
   align-content: center; }
 
 .library__main-checkbox {
   -webkit-appearance: none;
   display: inline-block;
   position: relative;
+  align-self: center;
   margin: 0;
   padding: 0;
-  width: 10px;
-  height: 10px;
+  width: calc(6px + 0.4vw);
+  height: calc(6px + 0.4vw);
   cursor: pointer;
   background: linear-gradient(to bottom, #c5c4c4 0%, #b4b3b2 100%);
   -webkit-clip-path: polygon(50% 0%, 66% 27%, 98% 35%, 76% 57%, 79% 91%, 50% 78%, 21% 91%, 24% 57%, 2% 35%, 32% 27%);
@@ -1286,7 +1286,8 @@ img[class$="social-logo"] {
   border-top: 2px solid #030200;
   margin-top: 2vw;
   font-family: "menu font";
-  font-size: calc(5px + 0.7vw); }
+  font-size: calc(5px + 0.7vw);
+  padding: .2% 0; }
   .footer a {
     text-decoration: none;
     color: #030200; }
@@ -1330,7 +1331,8 @@ img[class$="social-logo"] {
   cursor: pointer;
   font-family: "menu font";
   background-color: #fff;
-  border: 1px solid #030200; }
+  border: 1px solid #030200;
+  line-height: 1vw; }
   .footer__button:hover {
     background-color: #68009b;
     color: #f4ff00; }
@@ -1596,5 +1598,17 @@ img[class$="social-logo"] {
     width: 100%;
     padding: 5%;
     font-size: calc(7px + 0.5vw); } }
+
+@media screen and (min-width: 2200px) {
+  .sign-inForm__success {
+    font-size: calc(7px + 0.7vw); }
+  .sign-inForm__logOut {
+    font-size: calc(8px + 0.5vw); }
+  .library__main-rated {
+    font-size: calc(7px + 0.6vw); }
+  .library__bottom-controls {
+    width: 18%; }
+  .footer {
+    padding: .5% 0; } }
 
 /*# sourceMappingURL=style.css.map */
