@@ -1,6 +1,7 @@
 //Create a promise of AJAX request to set up a item on localeStorage first and then use it
 var soundtracks_base;
 var rated = [];
+
 if (/^logIn/.test(document.cookie)) {
     if (localStorage.getItem("rated")) {
         rated = JSON.parse(localStorage.getItem("rated"));

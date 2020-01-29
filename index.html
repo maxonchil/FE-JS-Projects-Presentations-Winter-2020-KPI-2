@@ -27,7 +27,7 @@
                 <input type="radio" id="header__li1" name="header__li1">
                 <input type="radio" id="header__li3" name="header__li1">
 
-               
+
                 <div class="header__title">
                     <a href="#">
                         <h1>Be3x Music</h1>
@@ -83,7 +83,7 @@
                         </li>
                     </ul>
                 </nav>
-                
+
                 <form action="" class="header__search">
                     <input type="search" placeholder="Search for tracks..." autocomplete="off" name="header-search">
                     <span class="icon__search"></span>
@@ -119,9 +119,9 @@
                     <label class="create-accountForm__close" for="reg_controler1"></label>
                     <div class="create-accountForm__success">Account has been created successfully!</div>
                     <form action="" name="create-acctountForm">
+
                         <div class="create-accountForm__fields">
                             <input type="text" name="user-name" placeholder="Your username" required>
-
                             <input type="email" name="user-email" placeholder="Your email" size="30" required>
                             <div class="create-accountForm__errorName"></div>
                             <div class="create-accountForm__errorEmail"></div>
@@ -129,6 +129,7 @@
                             <input type="password" name="user-password2" placeholder="Repeat a password" required>
                             <div class="create-accountForm__errorPas"></div>
                         </div>
+
                         <div class="create-accoundForm__buttons">
                             <input type="reset" value="Reset">
                             <input class="create-accountForm__submit" type="button" value="Submit">
@@ -137,8 +138,27 @@
                     </form>
                 </div>
             </div>
-            <input type="file" id="upload" accept="audio/*" multiple>
-            <label class="header__upload" for="upload">Upload</label>
+
+
+            <button class="header__upload-button" type="button">Upload</button>
+
+            <div class="header__upload-form">
+                <select class="header__upload-select" name="upload_song" id="">
+                    <option class="header__upload-option" value="Rock" disabled selected>Song genre:</option>
+                    <option class="header__upload-option" value="Rock">Rock</option>
+                    <option class="header__upload-option" value="K-pop">K-pop</option>
+                    <option class="header__upload-option" value="Jazz">Jazz</option>
+                    <option class="header__upload-option" value="Dubstep">Dubstep</option>
+                    <option class="header__upload-option" value="Electro">Electro</option>
+                    <option class="header__upload-option" value="Blues">Blues</option>
+                    <option class="header__upload-option" value="Techno">Techno</option>
+                    <option class="header__upload-option" value="Country">Country</option>
+                    <option class="header__upload-option" value="Pop">Pop</option>
+                </select>
+                <input type="file" id="upload" accept="audio/*" multiple>
+                <label class="header__upload-input" for="upload">Upload</label>
+            </div>
+
             <label for="header__burger">
                 <span class="header__burger-line header__burger-firstLine"></span>
                 <span class="header__burger-line header__burger-secondLine"></span>
@@ -186,8 +206,7 @@
                                     href="https://www.instagram.com/be3x_voice/"><span>Instagram</span></a>
                             </li>
                             <li class="header__submenu3-item1">
-                                <a target="_blank"
-                                    href="https://www.facebook.com/maxonchil"><span>Facebook</span></a>
+                                <a target="_blank" href="https://www.facebook.com/maxonchil"><span>Facebook</span></a>
                             </li>
                             <li class="header__submenu3-item1">
                                 <a href="skype:richard77352"><span>Skype</span></a>
@@ -342,7 +361,7 @@
 
         <section class="library" id="library">
             <div class="container">
-                
+
                 <div class="library__inner">
                     <div class="library__top">
                         <p class="library__top-back"><span class="icon__arrow"></span>Back to main list</p>
