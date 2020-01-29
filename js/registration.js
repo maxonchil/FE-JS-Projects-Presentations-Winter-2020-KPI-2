@@ -112,7 +112,7 @@ function registration(data) {
 
             users_base.push(reg_userData);
 
-           
+
             ((key, item) => {
                 try {
                     localStorage.setItem(key, item);
@@ -180,9 +180,7 @@ function registration(data) {
             document.querySelector(".sign-inForm__error").innerText = "";
 
             for (let i = 0; i < rate_container.length; i++) {
-                if (rate_container[i].classList.contains("none")) {
-                    rate_container[i].className = "library__main-rate";
-                }
+                rate_container[i].classList.toggle("none", false);
             }
 
             //If user loged in, then show him logout button
@@ -200,10 +198,16 @@ function registration(data) {
                     rate_text[i].innerText = "";
                 }
                 rated = [];
-                localStorage.setItem("rated", "[]");
-                Array.from(document.getElementsByClassName("library__main-audio"), e => e.className = "library__main-audio");
+
+                try {
+                    localStorage.setItem(localStorage.setItem("rated", "[]"));
+                } catch (error) {
+                    alert(error.name)
+                }
+                
+                Array.from(document.getElementsByClassName("library__main-audio"), e => e.classList.toggle("audio-loged", false));
             }
-            Array.from(document.getElementsByClassName("library__main-audio"), e => e.className += " audio-loged");
+            Array.from(document.getElementsByClassName("library__main-audio"), e => e.classList.toggle("audio-loged", true));
             //If no such username or password is wrong, show message
         } else {
             document.querySelectorAll("input[name^='sign-in']").forEach(e => {

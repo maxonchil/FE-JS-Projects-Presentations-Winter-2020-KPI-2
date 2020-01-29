@@ -15,10 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
         logOut_btn.style.display = "block";
         signIN_success.innerText = `Hi, ${users_base[document.cookie.split("=")[1]].user_name}`;
         signIN_success.style.display = "block";
-        Array.from(document.getElementsByClassName("library__main-audio"),
-            e => e.classList.contains("audio-loged") ?
-            true :
-            e.className += " audio-loged");
+
+        Array.from(document.getElementsByClassName("library__main-audio"),  e => e.classList.toggle("audio-loged", true));
 
 
         //If page was reloaded, add event on logou btn
@@ -34,8 +32,14 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             rated = [];
-            localStorage.setItem("rated", "[]");
-            Array.from(document.getElementsByClassName("library__main-audio"), e => e.className = "library__main-audio");
+
+            try {
+                localStorage.setItem("rated", "[]");
+            } catch (error) {
+                alert(error.name);
+            }
+
+            Array.from(document.getElementsByClassName("library__main-audio"), e => e.classList.toggle("audio-loged", false));
         }
     }
 })

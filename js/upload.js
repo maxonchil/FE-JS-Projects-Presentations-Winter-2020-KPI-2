@@ -35,7 +35,7 @@ document.getElementsByClassName("header__upload-button")[0].onclick = (event) =>
                     src: "music/" + upload_input.files[i].name,
                     trackName: upload_input.files[i].name.split(".mp3")[0],
                     genre: upload_genre,
-                    album: "",
+                    album: "uploaded",
                     rating: []
                 }
 

@@ -6,26 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
         rate_track,
         curent_index;
 
-    if (/^logIn/.test(document.cookie)) {
-        for (let i = 0; i < rate_container.length; i++) {
-            if (rated.indexOf(rate_container[i].dataset.track) !== -1) {
-                rate_container[i].classList.contains("none") ? true : rate_container[i].className += " none";
-                rate_text[i].innerText = "Voted!"
-            } else {
-                rate_container[i].classList.contains("none") ? rate_container[i].className = "library__main-rate" : false;
-                rate_text[i].innerText = ""
-            }
-        }
-    } else {
-        for (let i = 0; i < rate_container.length; i++) {
-            rate_container[i].className += " none";
-        }
-    }
-
 
     for (let i = 0; i < rate_container.length; i++) {
         rate_container[i].onclick = () => {
-
             rate_track = rate_container[i].dataset.track;
             curent_index = i;
         }
@@ -40,7 +23,12 @@ document.addEventListener("DOMContentLoaded", () => {
             rate_container[curent_index].className += " none";
             document.getElementsByClassName("library__main-rated")[curent_index].innerText = "Voted!";
             rated.push(rate_track);
-            localStorage.setItem("rated", JSON.stringify(rated));
+
+            try {
+                localStorage.setItem("rated", JSON.stringify(rated));
+            } catch (error) {
+                alert(error.name)
+            }
         }
     }
 

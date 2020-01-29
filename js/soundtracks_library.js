@@ -65,7 +65,9 @@ function useSoundTracks(filtred) {
 
     //Added pagination controls 
     if (controls_list.hasChildNodes()) {
-        controls_list.innerHTML = "";
+        while (controls_list.firstChild) {
+            controls_list.removeChild(controls_list.firstChild);
+        }
     }
     if (pages !== 1) {
         let first_li = document.createElement("li");
@@ -92,6 +94,7 @@ function useSoundTracks(filtred) {
     let library_titles = document.querySelectorAll(".library__main-title"),
         library_audio = document.querySelectorAll(".library__main-audio"),
         library_controls = document.querySelectorAll(".library__bottom-controlsItem"),
+        library_containers = document.getElementsByClassName("library__main-item"),
         rate_container = document.getElementsByClassName("library__main-rate"),
         rate_input = document.getElementsByClassName("library__main-checkbox"),
         rate_text = document.getElementsByClassName("library__main-rated");
@@ -117,125 +120,118 @@ function useSoundTracks(filtred) {
                 rate_input[i].checked = false;
             }
         }
-
         for (let i = 0; i < 10; i++) {
             if (array[i] === undefined) {
-                library_audio[i].removeAttribute("controls");
-                library_titles[i].innerText = "";
-                if (/^logIn/.test(document.cookie)) {
-                    rate_container[i].className += " none";
-                }
+                library_containers[i].classList.toggle("none", true);
             } else {
+                library_containers[i].classList.toggle("none", false);
                 library_titles[i].innerText = array[i].trackName;
-
-                if (library_audio[i].hasAttribute("controls")) {
-                    library_audio[i].setAttribute("src", array[i].src);
-                } else {
-                    library_audio[i].setAttribute("controls", "controls");
-                    library_audio[i].setAttribute("src", array[i].src);
-                }
+                library_audio[i].setAttribute("src", array[i].src);
                 if (/^logIn/.test(document.cookie)) {
-                    rate_container[i].classList.contains("none") ? rate_container[i].className = "library__main-rate" : false;
+                    rate_container[i].classList.toggle("none", false);
                     rate_container[i].setAttribute("data-track", array[i].trackName);
                     if (rated.length !== 0) {
                         if (rated.indexOf(array[i].trackName) !== -1) {
-                            rate_container[i].classList.contains("none") ? true : rate_container[i].className += " none";
+                            rate_container[i].classList.toggle("none", true);
                             rate_text[i].innerText = "Voted!"
                         } else {
                             rate_text[i].innerText = "";
+
                         }
                     }
+                } else {
+                    rate_container[i].classList.toggle("none", true);
                 }
 
             }
 
-        if (array.length === 0)
-            library_titles[0].innerText = "No matches...";
+            if (array.length === 0)
+                library_titles[0].innerText = "No matches...";
+        }
+
     }
 
-}
+    // Display songs and their names to the page
+    displayContent(soundtracks_array);
 
-// Display songs and their names to the page
-displayContent(soundtracks_array);
-
-//Added '-active' class to set up defoult chosed controler
-library_controls[0] === undefined ? true : library_controls[0].className += "-active";
+    //Added '-active' class to set up defoult chosed controler
+    library_controls[0] === undefined ? true : library_controls[0].className += "-active";
 
 
-//Added event on all library controls (pagination functionality)
-for (let i = 0; i < library_controls.length; i++) {
+    //Added event on all library controls (pagination functionality)
+    for (let i = 0; i < library_controls.length; i++) {
 
-    library_controls[i].onclick = (e) => {
+        library_controls[i].onclick = (e) => {
 
-        let curent_page = +e.target.innerText,
-            soundtracks_count = library_controls[i].innerText + 0,
-            show_on_page = soundtracks_array.slice(+soundtracks_count - 10, +soundtracks_count);
+            let curent_page = +e.target.innerText,
+                soundtracks_count = library_controls[i].innerText + 0,
+                show_on_page = soundtracks_array.slice(+soundtracks_count - 10, +soundtracks_count);
 
-        displayContent(show_on_page);
+            displayContent(show_on_page);
 
-        //Redrawing Controls when user click on it
-        if (curent_page === max_page) {
-            for (let i = 0; i < library_controls.length; i++) {
-                if (library_controls[i].classList.contains("library__bottom-controlsItem-active")) {
-                    library_controls[i].className = "library__bottom-controlsItem";
-                }
-            }
-            e.target.className += "-active"
-
-        } else if (max_page - curent_page === 1) {
-            if (library_controls.length < 5) {
+            //Redrawing Controls when user click on it
+            if (curent_page === max_page) {
                 for (let i = 0; i < library_controls.length; i++) {
                     if (library_controls[i].classList.contains("library__bottom-controlsItem-active")) {
                         library_controls[i].className = "library__bottom-controlsItem";
                     }
                 }
-                library_controls[library_controls.length - 2].className += "-active";
+                e.target.className += "-active"
+
+            } else if (max_page - curent_page === 1) {
+                if (library_controls.length < 5) {
+                    for (let i = 0; i < library_controls.length; i++) {
+                        if (library_controls[i].classList.contains("library__bottom-controlsItem-active")) {
+                            library_controls[i].className = "library__bottom-controlsItem";
+                        }
+                    }
+                    library_controls[library_controls.length - 2].className += "-active";
+                } else {
+                    controllersRedrawing(-4, max_page, 3);
+                }
+
+            } else if (curent_page >= 3) {
+                controllersRedrawing(-2, curent_page, 2);
+
+            } else if (curent_page === 2) {
+
+                controllersRedrawing(1, 0, 1);
+
             } else {
-                controllersRedrawing(-4, max_page, 3);
+                for (let i = 0; i < library_controls.length; i++) {
+                    if (library_controls[i].classList.contains("library__bottom-controlsItem-active")) {
+                        library_controls[i].className = "library__bottom-controlsItem";
+                    }
+                }
+                e.target.className += "-active"
             }
 
-        } else if (curent_page >= 3) {
-            controllersRedrawing(-2, curent_page, 2);
+        }
+    }
 
-        } else if (curent_page === 2) {
+    //Event for 'go to first page' button
+    document.querySelector(".library__bottom-beginning-btn").onclick = () => {
+        displayContent(soundtracks_array);
+        controllersRedrawing(1, 0, 0);
+    }
 
-            controllersRedrawing(1, 0, 1);
+    //Event for 'go to last page' button
+    document.querySelector(".library__bottom-end-btn").onclick = (e) => {
+        let tracks_count = soundtracks_array.length % 10 === 0 ? 10 : soundtracks_array.length % 10,
+            show_on_page = soundtracks_array.slice(-tracks_count);
 
+        displayContent(show_on_page);
+
+        if (library_controls.length === 5) {
+            controllersRedrawing(-4, max_page, 4);
         } else {
             for (let i = 0; i < library_controls.length; i++) {
                 if (library_controls[i].classList.contains("library__bottom-controlsItem-active")) {
                     library_controls[i].className = "library__bottom-controlsItem";
                 }
             }
-            e.target.className += "-active"
+            library_controls[library_controls.length - 1].className += "-active";
         }
 
     }
-}
-
-//Event for 'go to first page' button
-document.querySelector(".library__bottom-beginning-btn").onclick = () => {
-    displayContent(soundtracks_array);
-    controllersRedrawing(1, 0, 0);
-}
-
-//Event for 'go to last page' button
-document.querySelector(".library__bottom-end-btn").onclick = (e) => {
-    let tracks_count = soundtracks_array.length % 10 === 0 ? 10 : soundtracks_array.length % 10,
-        show_on_page = soundtracks_array.slice(-tracks_count);
-
-    displayContent(show_on_page);
-
-    if (library_controls.length === 5) {
-        controllersRedrawing(-4, max_page, 4);
-    } else {
-        for (let i = 0; i < library_controls.length; i++) {
-            if (library_controls[i].classList.contains("library__bottom-controlsItem-active")) {
-                library_controls[i].className = "library__bottom-controlsItem";
-            }
-        }
-        library_controls[library_controls.length - 1].className += "-active";
-    }
-
-}
 }
