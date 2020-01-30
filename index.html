@@ -368,10 +368,10 @@
                         <h3 class="library__title">Library</h3>
                         <select name="filter">
                             <option value="disabled" disabled selected>Sort songs by:</option>
-                            <option name="rating">Rating, popular first</option>
-                            <option name="alphabet">Rating, unpopular first</option>
-                            <option name="novelty">Alphabetically A-Z</option>
-                            <option name="novelty">Alphabetically Z-A</option>
+                            <option class="library__sort-item" value="popular" name="rating_popular">Rating, popular first</option>
+                            <option class="library__sort-item" value="unpopular" name="rating_unpopular">Rating, unpopular first</option>
+                            <option class="library__sort-item" value="a-z" name="alphabetically_A-Z">Alphabetically A-Z</option>
+                            <option class="library__sort-item" value="z-a" name="alphabetically_Z-A">Alphabetically Z-A</option>
                         </select>
                     </div>
 
@@ -659,6 +659,7 @@
     <script src="js/albums.js"></script>
     <script src="js/rate.js"></script>
     <script src="js/pageload_code.js"></script>
+    <script src="js/sort.js"></script>
 </body>
 
 </html>
