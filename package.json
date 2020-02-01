@@ -25,6 +25,7 @@
     "gulp-watch": "^5.0.1"
   },
   "devDependencies": {
+    "gulp-concat": "^2.6.1",
     "lite-server": "^2.5.4",
     "prettier": "^1.19.1"
   }

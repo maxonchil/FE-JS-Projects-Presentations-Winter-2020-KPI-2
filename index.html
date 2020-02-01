@@ -29,14 +29,14 @@
 
 
                 <div class="header__title">
-                    <a href="#">
+                    <a tabindex="1" href="#">
                         <h1>Be3x Music</h1>
                     </a>
                 </div>
                 <nav class="header__nav">
                     <ul class="header__menu">
                         <li class="header__menu-li1">
-                            <a href="#library">Library</a>
+                            <a tabindex="2" href="#library">Library</a>
                             <ul class="header__submenu1">
                                 <li class="header__submenu1-item1"><a href="#library"><span class="header__submenu-span"
                                             data-genre="Rock">Rock</span></a></li>
@@ -60,9 +60,9 @@
                             </ul>
                         </li>
 
-                        <li class="header__menu-li2"><a href="#albums">Latest albums</a></li>
+                        <li class="header__menu-li2"><a tabindex="3" href="#albums">Latest albums</a></li>
 
-                        <li class="header__menu-li3"><a href="#contacts">Contacts</a>
+                        <li class="header__menu-li3"><a tabindex="4" href="#contacts">Contacts</a>
                             <ul class="header__submenu3">
                                 <li class="header__submenu3-item1">
                                     <a target="_blank"
@@ -85,8 +85,9 @@
                 </nav>
 
                 <form action="#" class="header__search">
-                    <input type="search" placeholder="Search for tracks..." autocomplete="off" name="header-search">
-                    <span class="icon__search"></span>
+                    <input tabindex="5" type="search" placeholder="Search for tracks..." autocomplete="off"
+                        name="header-search">
+                    <span tabindex="6" class="icon__search"></span>
                 </form>
 
                 <div class="header__registation">
@@ -140,7 +141,7 @@
                 </div>
 
 
-                <button class="header__upload-button" type="button">Upload</button>
+                <button tabindex="7" class="header__upload-button" type="button">Upload</button>
 
                 <div class="header__upload-form">
                     <select class="header__upload-select" name="upload_song">
@@ -229,7 +230,7 @@
             <nav>
                 <ul class="aside__menu">
                     <li class="aside__menu-item1">
-                        <a href="#top10"><span class="icon__top10"></span></a>
+                        <a tabindex="8" href="#"><span class="icon__top10"></span></a>
                         <ul class="aside__submenu-1">
                             <li class="aside__sumbenu1-item1 sort_top-10" data-genre="Rock"><a href="#library">Top 10
                                     Rock</a></li>
@@ -252,39 +253,39 @@
                         </ul>
                     </li>
                     <li class="aside__menu-item2">
-                        <a title="Rock songs" href="#library"><span data-genre="Rock"
+                        <a tabindex="9" title="Rock songs" href="#library"><span data-genre="Rock"
                                 class="icon__rock_and_roll aside__icon"></span></a>
                     </li>
                     <li class="aside__menu-item3">
-                        <a title="K-pop songs" href="#library"><span data-genre="K-pop"
+                        <a tabindex="10" title="K-pop songs" href="#library"><span data-genre="K-pop"
                                 class="icon__kpop aside__icon"></span></a>
                     </li>
                     <li class="aside__menu-item4">
-                        <a title="Jazz songs" href="#library"><span data-genre="Jazz"
+                        <a tabindex="11" title="Jazz songs" href="#library"><span data-genre="Jazz"
                                 class="icon__jazz aside__icon"></span></a>
                     </li>
                     <li class="aside__menu-item5">
-                        <a title="Dabstep songs" href="#library"><span data-genre="Dubstep"
+                        <a tabindex="12" title="Dabstep songs" href="#library"><span data-genre="Dubstep"
                                 class="icon__dabstep aside__icon"></span></a>
                     </li>
                     <li class="aside__menu-item6">
-                        <a title="Electro songs" href="#library"><span data-genre="Electro"
+                        <a tabindex="13" title="Electro songs" href="#library"><span data-genre="Electro"
                                 class="icon__electro aside__icon"></span></a>
                     </li>
                     <li class="aside__menu-item7">
-                        <a title="Blues songs" href="#library"><span data-genre="Blues"
+                        <a tabindex="14" title="Blues songs" href="#library"><span data-genre="Blues"
                                 class="icon__blues aside__icon"></span></a>
                     </li>
                     <li class="aside__menu-item8">
-                        <a title="Techno songs" href="#library"><span data-genre="Techno"
+                        <a tabindex="15" title="Techno songs" href="#library"><span data-genre="Techno"
                                 class="icon__techno aside__icon"></span></a>
                     </li>
                     <li class="aside__menu-item9">
-                        <a title="Country songs" href="#library"><span data-genre="Country"
+                        <a tabindex="16" title="Country songs" href="#library"><span data-genre="Country"
                                 class="icon__country aside__icon"></span></a>
                     </li>
                     <li class="aside__menu-item10">
-                        <a title="Pop songs" href="#library"><span data-genre="Pop"
+                        <a tabindex="17" title="Pop songs" href="#library"><span data-genre="Pop"
                                 class="icon__pop aside__icon"></span></a>
                     </li>
                 </ul>
@@ -385,6 +386,7 @@
 
 
                     <div class="library__main">
+                        <div class="library__main-nomatches none">No such matches...</div>
                         <div class="library__main-item">
                             <p class="library__main-title"></p>
                             <audio class="library__main-audio" controls></audio>
@@ -656,7 +658,7 @@
         </div>
     </footer>
 
-
+<!-- 
     <script src="js/registration.js"></script>
     <script src="js/soundtracks_library.js"></script>
     <script src="js/upload.js"></script>
@@ -666,7 +668,8 @@
     <script src="js/albums.js"></script>
     <script src="js/rate.js"></script>
     <script src="js/pageload_code.js"></script>
-    <script src="js/sort.js"></script>
+    <script src="js/sort.js"></script> -->
+    <script  src="js/script.bundle.js"></script>
 </body>
 
 </html>

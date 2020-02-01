@@ -1,9 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-    sum = (a, ...rest) => rest.length !== 0 ? a + sum(...rest) : a;
+   let sum = (a, ...rest) => rest.length !== 0 ? a + sum(...rest) : a;
 
     let sort_functions = {
-        number: (direction) => direction === "up" ? (a, b) => a.rating - b.rating : (a, b) => b.rating - a.rating,
+        number: (direction) => direction === "up" ? (a, b) => a.rating[0] - b.rating[0] : (a, b) => b.rating[0] - a.rating[0],
         string: (direction) => {
             switch (direction) {
                 case "up":
@@ -27,15 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         }
                     };
             }
-        }
-    }
 
-    let sort_type = (key, direction) => {
-        switch (key) {
-            case "rating":
-                return sort_functions.number(direction);
-            case "trackName":
-                return sort_functions.string(direction);
         }
     }
 
@@ -43,13 +35,21 @@ document.addEventListener("DOMContentLoaded", () => {
         e.onclick = () => {
             let direction = e.dataset.direction,
                 key = e.value,
-                sorted = soundtracks_array.filter(e => e.rating.length).map((x) => ({
-                        ...x,
-                        rating: sum(...x.rating)
-                    })
+                array = JSON.parse(localStorage.getItem("soundtrack_array"));
 
-                );
-            useSoundTracks(sorted.sort(sort_type(key, direction)));
+            switch (key) {
+                case "trackName":
+                    return useSoundTracks(array.sort(sort_functions.string(direction)));
+
+                case "rating":
+                    return useSoundTracks(
+                        array.filter(e => e.rating.length)
+                        .map(x => ({
+                            ...x,
+                            rating: [sum(...x.rating)]
+                        }))
+                        .sort(sort_functions.number(direction)));
+            }
         }
     })
 
@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     ...x,
                     rating: sum(...x.rating)
                 }));
-                
+
             sorted.length >= 10 ?
                 sorted = sorted.slice(0, 10).sort(sort_type("rating", "down")) :
                 sorted = sorted.sort(sort_type("rating", "down"))

@@ -1,4 +1,5 @@
 //Create a promise of AJAX request to set up a item on localeStorage first and then use it
+
 var soundtracks_base;
 var rated = [];
 
@@ -56,8 +57,11 @@ function useSoundTracks(filtred) {
     } else {
         document.getElementsByClassName("library__top-back")[0].className += "library__top-back";
         soundtracks_array = filtred;
-    }
 
+    }
+  
+    localStorage.setItem("soundtrack_array", JSON.stringify(soundtracks_array));
+    
     let max_page = Math.ceil(soundtracks_array.length / 10),
         controls_list = document.querySelector(".library__bottom-controls"),
         pages = Math.ceil(soundtracks_array.length / 10) >= 5 ? 5 : Math.ceil(soundtracks_array.length / 10);
@@ -97,7 +101,8 @@ function useSoundTracks(filtred) {
         library_containers = document.getElementsByClassName("library__main-item"),
         rate_container = document.getElementsByClassName("library__main-rate"),
         rate_input = document.getElementsByClassName("library__main-checkbox"),
-        rate_text = document.getElementsByClassName("library__main-rated");
+        rate_text = document.getElementsByClassName("library__main-rated"),
+        no_mutches = document.getElementsByClassName("library__main-nomatches")[0];
 
     //Function for rewriting innerText of controls when user click on it
     function controllersRedrawing(left_shift, basic_page, active_e) {
@@ -124,6 +129,8 @@ function useSoundTracks(filtred) {
             if (array[i] === undefined) {
                 library_containers[i].classList.toggle("none", true);
             } else {
+                // no_mutches.toggle("none", true);
+                no_mutches.classList.toggle("none", true);
                 library_containers[i].classList.toggle("none", false);
                 library_titles[i].innerText = array[i].trackName;
                 library_audio[i].setAttribute("src", array[i].src);
@@ -146,9 +153,11 @@ function useSoundTracks(filtred) {
             }
 
             if (array.length === 0) {
-                while(controls_list.firstChild) {
+                while (controls_list.firstChild) {
                     controls_list.removeChild(controls_list.firstChild);
                 }
+                no_mutches.classList.toggle("none", false);
+
             }
 
         }
@@ -213,29 +222,35 @@ function useSoundTracks(filtred) {
         }
     }
 
-    //Event for 'go to first page' button
-    document.querySelector(".library__bottom-beginning-btn").onclick = () => {
-        displayContent(soundtracks_array);
-        controllersRedrawing(1, 0, 0);
-    }
+    if (document.querySelector(".library__bottom-beginning-btn")) {
 
-    //Event for 'go to last page' button
-    document.querySelector(".library__bottom-end-btn").onclick = (e) => {
-        let tracks_count = soundtracks_array.length % 10 === 0 ? 10 : soundtracks_array.length % 10,
-            show_on_page = soundtracks_array.slice(-tracks_count);
+        document.querySelector(".library__bottom-beginning-btn").onclick = () => {
+            displayContent(soundtracks_array);
+            controllersRedrawing(1, 0, 0);
+        }
+        document.querySelector(".library__bottom-end-btn").onclick = (e) => {
+            let tracks_count = soundtracks_array.length % 10 === 0 ? 10 : soundtracks_array.length % 10,
+                show_on_page = soundtracks_array.slice(-tracks_count);
 
-        displayContent(show_on_page);
+            displayContent(show_on_page);
 
-        if (library_controls.length === 5) {
-            controllersRedrawing(-4, max_page, 4);
-        } else {
-            for (let i = 0; i < library_controls.length; i++) {
-                if (library_controls[i].classList.contains("library__bottom-controlsItem-active")) {
-                    library_controls[i].className = "library__bottom-controlsItem";
+            if (library_controls.length === 5) {
+                controllersRedrawing(-4, max_page, 4);
+            } else {
+                for (let i = 0; i < library_controls.length; i++) {
+                    if (library_controls[i].classList.contains("library__bottom-controlsItem-active")) {
+                        library_controls[i].className = "library__bottom-controlsItem";
+                    }
                 }
+                library_controls[library_controls.length - 1].className += "-active";
             }
-            library_controls[library_controls.length - 1].className += "-active";
+
         }
 
     }
+    //Event for 'go to first page' button
+
+
+    //Event for 'go to last page' button
+
 }
