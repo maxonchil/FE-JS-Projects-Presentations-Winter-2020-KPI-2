@@ -20,14 +20,13 @@ gulp.task('sass-compile', function () {
         .pipe(gulp.dest('style'))
 });
 
-gulp.task('watch', function () {
-    gulp.watch('./scss/**/*.scss', gulp.series('sass-compile'))
-})
-
-
 gulp.task('concat', function () {
     return gulp.src(sourceFile)
         .pipe(concat(destFile))
-
         .pipe(gulp.dest(destFolder))
 });
+
+gulp.task('watch', function () {
+    gulp.watch('./scss/**/*.scss', gulp.series('sass-compile'));
+    gulp.watch(['./js/*.js', '!./js/script.bundle.js'], gulp.series('concat'));
+})
