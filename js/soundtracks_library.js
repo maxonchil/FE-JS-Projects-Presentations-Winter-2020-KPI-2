@@ -145,8 +145,12 @@ function useSoundTracks(filtred) {
 
             }
 
-            if (array.length === 0)
-                library_titles[0].innerText = "No matches...";
+            if (array.length === 0) {
+                while(controls_list.firstChild) {
+                    controls_list.removeChild(controls_list.firstChild);
+                }
+            }
+
         }
 
     }

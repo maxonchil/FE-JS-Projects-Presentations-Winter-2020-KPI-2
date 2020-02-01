@@ -84,7 +84,7 @@
                     </ul>
                 </nav>
 
-                <form action="" class="header__search">
+                <form action="#" class="header__search">
                     <input type="search" placeholder="Search for tracks..." autocomplete="off" name="header-search">
                     <span class="icon__search"></span>
                 </form>
@@ -95,131 +95,132 @@
                     <input type="radio" name="registation-controls" id="reg_controler2">
                     <input type="radio" name="registation-controls" id="reg_controler3">
                     <label class="header__registration-signIn" for="reg_controler2">Sign in</label>
-                    <label class="header__registration-createAccount" for="reg_controler3"">Create account</label>
+                    <label class="header__registration-createAccount" for="reg_controler3">Create account</label>
                     <div class=" sign-inForm__success"> </div>
-                <button type="submit" class="sign-inForm__logOut">Log out</button>
+                    <button type="submit" class="sign-inForm__logOut">Log out</button>
 
-                <div class="header__sign-inForm">
-                    <span class="sign-inForm__title">Sign in</span>
-                    <label class="sign-inForm__close" for="reg_controler1"></label>
-                    <form action="" name="sign-inForm">
-                        <div class="sign-inForm__fields">
-                            <input type="text" name="sign-inLog" placeholder="User name" required>
-                            <input type="password" name="sign-inPas" placeholder="Password" required>
-                            <div class="sign-inForm__error"></div>
-                        </div>
-                        <div class="sign-inForm__buttons">
-                            <label class="sign-inForm__cancel" for="reg_controler1">Cancel</label>
-                            <button class="sign-inForm__submit" type="button">Submit</button>
-                        </div>
-                    </form>
+                    <div class="header__sign-inForm">
+                        <span class="sign-inForm__title">Sign in</span>
+                        <label class="sign-inForm__close" for="reg_controler1"></label>
+                        <form action="#" name="sign-inForm">
+                            <div class="sign-inForm__fields">
+                                <input type="text" name="sign-inLog" placeholder="User name" required>
+                                <input type="password" name="sign-inPas" placeholder="Password" required>
+                                <div class="sign-inForm__error"></div>
+                            </div>
+                            <div class="sign-inForm__buttons">
+                                <label class="sign-inForm__cancel" for="reg_controler1">Cancel</label>
+                                <button class="sign-inForm__submit" type="button">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="header__create-acctountForm">
+                        <span class="create-accountForm__title">Create account</span>
+                        <label class="create-accountForm__close" for="reg_controler1"></label>
+                        <div class="create-accountForm__success">Account has been created successfully!</div>
+                        <form action="#" name="create-acctountForm">
+
+                            <div class="create-accountForm__fields">
+                                <input type="text" name="user-name" placeholder="Your username" required>
+                                <input type="email" name="user-email" placeholder="Your email" size="30" required>
+                                <div class="create-accountForm__errorName"></div>
+                                <div class="create-accountForm__errorEmail"></div>
+                                <input type="password" name="user-password" placeholder="Choose a password" required>
+                                <input type="password" name="user-password2" placeholder="Repeat a password" required>
+                                <div class="create-accountForm__errorPas"></div>
+                            </div>
+
+                            <div class="create-accoundForm__buttons">
+                                <input type="reset" value="Reset">
+                                <input class="create-accountForm__submit" type="button" value="Submit">
+
+                            </div>
+                        </form>
+                    </div>
                 </div>
-                <div class="header__create-acctountForm">
-                    <span class="create-accountForm__title">Create account</span>
-                    <label class="create-accountForm__close" for="reg_controler1"></label>
-                    <div class="create-accountForm__success">Account has been created successfully!</div>
-                    <form action="" name="create-acctountForm">
 
-                        <div class="create-accountForm__fields">
-                            <input type="text" name="user-name" placeholder="Your username" required>
-                            <input type="email" name="user-email" placeholder="Your email" size="30" required>
-                            <div class="create-accountForm__errorName"></div>
-                            <div class="create-accountForm__errorEmail"></div>
-                            <input type="password" name="user-password" placeholder="Choose a password" required>
-                            <input type="password" name="user-password2" placeholder="Repeat a password" required>
-                            <div class="create-accountForm__errorPas"></div>
-                        </div>
 
-                        <div class="create-accoundForm__buttons">
-                            <input type="reset" value="Reset">
-                            <input class="create-accountForm__submit" type="button" value="Submit">
+                <button class="header__upload-button" type="button">Upload</button>
 
-                        </div>
-                    </form>
+                <div class="header__upload-form">
+                    <select class="header__upload-select" name="upload_song">
+                        <option class="header__upload-option" value="Rock" disabled selected>Song genre:</option>
+                        <option class="header__upload-option" value="Rock">Rock</option>
+                        <option class="header__upload-option" value="K-pop">K-pop</option>
+                        <option class="header__upload-option" value="Jazz">Jazz</option>
+                        <option class="header__upload-option" value="Dubstep">Dubstep</option>
+                        <option class="header__upload-option" value="Electro">Electro</option>
+                        <option class="header__upload-option" value="Blues">Blues</option>
+                        <option class="header__upload-option" value="Techno">Techno</option>
+                        <option class="header__upload-option" value="Country">Country</option>
+                        <option class="header__upload-option" value="Pop">Pop</option>
+                    </select>
+                    <input type="file" id="upload" accept="audio/*" multiple>
+                    <label class="header__upload-input" for="upload">Upload</label>
                 </div>
+
+                <label for="header__burger">
+                    <span class="header__burger-line header__burger-firstLine"></span>
+                    <span class="header__burger-line header__burger-secondLine"></span>
+                </label>
+
+                <label for="header__burger2">
+                    <span class="header__burger-line2 header__burger-firstLine2"></span>
+                    <span class="header__burger-line2 header__burger-secondLine2"></span>
+                </label>
+                <nav class="header__nav-mobile">
+                    <ul class="header__menu">
+                        <li class="header__menu-li1">
+                            <label for="header__li1">Library</label>
+                            <ul class="header__submenu1">
+                                <li class="header__submenu1-item1"><a href="#library"><span class="header__submenu-span"
+                                            data-genre="Rock">Rock</span></a></li>
+                                <li class="header__submenu1-item2"><a href="#library"><span class="header__submenu-span"
+                                            data-genre="K-pop">K-Pop</span></a></li>
+                                <li class="header__submenu1-item3"><a href="#library"><span class="header__submenu-span"
+                                            data-genre="Jazz">Jazz</span></a></li>
+                                <li class="header__submenu1-item4"><a href="#library"><span class="header__submenu-span"
+                                            data-genre="Dubstep">Dubstep</span></a></li>
+                                <li class="header__submenu1-item5"><a href="#library"><span class="header__submenu-span"
+                                            data-genre="Electro">Electro</span></a></li>
+                                <li class="header__submenu1-item6"><a href="#library"><span class="header__submenu-span"
+                                            data-genre="Blues">Blues</span></a></li>
+                                <li class="header__submenu1-item7"><a href="#library"><span class="header__submenu-span"
+                                            data-genre="Techno">Techno</span></a></li>
+                                <li class="header__submenu1-item8"><a href="#library"><span class="header__submenu-span"
+                                            data-genre="Country">Country Music</span></a>
+                                </li>
+                                <li class="header__submenu1-item9"><a href="#library"><span data-genre="Pop">Pop
+                                            Music</span></a></li>
+                            </ul>
+                        </li>
+
+                        <li class="header__menu-li2"><a href="#albums">Latest albums</a></li>
+
+
+                        <li class="header__menu-li3">
+                            <label for="header__li3">Contacts</label>
+                            <ul class="header__submenu3">
+                                <li class="header__submenu3-item1">
+                                    <a target="_blank"
+                                        href="https://www.instagram.com/be3x_voice/"><span>Instagram</span></a>
+                                </li>
+                                <li class="header__submenu3-item1">
+                                    <a target="_blank"
+                                        href="https://www.facebook.com/maxonchil"><span>Facebook</span></a>
+                                </li>
+                                <li class="header__submenu3-item1">
+                                    <a href="skype:richard77352"><span>Skype</span></a>
+                                </li>
+                                <li class="header__submenu3-item1">
+                                    <a target="_blank"
+                                        href="https://github.com/maxonchil/FE14/invitations"><span>GitHub</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
             </div>
-
-
-            <button class="header__upload-button" type="button">Upload</button>
-
-            <div class="header__upload-form">
-                <select class="header__upload-select" name="upload_song" id="">
-                    <option class="header__upload-option" value="Rock" disabled selected>Song genre:</option>
-                    <option class="header__upload-option" value="Rock">Rock</option>
-                    <option class="header__upload-option" value="K-pop">K-pop</option>
-                    <option class="header__upload-option" value="Jazz">Jazz</option>
-                    <option class="header__upload-option" value="Dubstep">Dubstep</option>
-                    <option class="header__upload-option" value="Electro">Electro</option>
-                    <option class="header__upload-option" value="Blues">Blues</option>
-                    <option class="header__upload-option" value="Techno">Techno</option>
-                    <option class="header__upload-option" value="Country">Country</option>
-                    <option class="header__upload-option" value="Pop">Pop</option>
-                </select>
-                <input type="file" id="upload" accept="audio/*" multiple>
-                <label class="header__upload-input" for="upload">Upload</label>
-            </div>
-
-            <label for="header__burger">
-                <span class="header__burger-line header__burger-firstLine"></span>
-                <span class="header__burger-line header__burger-secondLine"></span>
-            </label>
-
-            <label for="header__burger2">
-                <span class="header__burger-line2 header__burger-firstLine2"></span>
-                <span class="header__burger-line2 header__burger-secondLine2"></span>
-            </label>
-            <nav class="header__nav-mobile">
-                <ul class="header__menu">
-                    <li class="header__menu-li1">
-                        <label for="header__li1">Library</label>
-                        <ul class="header__submenu1">
-                            <li class="header__submenu1-item1"><a href="#library"><span class="header__submenu-span"
-                                        data-genre="Rock">Rock</span></a></li>
-                            <li class="header__submenu1-item2"><a href="#library"><span class="header__submenu-span"
-                                        data-genre="K-pop">K-Pop</span></a></li>
-                            <li class="header__submenu1-item3"><a href="#library"><span class="header__submenu-span"
-                                        data-genre="Jazz">Jazz</span></a></li>
-                            <li class="header__submenu1-item4"><a href="#library"><span class="header__submenu-span"
-                                        data-genre="Dubstep">Dubstep</span></a></li>
-                            <li class="header__submenu1-item5"><a href="#library"><span class="header__submenu-span"
-                                        data-genre="Electro">Electro</span></a></li>
-                            <li class="header__submenu1-item6"><a href="#library"><span class="header__submenu-span"
-                                        data-genre="Blues">Blues</span></a></li>
-                            <li class="header__submenu1-item7"><a href="#library"><span class="header__submenu-span"
-                                        data-genre="Techno">Techno</span></a></li>
-                            <li class="header__submenu1-item8"><a href="#library"><span class="header__submenu-span"
-                                        data-genre="Country">Country Music</span></a>
-                            </li>
-                            <li class="header__submenu1-item9"><a href="#library"><span data-genre="Pop">Pop
-                                        Music</span></a></li>
-                        </ul>
-                    </li>
-
-                    <li class="header__menu-li2"><a href="#albums">Latest albums</a></li>
-
-
-                    <li class="header__menu-li3">
-                        <label for="header__li3">Contacts</label>
-                        <ul class="header__submenu3">
-                            <li class="header__submenu3-item1">
-                                <a target="_blank"
-                                    href="https://www.instagram.com/be3x_voice/"><span>Instagram</span></a>
-                            </li>
-                            <li class="header__submenu3-item1">
-                                <a target="_blank" href="https://www.facebook.com/maxonchil"><span>Facebook</span></a>
-                            </li>
-                            <li class="header__submenu3-item1">
-                                <a href="skype:richard77352"><span>Skype</span></a>
-                            </li>
-                            <li class="header__submenu3-item1">
-                                <a target="_blank"
-                                    href="https://github.com/maxonchil/FE14/invitations"><span>GitHub</span></a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
-        </div>
         </div>
 
     </header>
@@ -230,15 +231,24 @@
                     <li class="aside__menu-item1">
                         <a href="#top10"><span class="icon__top10"></span></a>
                         <ul class="aside__submenu-1">
-                            <li class="aside__sumbenu1-item1"><a href="#library">Top 10 Rock</a></li>
-                            <li class="aside__sumbenu1-item2"><a href="#library">Top 10 K-pop</a></li>
-                            <li class="aside__sumbenu1-item3"><a href="#library">Top 10 Jazz</a></li>
-                            <li class="aside__sumbenu1-item4"><a href="#library">Top 10 Dubstep</a></li>
-                            <li class="aside__sumbenu1-item5"><a href="#library">Top 10 Electro</a></li>
-                            <li class="aside__sumbenu1-item6"><a href="#library">Top 10 Blues</a></li>
-                            <li class="aside__sumbenu1-item7"><a href="#library">Top 10 Techno</a></li>
-                            <li class="aside__sumbenu1-item8"><a href="#library">Top 10 Country</a></li>
-                            <li class="aside__sumbenu1-item9"><a href="#library">Top 10 Pop</a></li>
+                            <li class="aside__sumbenu1-item1 sort_top-10" data-genre="Rock"><a href="#library">Top 10
+                                    Rock</a></li>
+                            <li class="aside__sumbenu1-item2 sort_top-10" data-genre="K-pop"><a href="#library">Top 10
+                                    K-pop</a></li>
+                            <li class="aside__sumbenu1-item3 sort_top-10" data-genre="Jazz"><a href="#library">Top 10
+                                    Jazz</a></li>
+                            <li class="aside__sumbenu1-item4 sort_top-10" data-genre="Dubstep"><a href="#library">Top 10
+                                    Dubstep</a></li>
+                            <li class="aside__sumbenu1-item5 sort_top-10" data-genre="Electro"><a href="#library">Top 10
+                                    Electro</a></li>
+                            <li class="aside__sumbenu1-item6 sort_top-10" data-genre="Blues"><a href="#library">Top 10
+                                    Blues</a></li>
+                            <li class="aside__sumbenu1-item7 sort_top-10" data-genre="Techno"><a href="#library">Top 10
+                                    Techno</a></li>
+                            <li class="aside__sumbenu1-item8 sort_top-10" data-genre="Country"><a href="#library">Top 10
+                                    Country</a></li>
+                            <li class="aside__sumbenu1-item9 sort_top-10" data-genre="Pop"><a href="#library">Top 10
+                                    Pop</a></li>
                         </ul>
                     </li>
                     <li class="aside__menu-item2">
@@ -293,8 +303,7 @@
                     <div class="slider__inner">
                         <div class="slider__item">
                             <h4>Top 1 hot 100</h4>
-                            <video poster="img/mariah_carey.jpg" controls>
-                                <source src="video/mariah_carey.mp4" type="video/mp4">
+                            <video src="video/mariah_carey.mp4" poster="img/mariah_carey.jpg" controls>
                             </video>
                             <label for="control2"></label>
 
@@ -302,8 +311,7 @@
 
                         <div class="slider__item">
                             <h4>Top 1 Billboard 200</h4>
-                            <video poster="img/roddy_rich.jpg" controls>
-                                <source src="video/roddy_rich.mp4" type="video/mp4">
+                            <video src="video/roddy_rich.mp4" poster="img/roddy_rich.jpg" controls>
                             </video>
                             <label for="control1"></label>
                             <label for="control3"></label>
@@ -311,8 +319,7 @@
 
                         <div class="slider__item">
                             <h4>Top 1 Artist 100</h4>
-                            <video poster="img/juice_wrld.jpg" controls>
-                                <source src="video/juice_wrld.mp4" type="video/mp4">
+                            <video src="video/juice_wrld.mp4" poster="img/juice_wrld.jpg" controls>
                             </video>
                             <label for="control2"></label>
                             <label for="control4"></label>
@@ -321,8 +328,7 @@
 
                         <div class="slider__item">
                             <h4>Top 1 year-end Hot 100 Songs </h4>
-                            <video poster="img/lil_nas_x.jpg" controls>
-                                <source src="video/lil_nas_x.mp4" type="video/mp4">
+                            <video src="video/lil_nas_x.mp4" poster="img/lil_nas_x.jpg" controls>
                             </video>
                             <label for="control3"></label>
                             <label for="control5"></label>
@@ -331,7 +337,6 @@
                         <div class="slider__item">
                             <h4>Top 1 2019 Year-End Boxscore</h4>
                             <video src="video/ed_sheran.mp4" poster="img/ed_sheran.png" controls>
-                                <source src="video/ed_sheran.mp4" type="video/mp4">
                             </video>
                             <label for="control4"></label>
                             <label for="control6"></label>
@@ -339,8 +344,7 @@
 
                         <div class="slider__item">
                             <h4>Top 1 year-end Billboard 200 Albums</h4>
-                            <video poster="img/billie-eilish.jpg" controls>
-                                <source src="video/billie_eilish.mp4" type="video/mp4">
+                            <video src="video/billie_eilish.mp4" poster="img/billie-eilish.jpg" controls>
                             </video>
                             <label for="control5"></label>
                         </div>
@@ -367,11 +371,15 @@
                         <p class="library__top-back"><span class="icon__arrow"></span>Back to main list</p>
                         <h3 class="library__title">Library</h3>
                         <select name="filter">
-                            <option value="disabled" disabled selected>Sort songs by:</option>
-                            <option class="library__sort-item" value="popular" name="rating_popular">Rating, popular first</option>
-                            <option class="library__sort-item" value="unpopular" name="rating_unpopular">Rating, unpopular first</option>
-                            <option class="library__sort-item" value="a-z" name="alphabetically_A-Z">Alphabetically A-Z</option>
-                            <option class="library__sort-item" value="z-a" name="alphabetically_Z-A">Alphabetically Z-A</option>
+                            <option value="" disabled selected>Sort songs by:</option>
+                            <option class="library__sort-item" data-direction="down" value="rating">Rating, popular
+                                first</option>
+                            <option class="library__sort-item" data-direction="up" value="rating">Rating, unpopular
+                                first</option>
+                            <option class="library__sort-item" data-direction="down" value="trackName">Alphabetically
+                                A-Z</option>
+                            <option class="library__sort-item" data-direction="up" value="trackName">Alphabetically Z-A
+                            </option>
                         </select>
                     </div>
 
@@ -506,7 +514,6 @@
                     </div>
                 </div>
             </div>
-            </div>
         </section>
 
         <section class="albums" id="albums">
@@ -592,7 +599,7 @@
                                     <input type="email" name="contacts-email" placeholder="Your email" required>
                                     <input type="tel" name="contacts-tel" placeholder="Your phone" required>
                                     <select name="contacts-select" required>
-                                        <option value="disabled" disabled selected>Reason of your appeal:</option>
+                                        <option value="" disabled selected>Reason of your appeal:</option>
                                         <option value="found-bug">I found a bug</option>
                                         <option value="cooperation">Cooperation offer</option>
                                         <option value="adversting">Advertising</option>
@@ -611,7 +618,7 @@
                     <div class="contacts__map">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.6199790709934!2d30.457456415893276!3d50.44817876959838!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce82b9d930e5%3A0x8b1e1e0c5175e2f!2z0JrQn9CGINGW0LwuINCG0LPQvtGA0Y8g0KHRltC60L7RgNGB0YzQutC-0LPQviwg0LrQvtGA0L_Rg9GBIOKEljE!5e0!3m2!1sru!2sua!4v1576944244203!5m2!1sru!2sua"
-                            rameborder="0" allowfullscreen=""></iframe>
+                            allowfullscreen=""></iframe>
                     </div>
                 </div>
             </div>
@@ -630,7 +637,7 @@
                         </ul>
                     </nav>
                 </div>
-                <button class="footer__button"><a href="#header">Get up</a></button>
+                <a class="footer__get-up" href="#header">Get up</a>
                 <div class="footer__right">
                     <ul class="footer__social">
                         <li><a target="_blank" href="https://www.instagram.com/be3x_voice/"><img
