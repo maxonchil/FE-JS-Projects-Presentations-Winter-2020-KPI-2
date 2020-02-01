@@ -1,3 +1,5 @@
+const SOUNDTRACKS_DATA = require('./soundtracks_library.js');
+
 document.addEventListener("DOMContentLoaded", () => {
 
     document.getElementById("albums__item-checked").checked = true;
@@ -16,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
 
-            soundtracks_base.filter(e => e.album === albums[i].dataset.album).forEach(element => {
+            SOUNDTRACKS_DATA.soundtracks_base.filter(e => e.album === albums[i].dataset.album).forEach(element => {
 
                 let div = document.createElement("div"),
                     p_title = document.createElement("p"),

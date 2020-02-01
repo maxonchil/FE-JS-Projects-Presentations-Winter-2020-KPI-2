@@ -1,3 +1,5 @@
+const SOUNDTRACKS_DATA = require('./soundtracks_library.js');
+
 document.getElementsByClassName("header__upload-button")[0].onclick = (event) => {
     let upload_form = document.getElementsByClassName("header__upload-form")[0],
         upload_btn = document.getElementsByClassName("header__upload-button")[0],
@@ -35,19 +37,16 @@ document.getElementsByClassName("header__upload-button")[0].onclick = (event) =>
                     src: "music/" + upload_input.files[i].name,
                     trackName: upload_input.files[i].name.split(".mp3")[0],
                     genre: upload_genre,
-                    album: "uploaded",
+                    album: "Uploaded",
                     rating: []
                 }
 
-                soundtracks_base.push(upload_song);
+                SOUNDTRACKS_DATA.soundtracks_base.push(upload_song);
 
                 try {
-                    localStorage.setItem("soundtracks_base", JSON.stringify(soundtracks_base));
+                    localStorage.setItem("soundtracks_base", JSON.stringify(SOUNDTRACKS_DATA.soundtracks_base));
                 } catch (e) {
-                    if (error.name === "QUOTA_EXCEEDED_ERR" || error.name === 'NS_ERROR_DOM_QUOTA_REACHED') {
-                        localStorage.clear();
-                        localStorage.setItem("soundtracks_base", JSON.stringify(soundtracks_base));
-                    }
+                   alert(e.name);
                 }
             }
             upload_form.classList.toggle("active", false);

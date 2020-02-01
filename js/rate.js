@@ -1,3 +1,5 @@
+const SOUNDTRACKS_DATA = require('./soundtracks_library.js');
+
 document.addEventListener("DOMContentLoaded", () => {
     let rate_container = document.getElementsByClassName("library__main-rate"),
         rate_input = document.getElementsByClassName("library__main-checkbox"),
@@ -18,14 +20,14 @@ document.addEventListener("DOMContentLoaded", () => {
         rate_input[i].onchange = () => {
             rating = rate_input[i].dataset.rating;
 
-            soundtracks_base.map(element => element.trackName === rate_track ? element.rating.push(rating) : false);
+            SOUNDTRACKS_DATA.soundtracks_base.map(element => element.trackName === rate_track ? element.rating.push(rating) : false);
 
             rate_container[curent_index].className += " none";
             document.getElementsByClassName("library__main-rated")[curent_index].innerText = "Voted!";
-            rated.push(rate_track);
+            SOUNDTRACKS_DATA.rated.push(rate_track);
 
             try {
-                localStorage.setItem("rated", JSON.stringify(rated));
+                localStorage.setItem("rated", JSON.stringify(SOUNDTRACKS_DATA.rated));
             } catch (error) {
                 alert(error.name)
             }

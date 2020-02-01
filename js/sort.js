@@ -1,6 +1,8 @@
+const SOUNDTRACKS_DATA = require('./soundtracks_library.js');
+
 document.addEventListener("DOMContentLoaded", () => {
 
-   let sum = (a, ...rest) => rest.length !== 0 ? a + sum(...rest) : a;
+    let sum = (a, ...rest) => rest.length !== 0 ? a + sum(...rest) : a;
 
     let sort_functions = {
         number: (direction) => direction === "up" ? (a, b) => a.rating[0] - b.rating[0] : (a, b) => b.rating[0] - a.rating[0],
@@ -39,10 +41,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
             switch (key) {
                 case "trackName":
-                    return useSoundTracks(array.sort(sort_functions.string(direction)));
+                    return SOUNDTRACKS_DATA.useSoundTracks(array.sort(sort_functions.string(direction)));
 
                 case "rating":
-                    return useSoundTracks(
+                    return SOUNDTRACKS_DATA.useSoundTracks(
                         array.filter(e => e.rating.length)
                         .map(x => ({
                             ...x,
@@ -56,16 +58,14 @@ document.addEventListener("DOMContentLoaded", () => {
     Array.from(document.getElementsByClassName("sort_top-10"), (e) => {
         e.onclick = () => {
             let sort_genre = e.dataset.genre,
-                sorted = soundtracks_base.filter(e => e.genre === sort_genre && e.rating.length).map((x) => ({
+                sorted = SOUNDTRACKS_DATA.soundtracks_base.filter(e => e.genre === sort_genre && e.rating.length).map((x) => ({
                     ...x,
                     rating: sum(...x.rating)
                 }));
 
             sorted.length >= 10 ?
-                sorted = sorted.slice(0, 10).sort(sort_type("rating", "down")) :
-                sorted = sorted.sort(sort_type("rating", "down"))
-
-            useSoundTracks(sorted);
+                SOUNDTRACKS_DATA.useSoundTracks(sorted.slice(0, 10).sort(sort_functions.number("down"))) :
+                SOUNDTRACKS_DATA.useSoundTracks(sorted.sort(sort_functions.number("down")));
         }
     })
 })

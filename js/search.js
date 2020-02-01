@@ -1,3 +1,5 @@
+const SOUNDTRACKS_DATA = require('./soundtracks_library.js');
+
 document.addEventListener("DOMContentLoaded", () => {
 
     //Search functionality for btn activate
@@ -8,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
             location.hash = "";
             location.hash += "#library";
         }
-        useSoundTracks(soundtracks_base.filter(e => e.trackName.toLowerCase().includes(search.toLowerCase())));
+        SOUNDTRACKS_DATA.useSoundTracks(SOUNDTRACKS_DATA.soundtracks_base.filter(e => e.trackName.toLowerCase().includes(search.toLowerCase())));
     };
 
 //Search functionality for enter activate
@@ -21,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 location.hash = "";
                 location.hash += "#library";
             }
-            useSoundTracks(soundtracks_base.filter(e => e.trackName.toLowerCase().includes(search.toLowerCase())));
+            SOUNDTRACKS_DATA.useSoundTracks(SOUNDTRACKS_DATA.soundtracks_base.filter(e => e.trackName.toLowerCase().includes(search.toLowerCase())));
         }
     })
 });

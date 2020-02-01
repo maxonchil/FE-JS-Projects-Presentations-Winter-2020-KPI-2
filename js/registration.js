@@ -1,4 +1,7 @@
-let users_base;
+export let users_base;
+
+const SOUNDTRACKS_DATA = require('./soundtracks_library.js');
+
 //Create a promise of AJAX request to set up a item on localeStorage first and then use it
 async function ajax_usersBase() {
     return new Promise(function (resolve, reject) {
@@ -68,11 +71,7 @@ function registration(data) {
                     localStorage.setItem(key, item);
                     users_base = [reg_userData];
                 } catch (error) {
-                    if (error.name === "QUOTA_EXCEEDED_ERR" || error.name === 'NS_ERROR_DOM_QUOTA_REACHED') {
-                        localStorage.clear();
-                        localStorage.setItem(key, item);
-                        users_base = [reg_userData];
-                    }
+                    alert(error);
                 }
             })("users_base", JSON.stringify([reg_userData]))
 
@@ -117,10 +116,7 @@ function registration(data) {
                 try {
                     localStorage.setItem(key, item);
                 } catch (error) {
-                    if (error.name === "QUOTA_EXCEEDED_ERR" || error.name === 'NS_ERROR_DOM_QUOTA_REACHED') {
-                        localStorage.clear();
-                        localStorage.setItem(key, item);
-                    }
+                    alert(error);
                 }
             })("users_base", JSON.stringify(users_base))
 
@@ -134,7 +130,6 @@ function registration(data) {
             reg_erroName.innerText = "";
             reg_errorPas.innerText = "";
         }
-
     }
     //Sign in form functionality
     document.querySelector(".sign-inForm__submit").onclick = () => {
@@ -197,12 +192,12 @@ function registration(data) {
                     rate_container[i].className += " none";
                     rate_text[i].innerText = "";
                 }
-                rated = [];
+                SOUNDTRACKS_DATA.rated = [];
 
                 try {
                     localStorage.setItem(localStorage.setItem("rated", "[]"));
                 } catch (error) {
-                    alert(error.name)
+                    alert(error.name);
                 }
                 
                 Array.from(document.getElementsByClassName("library__main-audio"), e => e.classList.toggle("audio-loged", false));

@@ -1,5 +1,5 @@
 //Create a promise of AJAX request to set up a item on localeStorage first and then use it
-
+export {useSoundTracks,soundtracks_base, rated};
 var soundtracks_base;
 var rated = [];
 
@@ -59,9 +59,9 @@ function useSoundTracks(filtred) {
         soundtracks_array = filtred;
 
     }
-  
+
     localStorage.setItem("soundtrack_array", JSON.stringify(soundtracks_array));
-    
+
     let max_page = Math.ceil(soundtracks_array.length / 10),
         controls_list = document.querySelector(".library__bottom-controls"),
         pages = Math.ceil(soundtracks_array.length / 10) >= 5 ? 5 : Math.ceil(soundtracks_array.length / 10);
@@ -73,7 +73,7 @@ function useSoundTracks(filtred) {
             controls_list.removeChild(controls_list.firstChild);
         }
     }
-    if (pages !== 1) {
+    if (pages > 1) {
         let first_li = document.createElement("li");
         first_li.className = "library__bottom-beginning-btn";
         controls_list.appendChild(first_li).innerText = "< First page";
@@ -143,7 +143,6 @@ function useSoundTracks(filtred) {
                             rate_text[i].innerText = "Voted!"
                         } else {
                             rate_text[i].innerText = "";
-
                         }
                     }
                 } else {
@@ -153,9 +152,6 @@ function useSoundTracks(filtred) {
             }
 
             if (array.length === 0) {
-                while (controls_list.firstChild) {
-                    controls_list.removeChild(controls_list.firstChild);
-                }
                 no_mutches.classList.toggle("none", false);
 
             }
