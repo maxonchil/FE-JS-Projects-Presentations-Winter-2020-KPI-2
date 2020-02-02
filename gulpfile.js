@@ -25,14 +25,6 @@ gulp.task('sass-compile', function () {
         .pipe(gulp.dest('style'))
 });
 
-// gulp.task('concat', function () {
-//     return gulp.src(sourceFile)
-//         .pipe(concat(destFile))
-//         .pipe(gulp.dest(destFolder))
-// });
-
-
-
 gulp.task('browserify', () =>
     browserify(sourceFile)
     .transform('babelify', {

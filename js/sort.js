@@ -2,8 +2,10 @@ const SOUNDTRACKS_DATA = require('./soundtracks_library.js');
 
 document.addEventListener("DOMContentLoaded", () => {
 
+    //Function to calculate the sum of all numbers in an array
     let sum = (a, ...rest) => rest.length !== 0 ? a + sum(...rest) : a;
 
+    //Object with a sorting functions for different data types
     let sort_functions = {
         number: (direction) => direction === "up" ? (a, b) => a.rating[0] - b.rating[0] : (a, b) => b.rating[0] - a.rating[0],
         string: (direction) => {
@@ -52,6 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         }))
                         .sort(sort_functions.number(direction)));
             }
+            
         }
     })
 

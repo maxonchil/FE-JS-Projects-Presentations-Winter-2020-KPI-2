@@ -28,7 +28,7 @@ document.getElementsByClassName("header__upload-button")[0].onclick = (event) =>
                 }
             })
 
-        //When file uploaded, add it to global variable and LS
+        //When file uploaded, add it to soundtracks base and LS
         upload_input.onchange = () => {
 
             for (i = 0; i < upload_input.files.length; i++) {

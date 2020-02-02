@@ -1,8 +1,11 @@
-//Create a promise of AJAX request to set up a item on localeStorage first and then use it
-export {useSoundTracks,soundtracks_base, rated};
+export {
+    useSoundTracks,
+    soundtracks_base,
+    rated
+};
 var soundtracks_base;
 var rated = [];
-
+//If user loged in, get from LS songs for which he voted
 if (/^logIn/.test(document.cookie)) {
     if (localStorage.getItem("rated")) {
         rated = JSON.parse(localStorage.getItem("rated"));
@@ -28,8 +31,6 @@ async function ajax_soundtracks() {
 
 }
 
-//Check by async function is in localeStorage exist soundracks base or not. 
-
 (async () => {
     let data;
     if (!localStorage.getItem("soundtracks_base")) {
@@ -44,22 +45,21 @@ async function ajax_soundtracks() {
 
 
 
-//Main function to work with data
+//Main function to work with scountracks data
 function useSoundTracks(filtred) {
 
     let soundtracks_array; //temporary storage for the data that will be displayed to the user
 
-    //If no search results, then show message and if user in not on main library, then show him 'Back to main library' button
+
 
     if (filtred === undefined) {
-        document.getElementsByClassName("library__top-back")[0].className += " hidden";
+        document.getElementsByClassName("library__top-back")[0].classList.toggle("hidden", true);
         soundtracks_array = soundtracks_base.slice();
     } else {
-        document.getElementsByClassName("library__top-back")[0].className += "library__top-back";
+        document.getElementsByClassName("library__top-back")[0].classList.toggle("hidden", false);
         soundtracks_array = filtred;
-
     }
-
+    //Save a copy of the displayed content in LS to sort it later if needed
     localStorage.setItem("soundtrack_array", JSON.stringify(soundtracks_array));
 
     let max_page = Math.ceil(soundtracks_array.length / 10),
@@ -67,7 +67,7 @@ function useSoundTracks(filtred) {
         pages = Math.ceil(soundtracks_array.length / 10) >= 5 ? 5 : Math.ceil(soundtracks_array.length / 10);
 
 
-    //Added pagination controls 
+    //Redrawing pagination controls elements
     if (controls_list.hasChildNodes()) {
         while (controls_list.firstChild) {
             controls_list.removeChild(controls_list.firstChild);
@@ -94,7 +94,6 @@ function useSoundTracks(filtred) {
     }
 
 
-    //Selected controls, audio elements and their 'p' tag for show a soundtrack name and set up src
     let library_titles = document.querySelectorAll(".library__main-title"),
         library_audio = document.querySelectorAll(".library__main-audio"),
         library_controls = document.querySelectorAll(".library__bottom-controlsItem"),
@@ -118,7 +117,7 @@ function useSoundTracks(filtred) {
     }
 
 
-    //Сontent output function
+    //The function to displays songs according to the request on the page
     function displayContent(array) {
         if (/^logIn/.test(document.cookie)) {
             for (let i = 0; i < rate_input.length; i++) {
@@ -129,14 +128,15 @@ function useSoundTracks(filtred) {
             if (array[i] === undefined) {
                 library_containers[i].classList.toggle("none", true);
             } else {
-                // no_mutches.toggle("none", true);
                 no_mutches.classList.toggle("none", true);
+                rate_container[i].setAttribute("data-track", array[i].trackName);
+
                 library_containers[i].classList.toggle("none", false);
                 library_titles[i].innerText = array[i].trackName;
                 library_audio[i].setAttribute("src", array[i].src);
+
                 if (/^logIn/.test(document.cookie)) {
                     rate_container[i].classList.toggle("none", false);
-                    rate_container[i].setAttribute("data-track", array[i].trackName);
                     if (rated.length !== 0) {
                         if (rated.indexOf(array[i].trackName) !== -1) {
                             rate_container[i].classList.toggle("none", true);
@@ -150,7 +150,7 @@ function useSoundTracks(filtred) {
                 }
 
             }
-
+            //If no search results, then show message and if user in not on main library, then show him 'Back to main library' button
             if (array.length === 0) {
                 no_mutches.classList.toggle("none", false);
 
@@ -160,7 +160,7 @@ function useSoundTracks(filtred) {
 
     }
 
-    // Display songs and their names to the page
+    // Display songs and their names on a page
     displayContent(soundtracks_array);
 
     //Added '-active' class to set up defoult chosed controler
@@ -196,10 +196,13 @@ function useSoundTracks(filtred) {
                     }
                     library_controls[library_controls.length - 2].className += "-active";
                 } else {
+
                     controllersRedrawing(-4, max_page, 3);
+
                 }
 
             } else if (curent_page >= 3) {
+
                 controllersRedrawing(-2, curent_page, 2);
 
             } else if (curent_page === 2) {
@@ -217,7 +220,7 @@ function useSoundTracks(filtred) {
 
         }
     }
-
+    //Event for first\last page button's, if they are on a page
     if (document.querySelector(".library__bottom-beginning-btn")) {
 
         document.querySelector(".library__bottom-beginning-btn").onclick = () => {
@@ -244,9 +247,4 @@ function useSoundTracks(filtred) {
         }
 
     }
-    //Event for 'go to first page' button
-
-
-    //Event for 'go to last page' button
-
 }

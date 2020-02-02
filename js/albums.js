@@ -2,12 +2,14 @@ const SOUNDTRACKS_DATA = require('./soundtracks_library.js');
 
 document.addEventListener("DOMContentLoaded", () => {
 
+    //Enable albums cover art
     document.getElementById("albums__item-checked").checked = true;
 
     let albums = document.getElementsByClassName("albums__cover"),
         inner = document.getElementsByClassName("albums__tracks-inner")[0],
         top_inner = document.getElementsByClassName("albums__track-top")[0];
 
+    //Clear the contents of the container before displaying the following items
     for (let i = 0; i < albums.length; i++) {
         albums[i].onchange = () => {
 
@@ -17,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
 
-
+            //Get the song corresponding to the album, create this element and add it to the page
             SOUNDTRACKS_DATA.soundtracks_base.filter(e => e.album === albums[i].dataset.album).forEach(element => {
 
                 let div = document.createElement("div"),

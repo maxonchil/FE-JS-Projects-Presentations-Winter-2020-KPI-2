@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
         rate_track,
         curent_index;
 
-
+//On click oт container, get the index of the element and the song voted for
     for (let i = 0; i < rate_container.length; i++) {
         rate_container[i].onclick = () => {
             rate_track = rate_container[i].dataset.track;
@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    //On the same click,get the rating that the user put,add it to the database, and save a state of a song as voted
     for (let i = 0; i < rate_input.length; i++) {
         rate_input[i].onchange = () => {
             rating = rate_input[i].dataset.rating;
@@ -23,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
             SOUNDTRACKS_DATA.soundtracks_base.map(element => element.trackName === rate_track ? element.rating.push(rating) : false);
 
             rate_container[curent_index].className += " none";
-            document.getElementsByClassName("library__main-rated")[curent_index].innerText = "Voted!";
+            rate_text[curent_index].innerText = "Voted!";
             SOUNDTRACKS_DATA.rated.push(rate_track);
 
             try {

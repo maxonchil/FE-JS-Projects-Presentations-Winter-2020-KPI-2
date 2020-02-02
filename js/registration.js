@@ -2,7 +2,6 @@ export let users_base;
 
 const SOUNDTRACKS_DATA = require('./soundtracks_library.js');
 
-//Create a promise of AJAX request to set up a item on localeStorage first and then use it
 async function ajax_usersBase() {
     return new Promise(function (resolve, reject) {
         let xhr = new XMLHttpRequest();
@@ -15,7 +14,7 @@ async function ajax_usersBase() {
         xhr.send();
     })
 }
-//Check by async function is in localeStorage exist users base or not. 
+
 (async () => {
     let data;
     if (!localStorage.getItem("users_base")) {
@@ -32,7 +31,6 @@ function registration(data) {
     users_base = data;
 
 
-    //Selected all needed DOM elements
     document.getElementsByClassName("create-accountForm__submit")[0].onclick = () => {
         let reg_userName = document.querySelector("[name='user-name']").value,
             reg_userEmail = document.querySelector("[name='user-email']").value,
@@ -144,7 +142,6 @@ function registration(data) {
             check_log = false,
             check_pas = true;
 
-        //Looking for a registred user with entered nickname
         for (let i = 0; i < users_counter; i++) {
             if (signIn_log === users_base[i].user_name) {
                 check_log = true;
@@ -153,10 +150,8 @@ function registration(data) {
             }
         }
 
-        //If entered nickname allready registred, then compare the correctness of the entered password
         signIn_pas === users_base[user_index].user_password ? check_pas = true : check_pas = false;
 
-        //If log check and pas chek is ok, then user loged in
         if (check_log === true && check_pas === true) {
             let rate_container = document.getElementsByClassName("library__main-rate");
 
@@ -192,6 +187,7 @@ function registration(data) {
                     rate_container[i].className += " none";
                     rate_text[i].innerText = "";
                 }
+                //When the user loged out,discard the state of the voted songs
                 SOUNDTRACKS_DATA.rated = [];
 
                 try {
@@ -199,7 +195,7 @@ function registration(data) {
                 } catch (error) {
                     alert(error.name);
                 }
-                
+
                 Array.from(document.getElementsByClassName("library__main-audio"), e => e.classList.toggle("audio-loged", false));
             }
             Array.from(document.getElementsByClassName("library__main-audio"), e => e.classList.toggle("audio-loged", true));

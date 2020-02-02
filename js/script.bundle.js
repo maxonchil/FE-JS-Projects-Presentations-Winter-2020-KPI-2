@@ -4,10 +4,11 @@
 var SOUNDTRACKS_DATA = require('./soundtracks_library.js');
 
 document.addEventListener("DOMContentLoaded", function () {
+  //Enable albums cover art
   document.getElementById("albums__item-checked").checked = true;
   var albums = document.getElementsByClassName("albums__cover"),
       inner = document.getElementsByClassName("albums__tracks-inner")[0],
-      top_inner = document.getElementsByClassName("albums__track-top")[0];
+      top_inner = document.getElementsByClassName("albums__track-top")[0]; //Clear the contents of the container before displaying the following items
 
   var _loop = function _loop(i) {
     albums[i].onchange = function () {
@@ -15,7 +16,8 @@ document.addEventListener("DOMContentLoaded", function () {
         while (inner.firstChild) {
           inner.removeChild(inner.firstChild);
         }
-      }
+      } //Get the song corresponding to the album, create this element and add it to the page
+
 
       SOUNDTRACKS_DATA.soundtracks_base.filter(function (e) {
         return e.album === albums[i].dataset.album;
@@ -54,8 +56,9 @@ document.addEventListener("DOMContentLoaded", function () {
 var SOUNDTRACKS_DATA = require('./soundtracks_library.js');
 
 document.addEventListener("DOMContentLoaded", function () {
-  //Take together all items for filtering by genre
-  var genre_items = Array.from(document.getElementsByClassName("aside__icon")).concat(Array.from(document.getElementsByClassName("header__submenu-span")));
+  //Collect all elements that filter by genre
+  var genre_items = Array.from(document.getElementsByClassName("aside__icon")).concat(Array.from(document.getElementsByClassName("header__submenu-span"))); //Find songs by the corresponding genre and pass them to the function to display on page
+
   genre_items.forEach(function (item) {
     item.onclick = function (e) {
       SOUNDTRACKS_DATA.useSoundTracks(SOUNDTRACKS_DATA.soundtracks_base.filter(function (element) {
@@ -70,6 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
 var SOUNDTRACKS_DATA = require('./soundtracks_library.js');
 
 document.addEventListener("DOMContentLoaded", function () {
+  //Onclick 'back button' pass all songs from the database to the function for displaying content on page
   document.getElementsByClassName("library__top-back")[0].onclick = function () {
     SOUNDTRACKS_DATA.useSoundTracks(SOUNDTRACKS_DATA.soundtracks_base);
     document.getElementsByClassName("library__top-back")[0].className += " hidden";
@@ -83,7 +87,7 @@ var SOUNDTRACKS_DATA = require('./soundtracks_library.js');
 var USERS_DATA = require('./registration.js');
 
 document.addEventListener("DOMContentLoaded", function () {
-  //If page was reloaded, rewriting registration elements
+  //If page was reloaded and user logen id, redraw the page in accordance with the fact that the user is logged in
   if (/^logIn/.test(document.cookie)) {
     var rate_container = document.getElementsByClassName("library__main-rate"),
         createAcc_btn = document.querySelector(".header__registration-createAccount"),
@@ -99,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
     signIN_success.style.display = "block";
     Array.from(document.getElementsByClassName("library__main-audio"), function (e) {
       return e.classList.toggle("audio-loged", true);
-    }); //If page was reloaded, add event on logou btn
+    }); //If page was reloaded, add event on logout btn
 
     logOut_btn.onclick = function () {
       document.cookie = "logIn=" + [document.cookie.split("=")[1]] + ";" + "max-age=0;";
@@ -113,11 +117,13 @@ document.addEventListener("DOMContentLoaded", function () {
         rate_text[i].innerText = "";
       }
 
-      SOUNDTRACKS_DATA.rated = []; // try {
-      //     localStorage.setItem("rated", "[]");
-      // } catch (error) {
-      //     alert(error.name);
-      // }
+      SOUNDTRACKS_DATA.rated = [];
+
+      try {
+        localStorage.setItem("rated", "[]");
+      } catch (error) {
+        alert(error.name);
+      }
 
       Array.from(document.getElementsByClassName("library__main-audio"), function (e) {
         return e.classList.toggle("audio-loged", false);
@@ -136,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function () {
       rate_text = document.getElementsByClassName("library__main-rated"),
       rating,
       rate_track,
-      curent_index;
+      curent_index; //On click oт container, get the index of the element and the song voted for
 
   var _loop = function _loop(i) {
     rate_container[i].onclick = function () {
@@ -147,7 +153,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
   for (var i = 0; i < rate_container.length; i++) {
     _loop(i);
-  }
+  } //On the same click,get the rating that the user put,add it to the database, and save a state of a song as voted
+
 
   var _loop2 = function _loop2(_i) {
     rate_input[_i].onchange = function () {
@@ -156,7 +163,7 @@ document.addEventListener("DOMContentLoaded", function () {
         return element.trackName === rate_track ? element.rating.push(rating) : false;
       });
       rate_container[curent_index].className += " none";
-      document.getElementsByClassName("library__main-rated")[curent_index].innerText = "Voted!";
+      rate_text[curent_index].innerText = "Voted!";
       SOUNDTRACKS_DATA.rated.push(rate_track);
 
       try {
@@ -188,13 +195,11 @@ var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/
 var users_base;
 exports.users_base = users_base;
 
-var SOUNDTRACKS_DATA = require('./soundtracks_library.js'); //Create a promise of AJAX request to set up a item on localeStorage first and then use it
-
+var SOUNDTRACKS_DATA = require('./soundtracks_library.js');
 
 function ajax_usersBase() {
   return _ajax_usersBase.apply(this, arguments);
-} //Check by async function is in localeStorage exist users base or not. 
-
+}
 
 function _ajax_usersBase() {
   _ajax_usersBase = (0, _asyncToGenerator2.default)(
@@ -265,7 +270,7 @@ _regenerator.default.mark(function _callee() {
 
 function registration(data) {
   //Create an array with all users
-  exports.users_base = users_base = data; //Selected all needed DOM elements
+  exports.users_base = users_base = data;
 
   document.getElementsByClassName("create-accountForm__submit")[0].onclick = function () {
     var reg_userName = document.querySelector("[name='user-name']").value,
@@ -373,7 +378,7 @@ function registration(data) {
         users_counter = users_base.length,
         user_index = 0,
         check_log = false,
-        check_pas = true; //Looking for a registred user with entered nickname
+        check_pas = true;
 
     for (var i = 0; i < users_counter; i++) {
       if (signIn_log === users_base[i].user_name) {
@@ -381,10 +386,9 @@ function registration(data) {
         user_index = i;
         break;
       }
-    } //If entered nickname allready registred, then compare the correctness of the entered password
+    }
 
-
-    signIn_pas === users_base[user_index].user_password ? check_pas = true : check_pas = false; //If log check and pas chek is ok, then user loged in
+    signIn_pas === users_base[user_index].user_password ? check_pas = true : check_pas = false;
 
     if (check_log === true && check_pas === true) {
       var rate_container = document.getElementsByClassName("library__main-rate");
@@ -417,7 +421,8 @@ function registration(data) {
         for (var _i3 = 0; _i3 < rate_container.length; _i3++) {
           rate_container[_i3].className += " none";
           rate_text[_i3].innerText = "";
-        }
+        } //When the user loged out,discard the state of the voted songs
+
 
         SOUNDTRACKS_DATA.rated = [];
 
@@ -498,13 +503,15 @@ function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { va
 var SOUNDTRACKS_DATA = require('./soundtracks_library.js');
 
 document.addEventListener("DOMContentLoaded", function () {
+  //Function to calculate the sum of all numbers in an array
   var sum = function sum(a) {
     for (var _len = arguments.length, rest = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
       rest[_key - 1] = arguments[_key];
     }
 
     return rest.length !== 0 ? a + sum.apply(void 0, rest) : a;
-  };
+  }; //Object with a sorting functions for different data types
+
 
   var sort_functions = {
     number: function number(direction) {
@@ -590,10 +597,10 @@ var _regenerator = _interopRequireDefault(require("@babel/runtime/regenerator"))
 
 var _asyncToGenerator2 = _interopRequireDefault(require("@babel/runtime/helpers/asyncToGenerator"));
 
-//Create a promise of AJAX request to set up a item on localeStorage first and then use it
 var soundtracks_base;
 exports.soundtracks_base = soundtracks_base;
-var rated = [];
+var rated = []; //If user loged in, get from LS songs for which he voted
+
 exports.rated = rated;
 
 if (/^logIn/.test(document.cookie)) {
@@ -608,8 +615,7 @@ if (/^logIn/.test(document.cookie)) {
 
 function ajax_soundtracks() {
   return _ajax_soundtracks.apply(this, arguments);
-} //Check by async function is in localeStorage exist soundracks base or not. 
-
+}
 
 function _ajax_soundtracks() {
   _ajax_soundtracks = (0, _asyncToGenerator2.default)(
@@ -677,24 +683,24 @@ _regenerator.default.mark(function _callee() {
       }
     }
   }, _callee);
-}))(); //Main function to work with data
+}))(); //Main function to work with scountracks data
 
 function useSoundTracks(filtred) {
   var soundtracks_array; //temporary storage for the data that will be displayed to the user
-  //If no search results, then show message and if user in not on main library, then show him 'Back to main library' button
 
   if (filtred === undefined) {
-    document.getElementsByClassName("library__top-back")[0].className += " hidden";
+    document.getElementsByClassName("library__top-back")[0].classList.toggle("hidden", true);
     soundtracks_array = soundtracks_base.slice();
   } else {
-    document.getElementsByClassName("library__top-back")[0].className += "library__top-back";
+    document.getElementsByClassName("library__top-back")[0].classList.toggle("hidden", false);
     soundtracks_array = filtred;
-  }
+  } //Save a copy of the displayed content in LS to sort it later if needed
+
 
   localStorage.setItem("soundtrack_array", JSON.stringify(soundtracks_array));
   var max_page = Math.ceil(soundtracks_array.length / 10),
       controls_list = document.querySelector(".library__bottom-controls"),
-      pages = Math.ceil(soundtracks_array.length / 10) >= 5 ? 5 : Math.ceil(soundtracks_array.length / 10); //Added pagination controls 
+      pages = Math.ceil(soundtracks_array.length / 10) >= 5 ? 5 : Math.ceil(soundtracks_array.length / 10); //Redrawing pagination controls elements
 
   if (controls_list.hasChildNodes()) {
     while (controls_list.firstChild) {
@@ -719,8 +725,7 @@ function useSoundTracks(filtred) {
     var last_li = document.createElement("li");
     last_li.className = "library__bottom-end-btn";
     controls_list.appendChild(last_li).innerText = "Last page >";
-  } //Selected controls, audio elements and their 'p' tag for show a soundtrack name and set up src
-
+  }
 
   var library_titles = document.querySelectorAll(".library__main-title"),
       library_audio = document.querySelectorAll(".library__main-audio"),
@@ -742,7 +747,7 @@ function useSoundTracks(filtred) {
       counter++;
     });
     library_controls[active_e].className += "-active";
-  } //Сontent output function
+  } //The function to displays songs according to the request on the page
 
 
   function displayContent(array) {
@@ -756,8 +761,9 @@ function useSoundTracks(filtred) {
       if (array[_i2] === undefined) {
         library_containers[_i2].classList.toggle("none", true);
       } else {
-        // no_mutches.toggle("none", true);
         no_mutches.classList.toggle("none", true);
+
+        rate_container[_i2].setAttribute("data-track", array[_i2].trackName);
 
         library_containers[_i2].classList.toggle("none", false);
 
@@ -767,8 +773,6 @@ function useSoundTracks(filtred) {
 
         if (/^logIn/.test(document.cookie)) {
           rate_container[_i2].classList.toggle("none", false);
-
-          rate_container[_i2].setAttribute("data-track", array[_i2].trackName);
 
           if (rated.length !== 0) {
             if (rated.indexOf(array[_i2].trackName) !== -1) {
@@ -782,13 +786,14 @@ function useSoundTracks(filtred) {
         } else {
           rate_container[_i2].classList.toggle("none", true);
         }
-      }
+      } //If no search results, then show message and if user in not on main library, then show him 'Back to main library' button
+
 
       if (array.length === 0) {
         no_mutches.classList.toggle("none", false);
       }
     }
-  } // Display songs and their names to the page
+  } // Display songs and their names on a page
 
 
   displayContent(soundtracks_array); //Added '-active' class to set up defoult chosed controler
@@ -840,7 +845,8 @@ function useSoundTracks(filtred) {
 
   for (var _i3 = 0; _i3 < library_controls.length; _i3++) {
     _loop(_i3);
-  }
+  } //Event for first\last page button's, if they are on a page
+
 
   if (document.querySelector(".library__bottom-beginning-btn")) {
     document.querySelector(".library__bottom-beginning-btn").onclick = function () {
@@ -865,9 +871,7 @@ function useSoundTracks(filtred) {
         library_controls[library_controls.length - 1].className += "-active";
       }
     };
-  } //Event for 'go to first page' button
-  //Event for 'go to last page' button
-
+  }
 }
 },{"@babel/runtime/helpers/asyncToGenerator":12,"@babel/runtime/helpers/interopRequireDefault":14,"@babel/runtime/regenerator":18}],10:[function(require,module,exports){
 "use strict";
@@ -894,7 +898,7 @@ document.getElementsByClassName("header__upload-button")[0].onclick = function (
       e.onclick = function () {
         upload_genre = e.value;
       };
-    }); //When file uploaded, add it to global variable and LS
+    }); //When file uploaded, add it to soundtracks base and LS
 
     upload_input.onchange = function () {
       for (i = 0; i < upload_input.files.length; i++) {
