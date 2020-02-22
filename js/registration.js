@@ -175,6 +175,8 @@ function registration(data) {
 
             //If user loged in, then show him logout button
             logOut_btn.onclick = () => {
+                let rate_text = document.querySelector(".library__main-rated");
+                
                 document.cookie = "logIn=" + user_index + ";" + "max-age=0;";
                 logOut_btn.style.display = "none";
                 signIN_success.style.display = "none";

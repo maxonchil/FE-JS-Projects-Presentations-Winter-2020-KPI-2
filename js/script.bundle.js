@@ -410,6 +410,7 @@ function registration(data) {
 
 
       logOut_btn.onclick = function () {
+        var rate_text = document.querySelector(".library__main-rated");
         document.cookie = "logIn=" + user_index + ";" + "max-age=0;";
         logOut_btn.style.display = "none";
         signIN_success.style.display = "none";
